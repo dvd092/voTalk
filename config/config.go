@@ -2,7 +2,7 @@ package config
 
 import (
 	"log"
-	"expert/utils"
+	"votalk/utils"
 
 	"gopkg.in/go-ini/ini.v1"
 )

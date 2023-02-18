@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"expert/config"
+	"votalk/config"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
@@ -16,13 +16,13 @@ var Db *sql.DB
 var err error
 
 const (
-	tableNameUser = "users"
-	tableNameTodo = "todos"
+	tableNameExUser = "ex_users"
+	tableNameVwUser = "vw_users"
 	tableNameSession = "sessions"
 )
 
 func init() {
-	Db, err = sql.Open(config.Config.SQLDriver, "dvd09:rlaekdnlt@tcp(localhost:3306)/go_training?parseTime=true")
+	Db, err = sql.Open(config.Config.SQLDriver, "dvd09:rlaekdnlt@tcp(localhost:3306)/ex_po?parseTime=true")
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -34,19 +34,30 @@ func init() {
 		fmt.Println("接続成功")
 	}
 
-	cmdU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,uuid VARCHAR(100),name VARCHAR(100),email VARCHAR(100),password VARCHAR(100),created_at DATETIME)`, tableNameUser)
+	//viewユーザーテーブル作成
+	cmdVwU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,uuid VARCHAR(100),name VARCHAR(100),email VARCHAR(100),password VARCHAR(100),created_at DATETIME)`, tableNameVwUser)
 
-	_, err = Db.Exec(cmdU)
+	_, err = Db.Exec(cmdVwU)
 	if err != nil {
 		log.Fatalln(err)
 	}
-	Db.Exec(cmdU)
+	Db.Exec(cmdVwU)
 
-	cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,content TEXT, user_id INTEGER, created_at DATETIME)`, tableNameTodo)
+	//expertユーザーテーブル作成
+	cmdExU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,uuid VARCHAR(100),name VARCHAR(100),email VARCHAR(100),password VARCHAR(100),created_at DATETIME)`, tableNameExUser)
+
+	_, err = Db.Exec(cmdExU)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	Db.Exec(cmdExU)
+
+	// cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,content TEXT, user_id INTEGER, created_at DATETIME)`, tableNameTodo)
 
 
-	Db.Exec(cmdT)
+	// Db.Exec(cmdT)
 
+	//セッションテーブル作成
 	cmdS := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (
 		id INTEGER PRIMARY KEY AUTO_INCREMENT,
 		uuid VARCHAR(255) NOT NULL UNIQUE,

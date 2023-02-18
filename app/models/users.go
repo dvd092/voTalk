@@ -64,46 +64,46 @@ func (u *UserVw) CreateUser() (err error) {
 		return err
 }
 
-func GetUser(id int) (user UserEx, err error) {
-	user = UserEx{}
-	cmd := `select id, uuid, name, email, password, created_at from users where id = ?`
-	err = Db.QueryRow(cmd, id).Scan(&user.ID, &user.UUID, &user.Name, &user.Email, &user.Password, &user.CreatedAt)
-	return user,err
-}
+// func GetUser(id int) (user UserEx, err error) {
+// 	user = UserEx{}
+// 	cmd := `select id, uuid, name, email, password, created_at from users where id = ?`
+// 	err = Db.QueryRow(cmd, id).Scan(&user.ID, &user.UUID, &user.Name, &user.Email, &user.Password, &user.CreatedAt)
+// 	return user,err
+// }
 
-func (u *UserEx) UpdateUser() (err error) {
-	cmd := `update users set name =?, email =? where id =?`
-  _, err = Db.Exec(cmd, u.Name, u.Email, u.ID)
-	if err!= nil {
-    log.Fatalln(err)
-	}
-	return err
-}
+// func (u *UserEx) UpdateUser() (err error) {
+// 	cmd := `update users set name =?, email =? where id =?`
+//   _, err = Db.Exec(cmd, u.Name, u.Email, u.ID)
+// 	if err!= nil {
+//     log.Fatalln(err)
+// 	}
+// 	return err
+// }
 
-func (u *UserEx) DeleteUser() (err error) {
-	cmd := `delete from users where id =?`
-  _, err = Db.Exec(cmd, u.ID)
-  if err!= nil {
-    log.Fatalln(err)
-  }
-	return err
-}
+// func (u *UserEx) DeleteUser() (err error) {
+// 	cmd := `delete from users where id =?`
+//   _, err = Db.Exec(cmd, u.ID)
+//   if err!= nil {
+//     log.Fatalln(err)
+//   }
+// 	return err
+// }
 
-func GetUserByEmail(email string) (user UserEx, err error) {
-	user = UserEx{}
-	cmd := `select id, uuid, name, email, password, created_at from users where email = ?`
-	err = Db.QueryRow(cmd,email).Scan(
-		&user.ID, 
-		&user.UUID,
-		&user.Name,
-    &user.Email,
-		&user.Password,
-    &user.CreatedAt)
+// func GetUserByEmail(email string) (user UserEx, err error) {
+// 	user = UserEx{}
+// 	cmd := `select id, uuid, name, email, password, created_at from users where email = ?`
+// 	err = Db.QueryRow(cmd,email).Scan(
+// 		&user.ID, 
+// 		&user.UUID,
+// 		&user.Name,
+//     &user.Email,
+// 		&user.Password,
+//     &user.CreatedAt)
 
-	return user,err
-}
+// 	return user,err
+// }
 
-func (u *UserEx) CreateSession() (session Session, err error) {
+func (u *UserVw) CreateSession() (session Session, err error) {
 	session = Session{}
 	cmd1 := `insert into sessions (
 		uuid,

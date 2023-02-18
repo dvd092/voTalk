@@ -1,4 +1,4 @@
-module expert
+module votalk
 
 go 1.18
 

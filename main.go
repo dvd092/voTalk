@@ -1,15 +1,14 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	// "log"
-	"expert/app/controllers"
-	"expert/app/models"
+	"votalk/app/controllers"
+	// "expert/app/models"
 	// "todo_app/config"
 )
 
 func main() {
-	fmt.Println(models.Db)
 
 	controllers.StartMainServer()
 

@@ -709,3 +709,377 @@ created by net/http.(*Server).Serve
 2023/02/17 16:59:56 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
 2023/02/17 17:06:12 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
 2023/02/17 23:06:33 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 11:24:54 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 11:26:00 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 11:26:16 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 11:34:24 users.go:46: Error 1146 (42S02): Table 'go_training.ex_users' doesn't exist
+2023/02/18 11:40:00 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 11:40:29 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 12:34:54 route_auth.go:14: viewer
+2023/02/18 12:34:54 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:57)
+2023/02/18 12:43:52 route_auth.go:18: Invalid session
+2023/02/18 12:43:52 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/18 12:44:51 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:53)
+2023/02/18 12:45:48 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:53)
+2023/02/18 12:50:12 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/18 12:50:42 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/18 12:51:54 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/18 12:55:55 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/18 12:57:07 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 12:57:16 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:01:50 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/18 13:01:59 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/18 13:05:09 route_auth.go:14: GET
+2023/02/18 13:05:09 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:05:39 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 13:05:54 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 13:16:42 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:16:44 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:17:06 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:17:14 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:17:39 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:18:41 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:19:34 server.go:3197: http: panic serving 127.0.0.1:52550: template: signup.html:8: missing value for command
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xae11c0, 0xc00004afa0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xbdb028?, 0xc0001f0380}, {0xad1b80, 0xc00018c6a0}, {0xc00006b920?, 0x3, 0xa5df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xbdb028, 0xc0001f0380}, 0xc0001c8600)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2afe2b74ce8?, {0xbdb028?, 0xc0001f0380?}, 0x78d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbdb028, 0xc0001f0380}, 0xc0001c8600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000100cf0?}, {0xbdb028, 0xc0001f0380}, 0xc0001c8600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000aadc0, {0xbdb2b8, 0xc000096c00})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:19:34 server.go:3197: http: panic serving 127.0.0.1:52551: template: signup.html:8: missing value for command
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xae11c0, 0xc00004b140})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xbdb028?, 0xc0001481c0}, {0xad1b80, 0xc00004b060}, {0xc00006b920?, 0x3, 0xa5df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xbdb028, 0xc0001481c0}, 0xc000204000)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2afe2b74bf8?, {0xbdb028?, 0xc0001481c0?}, 0x78d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbdb028, 0xc0001481c0}, 0xc000204000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000096cf0?}, {0xbdb028, 0xc0001481c0}, 0xc000204000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00006c820, {0xbdb2b8, 0xc000096c00})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:19:34 server.go:3197: http: panic serving 127.0.0.1:52552: template: signup.html:8: missing value for command
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xae11c0, 0xc00004b380})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xbdb028?, 0xc0001482a0}, {0xad1b80, 0xc00004b200}, {0xc00006b920?, 0x3, 0xa5df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xbdb028, 0xc0001482a0}, 0xc000204100)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2afe2b74b08?, {0xbdb028?, 0xc0001482a0?}, 0x78d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbdb028, 0xc0001482a0}, 0xc000204100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000096e10?}, {0xbdb028, 0xc0001482a0}, 0xc000204100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00006ca00, {0xbdb2b8, 0xc000096c00})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:19:34 server.go:3197: http: panic serving 127.0.0.1:52735: template: signup.html:8: missing value for command
+goroutine 63 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xae11c0, 0xc00018c900})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xbdb028?, 0xc000148380}, {0xad1b80, 0xc00004b440}, {0xc00006b920?, 0x3, 0xa5df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xbdb028, 0xc000148380}, 0xc0001c8700)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2afe2b74b08?, {0xbdb028?, 0xc000148380?}, 0x78d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbdb028, 0xc000148380}, 0xc0001c8700)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00028c450?}, {0xbdb028, 0xc000148380}, 0xc0001c8700)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00006cbe0, {0xbdb2b8, 0xc000096c00})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:19:36 server.go:3197: http: panic serving 127.0.0.1:52736: template: signup.html:8: missing value for command
+goroutine 49 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xae11c0, 0xc00018cb50})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xbdb028?, 0xc0001f0460}, {0xad1b80, 0xc00018c9c0}, {0xc00006b920?, 0x3, 0xa5df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xbdb028, 0xc0001f0460}, 0xc000204200)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2afe2b74b08?, {0xbdb028?, 0xc0001f0460?}, 0x78d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbdb028, 0xc0001f0460}, 0xc000204200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000979b0?}, {0xbdb028, 0xc0001f0460}, 0xc000204200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019c280, {0xbdb2b8, 0xc000096c00})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:19:36 server.go:3197: http: panic serving 127.0.0.1:52742: template: signup.html:8: missing value for command
+goroutine 70 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xae11c0, 0xc00018cda0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xbdb028?, 0xc0001f0540}, {0xad1b80, 0xc00018cc10}, {0xc00006b920?, 0x3, 0xa5df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xbdb028, 0xc0001f0540}, 0xc000116400)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2afe2b74b08?, {0xbdb028?, 0xc0001f0540?}, 0x78d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbdb028, 0xc0001f0540}, 0xc000116400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00015fda0?}, {0xbdb028, 0xc0001f0540}, 0xc000116400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019c320, {0xbdb2b8, 0xc000096c00})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:19:41 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:21:02 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:21:20 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:22:08 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:25:36 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:25:46 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:25:48 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:25:50 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:26:57 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:26:59 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:00 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:01 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:02 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:03 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:06 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:30 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:31 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:46 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:47 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:27:48 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:28:07 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:28:08 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:28:39 route_auth.go:17: viewer
+2023/02/18 13:28:39 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 13:28:41 route_auth.go:17: expert
+2023/02/18 13:28:41 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 13:28:43 route_auth.go:17: viewer
+2023/02/18 13:28:43 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/18 13:32:13 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:32:15 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:32:15 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:32:35 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:32:37 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:33 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:35 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:36 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:36 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:36 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:37 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:37 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:54 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:55 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:33:56 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:34:04 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:34:09 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:34:25 server.go:3197: http: panic serving 127.0.0.1:50562: template: signup.html:8: function "s" not defined
+goroutine 59 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x9911c0, 0xc000450190})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0xa8b008?, 0xc0001f60e0}, {0x981b80, 0xc00019e720}, {0xc0004e1920?, 0x3, 0x90df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.signup({0xa8b008, 0xc0001f60e0}, 0xc0001fe000)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x21ff7280a58?, {0xa8b008?, 0xc0001f60e0?}, 0x63d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xa8b008, 0xc0001f60e0}, 0xc0001fe000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00001b950?}, {0xa8b008, 0xc0001f60e0}, 0xc0001fe000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00009abe0, {0xa8b298, 0xc00018eb40})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:34:25 server.go:3197: http: panic serving 127.0.0.1:50154: template: signup.html:8: function "s" not defined
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x9911c0, 0xc000450250})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0xa8b008?, 0xc000116000}, {0x981b80, 0xc00004a150}, {0xc0004e1920?, 0x3, 0x90df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.signup({0xa8b008, 0xc000116000}, 0xc000498400)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x21ff7280c38?, {0xa8b008?, 0xc000116000?}, 0x63d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xa8b008, 0xc000116000}, 0xc000498400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018ec30?}, {0xa8b008, 0xc000116000}, 0xc000498400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000070000, {0xa8b298, 0xc00018eb40})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:34:25 server.go:3197: http: panic serving 127.0.0.1:50155: template: signup.html:8: function "s" not defined
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x9911c0, 0xc000450920})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0xa8b008?, 0xc000094000}, {0x981b80, 0xc000450490}, {0xc0004e1920?, 0x3, 0x90df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.signup({0xa8b008, 0xc000094000}, 0xc0000dfd00)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x21ff7280b48?, {0xa8b008?, 0xc000094000?}, 0x63d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xa8b008, 0xc000094000}, 0xc0000dfd00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c2ff0?}, {0xa8b008, 0xc000094000}, 0xc0000dfd00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000700a0, {0xa8b298, 0xc00018eb40})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:34:25 server.go:3197: http: panic serving 127.0.0.1:50153: template: signup.html:8: function "s" not defined
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x9911c0, 0xc000450b50})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0xa8b008?, 0xc0001160e0}, {0x981b80, 0xc00004a2a0}, {0xc0004e1920?, 0x3, 0x90df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.signup({0xa8b008, 0xc0001160e0}, 0xc0001fe500)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x21ff7280d28?, {0xa8b008?, 0xc0001160e0?}, 0x63d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xa8b008, 0xc0001160e0}, 0xc0001fe500)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00001a0f0?}, {0xa8b008, 0xc0001160e0}, 0xc0001fe500)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6dc0, {0xa8b298, 0xc00018eb40})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:34:25 server.go:3197: http: panic serving 127.0.0.1:50584: template: signup.html:8: function "s" not defined
+goroutine 114 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x9911c0, 0xc000450d00})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0xa8b008?, 0xc0001161c0}, {0x981b80, 0xc00004a3e0}, {0xc0004e1920?, 0x3, 0x90df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.signup({0xa8b008, 0xc0001161c0}, 0xc000470100)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x21ff7280d28?, {0xa8b008?, 0xc0001161c0?}, 0x63d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xa8b008, 0xc0001161c0}, 0xc000470100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000486b10?}, {0xa8b008, 0xc0001161c0}, 0xc000470100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a60a0, {0xa8b298, 0xc00018eb40})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:34:26 server.go:3197: http: panic serving 127.0.0.1:50585: template: signup.html:8: function "s" not defined
+goroutine 130 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x9911c0, 0xc00019e9c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0xa8b008?, 0xc0000940e0}, {0x981b80, 0xc000450ef0}, {0xc0004e1920?, 0x3, 0x90df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.signup({0xa8b008, 0xc0000940e0}, 0xc0001fe100)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x21ff7280d28?, {0xa8b008?, 0xc0000940e0?}, 0x63d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xa8b008, 0xc0000940e0}, 0xc0001fe100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000449080?}, {0xa8b008, 0xc0000940e0}, 0xc0001fe100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00009a0a0, {0xa8b298, 0xc00018eb40})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:34:26 server.go:3197: http: panic serving 127.0.0.1:50588: template: signup.html:8: function "s" not defined
+goroutine 75 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x9911c0, 0xc0004513d0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0xa8b008?, 0xc0000941c0}, {0x981b80, 0xc000451250}, {0xc00009f920?, 0x3, 0x90df40?})
+	C:/Users/dvd09/go/src/voTalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.signup({0xa8b008, 0xc0000941c0}, 0xc000470200)
+	C:/Users/dvd09/go/src/voTalk/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x21ff7280d28?, {0xa8b008?, 0xc0000941c0?}, 0x63d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xa8b008, 0xc0000941c0}, 0xc000470200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000487110?}, {0xa8b008, 0xc0000941c0}, 0xc000470200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000070280, {0xa8b298, 0xc00018eb40})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/18 13:34:40 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:34:41 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:34:42 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:34:49 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:36:32 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:36:33 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 13:39:19 route_auth.go:18: Invalid session
+2023/02/18 13:39:19 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:56)
+2023/02/18 13:40:14 route_auth.go:19: viewer
+2023/02/18 13:40:14 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:56)
+2023/02/18 15:32:02 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 15:34:13 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.signup (route_auth.go:55)
+2023/02/18 15:38:55 users.go:62: Error 1062 (23000): Duplicate entry '0' for key 'PRIMARY'
