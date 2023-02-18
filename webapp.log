@@ -1,0 +1,711 @@
+2023/02/17 15:29:07 base.go:41: dial tcp [::1]:3306: connectex: No connection could be made because the target machine actively refused it.
+2023/02/17 16:26:12 server.go:3197: http: panic serving [::1]:62114: template: signup.html:2: bad character U+007B '{'
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7b11c0, 0xc0000a0900})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x8aaf88?, 0xc0000d0460}, {0x0, 0x0}, {0xc0000f7980?, 0x3, 0xc0000f7970?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x8aaf88, 0xc0000d0460}, 0xc0000b6a00)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:22 +0x173
+net/http.HandlerFunc.ServeHTTP(0x20f2a640c38?, {0x8aaf88?, 0xc0000d0460?}, 0x45d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x8aaf88, 0xc0000d0460}, 0xc0000b6a00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018f560?}, {0x8aaf88, 0xc0000d0460}, 0xc0000b6a00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000bc1e0, {0x8ab218, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:12 server.go:3197: http: panic serving [::1]:62062: template: signup.html:2: bad character U+007B '{'
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7b11c0, 0xc0001602f0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x8aaf88?, 0xc0001f20e0}, {0x0, 0x0}, {0xc000531980?, 0x3, 0xc0002a3970?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x8aaf88, 0xc0001f20e0}, 0xc00050c000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:22 +0x173
+net/http.HandlerFunc.ServeHTTP(0x20f2a640d28?, {0x8aaf88?, 0xc0001f20e0?}, 0x45d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x8aaf88, 0xc0001f20e0}, 0xc00050c000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c0c0?}, {0x8aaf88, 0xc0001f20e0}, 0xc00050c000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019edc0, {0x8ab218, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:12 server.go:3197: http: panic serving [::1]:62115: template: signup.html:2: bad character U+007B '{'
+goroutine 29 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7b11c0, 0xc000160540})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x8aaf88?, 0xc0000d0000}, {0x0, 0x0}, {0xc000531980?, 0x3, 0xc0002d7970?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x8aaf88, 0xc0000d0000}, 0xc0000b6800)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:22 +0x173
+net/http.HandlerFunc.ServeHTTP(0x20f2a640b48?, {0x8aaf88?, 0xc0000d0000?}, 0x45d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x8aaf88, 0xc0000d0000}, 0xc0000b6800)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008d3e0?}, {0x8aaf88, 0xc0000d0000}, 0xc0000b6800)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000bc280, {0x8ab218, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:12 server.go:3197: http: panic serving [::1]:62116: template: signup.html:2: bad character U+007B '{'
+goroutine 31 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7b11c0, 0xc000474660})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x8aaf88?, 0xc0000d00e0}, {0x0, 0x0}, {0xc000531980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x8aaf88, 0xc0000d00e0}, 0xc0001fac00)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:22 +0x173
+net/http.HandlerFunc.ServeHTTP(0x20f2a640a58?, {0x8aaf88?, 0xc0000d00e0?}, 0x45d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x8aaf88, 0xc0000d00e0}, 0xc0001fac00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008d560?}, {0x8aaf88, 0xc0000d00e0}, 0xc0001fac00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000bc320, {0x8ab218, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:12 server.go:3197: http: panic serving [::1]:62177: template: signup.html:2: bad character U+007B '{'
+goroutine 95 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7b11c0, 0xc000474d30})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x8aaf88?, 0xc0001f21c0}, {0x0, 0x0}, {0xc000531980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x8aaf88, 0xc0001f21c0}, 0xc0000b6000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:22 +0x173
+net/http.HandlerFunc.ServeHTTP(0x20f2a640a58?, {0x8aaf88?, 0xc0001f21c0?}, 0x45d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x8aaf88, 0xc0001f21c0}, 0xc0000b6000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000312120?}, {0x8aaf88, 0xc0001f21c0}, 0xc0000b6000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019e0a0, {0x8ab218, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:13 server.go:3197: http: panic serving [::1]:62178: template: signup.html:2: bad character U+007B '{'
+goroutine 116 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x7b11c0, 0xc000160880})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x8aaf88?, 0xc0000d01c0}, {0x0, 0x0}, {0xc000307980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x8aaf88, 0xc0000d01c0}, 0xc0002a8100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:22 +0x173
+net/http.HandlerFunc.ServeHTTP(0x20f2a640a58?, {0x8aaf88?, 0xc0000d01c0?}, 0x45d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x8aaf88, 0xc0000d01c0}, 0xc0002a8100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000286fc0?}, {0x8aaf88, 0xc0000d01c0}, 0xc0002a8100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019ec80, {0x8ab218, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:19 server.go:3197: http: panic serving [::1]:62186: template: signup.html:2: bad character U+007B '{'
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xeb11c0, 0xc0000509b0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfaaf68?, 0xc0000c8000}, {0xea1b80, 0xc0000a0100}, {0xc00006b980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfaaf68, 0xc0000c8000}, 0xc0000b6000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x1a159370d28?, {0xfaaf68?, 0xc0000c8000?}, 0xb5d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfaaf68, 0xc0000c8000}, 0xc0000b6000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c0c0?}, {0xfaaf68, 0xc0000c8000}, 0xc0000b6000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019edc0, {0xfab1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:27 server.go:3197: http: panic serving [::1]:62185: template: signup.html:2: bad character U+007B '{'
+goroutine 23 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xeb11c0, 0xc000196760})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfaaf68?, 0xc00017e000}, {0xea1b80, 0xc000050a80}, {0xc00006b980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfaaf68, 0xc00017e000}, 0xc0001fa000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x1a159370c38?, {0xfaaf68?, 0xc00017e000?}, 0xb5d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfaaf68, 0xc00017e000}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018ed20?}, {0xfaaf68, 0xc00017e000}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000e0000, {0xfab1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:27 server.go:3197: http: panic serving 127.0.0.1:62193: template: signup.html:2: bad character U+007B '{'
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xeb11c0, 0xc0001967a0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfaaf68?, 0xc00017e0e0}, {0xea1b80, 0xc0000a0250}, {0xc00006b980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfaaf68, 0xc00017e0e0}, 0xc0000b6100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x1a159370b48?, {0xfaaf68?, 0xc00017e0e0?}, 0xb5d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfaaf68, 0xc00017e0e0}, 0xc0000b6100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c750?}, {0xfaaf68, 0xc00017e0e0}, 0xc0000b6100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019ee60, {0xfab1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:26:27 server.go:3197: http: panic serving [::1]:62198: template: signup.html:2: bad character U+007B '{'
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xeb11c0, 0xc000050e50})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfaaf68?, 0xc00017e1c0}, {0xea1b80, 0xc000050cd0}, {0xc00006f980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfaaf68, 0xc00017e1c0}, 0xc0000b6200)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x1a159370b48?, {0xfaaf68?, 0xc00017e1c0?}, 0xb5d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfaaf68, 0xc00017e1c0}, 0xc0000b6200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008cae0?}, {0xfaaf68, 0xc00017e1c0}, 0xc0000b6200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00019ef00, {0xfab1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:00 server.go:3197: http: panic serving [::1]:60534: template: signup.html:2: unexpected "{" in operand
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xeb11c0, 0xc000196860})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfaaf68?, 0xc00017e2a0}, {0xea1b80, 0xc000050f30}, {0xc000237980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfaaf68, 0xc00017e2a0}, 0xc000118200)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x1a159370b48?, {0xfaaf68?, 0xc00017e2a0?}, 0xb5d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfaaf68, 0xc00017e2a0}, 0xc000118200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000077ec0?}, {0xfaaf68, 0xc00017e2a0}, 0xc000118200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000e00a0, {0xfab1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:00 server.go:3197: http: panic serving [::1]:60535: template: signup.html:2: unexpected "{" in operand
+goroutine 26 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xeb11c0, 0xc0000a0480})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfaaf68?, 0xc0001f20e0}, {0xea1b80, 0xc000196920}, {0xc000237980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfaaf68, 0xc0001f20e0}, 0xc000118300)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x1a159370c38?, {0xfaaf68?, 0xc0001f20e0?}, 0xb5d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfaaf68, 0xc0001f20e0}, 0xc000118300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000077f20?}, {0xfaaf68, 0xc0001f20e0}, 0xc000118300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000e0140, {0xfab1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:00 server.go:3197: http: panic serving [::1]:60536: template: signup.html:2: unexpected "{" in operand
+goroutine 30 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xeb11c0, 0xc0000510a0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfaaf68?, 0xc0000c80e0}, {0xea1b80, 0xc0000a0540}, {0xc000237980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfaaf68, 0xc0000c80e0}, 0xc0001fa100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x1a159370c38?, {0xfaaf68?, 0xc0000c80e0?}, 0xb5d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfaaf68, 0xc0000c80e0}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018f890?}, {0xfaaf68, 0xc0000c80e0}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000e01e0, {0xfab1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:11 server.go:3197: http: panic serving [::1]:60549: template: signup.html:2: unexpected "{" in operand
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xe111c0, 0xc0000a2780})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xf0af68?, 0xc00014a000}, {0xe01b80, 0xc000050a30}, {0xc00006f980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xf0af68, 0xc00014a000}, 0xc000118100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2daf6314ce8?, {0xf0af68?, 0xc00014a000?}, 0xabd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf0af68, 0xc00014a000}, 0xc000118100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000076cf0?}, {0xf0af68, 0xc00014a000}, 0xc000118100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000aadc0, {0xf0b1f8, 0xc000096bd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:11 server.go:3197: http: panic serving [::1]:60550: template: signup.html:2: unexpected "{" in operand
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xe111c0, 0xc0000a2a00})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xf0af68?, 0xc0000fc0e0}, {0xe01b80, 0xc0000a2850}, {0xc00006f980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xf0af68, 0xc0000fc0e0}, 0xc000204000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2daf6314bf8?, {0xf0af68?, 0xc0000fc0e0?}, 0xabd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf0af68, 0xc0000fc0e0}, 0xc000204000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000096cc0?}, {0xf0af68, 0xc0000fc0e0}, 0xc000204000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000070820, {0xf0b1f8, 0xc000096bd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:11 server.go:3197: http: panic serving [::1]:60551: template: signup.html:2: unexpected "{" in operand
+goroutine 27 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xe111c0, 0xc000190250})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xf0af68?, 0xc0001aa000}, {0xe01b80, 0xc0001900b0}, {0xc00006b980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xf0af68, 0xc0001aa000}, 0xc000192000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x2daf6314bf8?, {0xf0af68?, 0xc0001aa000?}, 0xabd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf0af68, 0xc0001aa000}, 0xc000192000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000188060?}, {0xf0af68, 0xc0001aa000}, 0xc000192000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000aae60, {0xf0b1f8, 0xc000096bd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:42 server.go:3197: http: panic serving [::1]:60563: template: signup.html:2: unexpected "{" in operand
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc00019e780})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc00010e000}, {0xeb1b80, 0xc0000889b0}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc00010e000}, 0xc000070000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340d28?, {0xfbaf68?, 0xc00010e000?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc00010e000}, 0xc000070000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000200f0?}, {0xfbaf68, 0xc00010e000}, 0xc000070000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6dc0, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:42 server.go:3197: http: panic serving [::1]:60564: template: signup.html:2: unexpected "{" in operand
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc00019ea00})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc0001fa0e0}, {0xeb1b80, 0xc00019e850}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc0001fa0e0}, 0xc0000de100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340c38?, {0xfbaf68?, 0xc0001fa0e0?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc0001fa0e0}, 0xc0000de100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c2c30?}, {0xfbaf68, 0xc0001fa0e0}, 0xc0000de100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074000, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:42 server.go:3197: http: panic serving [::1]:60565: template: signup.html:2: unexpected "{" in operand
+goroutine 43 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc000088a80})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc00007e000}, {0xeb1b80, 0xc000050150}, {0xc00028b980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc00007e000}, 0xc000070100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340c38?, {0xfbaf68?, 0xc00007e000?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc00007e000}, 0xc000070100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000202a0?}, {0xfbaf68, 0xc00007e000}, 0xc000070100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6e60, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:42 server.go:3197: http: panic serving [::1]:60566: template: signup.html:2: unexpected "{" in operand
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc000088ae0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc0001fa1c0}, {0xeb1b80, 0xc00019eb90}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc0001fa1c0}, 0xc00022a100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340c38?, {0xfbaf68?, 0xc0001fa1c0?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc0001fa1c0}, 0xc00022a100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018fc20?}, {0xfbaf68, 0xc0001fa1c0}, 0xc00022a100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000740a0, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:42 server.go:3197: http: panic serving [::1]:60567: template: signup.html:2: unexpected "{" in operand
+goroutine 46 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc00019ed90})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc00010e0e0}, {0xeb1b80, 0xc000088ba0}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc00010e0e0}, 0xc000070200)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340d28?, {0xfbaf68?, 0xc00010e0e0?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc00010e0e0}, 0xc000070200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000207b0?}, {0xfbaf68, 0xc00010e0e0}, 0xc000070200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6f00, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:42 server.go:3197: http: panic serving [::1]:60568: template: signup.html:2: unexpected "{" in operand
+goroutine 52 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc000088d50})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc0001fa2a0}, {0xeb1b80, 0xc00019ee50}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc0001fa2a0}, 0xc000070300)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340d28?, {0xfbaf68?, 0xc0001fa2a0?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc0001fa2a0}, 0xc000070300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000209c0?}, {0xfbaf68, 0xc0001fa2a0}, 0xc000070300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6fa0, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:51 server.go:3197: http: panic serving [::1]:60572: template: signup.html:2: unexpected "{" in operand
+goroutine 55 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc00019fb20})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc0001fa700}, {0xeb1b80, 0xc00019f9e0}, {0xc00009d980?, 0x3, 0xc00009d970?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc0001fa700}, 0xc00022a800)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340d28?, {0xfbaf68?, 0xc0001fa700?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc0001fa700}, 0xc00022a800)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000020a20?}, {0xfbaf68, 0xc0001fa700}, 0xc00022a800)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a7040, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:51 server.go:3197: http: panic serving [::1]:60573: template: signup.html:2: unexpected "{" in operand
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc00019fc60})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc00010e2a0}, {0xeb1b80, 0xc000089120}, {0xc00009d980?, 0x3, 0xc00020f970?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc00010e2a0}, 0xc00022a300)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340c38?, {0xfbaf68?, 0xc00010e2a0?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc00010e2a0}, 0xc00022a300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000270b70?}, {0xfbaf68, 0xc00010e2a0}, 0xc00022a300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074140, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:51 server.go:3197: http: panic serving [::1]:60574: template: signup.html:2: unexpected "{" in operand
+goroutine 95 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc00019fed0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc0001fa7e0}, {0xeb1b80, 0xc00019fd20}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc0001fa7e0}, 0xc0000de400)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340c38?, {0xfbaf68?, 0xc0001fa7e0?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc0001fa7e0}, 0xc0000de400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00014ea20?}, {0xfbaf68, 0xc0001fa7e0}, 0xc0000de400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a7720, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:28:52 server.go:3197: http: panic serving [::1]:60575: template: signup.html:2: unexpected "{" in operand
+goroutine 116 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xec11c0, 0xc000390120})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0xfbaf68?, 0xc0001fa8c0}, {0xeb1b80, 0xc00019ff90}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0xfbaf68, 0xc0001fa8c0}, 0xc000070700)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x16374340c38?, {0xfbaf68?, 0xc0001fa8c0?}, 0xb6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xfbaf68, 0xc0001fa8c0}, 0xc000070700)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002c8e10?}, {0xfbaf68, 0xc0001fa8c0}, 0xc000070700)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a77c0, {0xfbb1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:35:44 server.go:3197: http: panic serving [::1]:49190: template: signup.html:21: unexpected EOF
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x6311c0, 0xc000088930})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x72af68?, 0xc00007e000}, {0x621b80, 0xc000050130}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x72af68, 0xc00007e000}, 0xc000070000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x22167fd0d28?, {0x72af68?, 0xc00007e000?}, 0x2dd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x72af68, 0xc00007e000}, 0xc000070000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000200f0?}, {0x72af68, 0xc00007e000}, 0xc000070000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6e60, {0x72b1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:35:44 server.go:3197: http: panic serving [::1]:49191: template: signup.html:21: unexpected EOF
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x6311c0, 0xc00019e750})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x72af68?, 0xc000144000}, {0x621b80, 0xc000088a00}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x72af68, 0xc000144000}, 0xc000202000)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x22167fd0c38?, {0x72af68?, 0xc000144000?}, 0x2dd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x72af68, 0xc000144000}, 0xc000202000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018ecc0?}, {0x72af68, 0xc000144000}, 0xc000202000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074000, {0x72b1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:35:44 server.go:3197: http: panic serving [::1]:49192: template: signup.html:21: unexpected EOF
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x6311c0, 0xc000050350})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x72af68?, 0xc0001fa0e0}, {0x621b80, 0xc00019e810}, {0xc00009d980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x72af68, 0xc0001fa0e0}, 0xc0000de200)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x22167fd0c38?, {0x72af68?, 0xc0001fa0e0?}, 0x2dd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x72af68, 0xc0001fa0e0}, 0xc0000de200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c3320?}, {0x72af68, 0xc0001fa0e0}, 0xc0000de200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6f00, {0x72b1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:35:49 server.go:3197: http: panic serving [::1]:49193: template: signup.html:21: unexpected EOF
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x6311c0, 0xc000088e80})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x72af68?, 0xc0001440e0}, {0x621b80, 0xc000088cb0}, {0xc0000a1980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x72af68, 0xc0001440e0}, 0xc0000de300)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x22167fd0c38?, {0x72af68?, 0xc0001440e0?}, 0x2dd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x72af68, 0xc0001440e0}, 0xc0000de300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c37a0?}, {0x72af68, 0xc0001440e0}, 0xc0000de300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000740a0, {0x72b1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:35:49 server.go:3197: http: panic serving [::1]:49194: template: signup.html:21: unexpected EOF
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x6311c0, 0xc00019ea60})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x72af68?, 0xc0001fa1c0}, {0x621b80, 0xc00019e950}, {0xc0000a1980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x72af68, 0xc0001fa1c0}, 0xc000070100)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x22167fd0d28?, {0x72af68?, 0xc0001fa1c0?}, 0x2dd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x72af68, 0xc0001fa1c0}, 0xc000070100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000020cf0?}, {0x72af68, 0xc0001fa1c0}, 0xc000070100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a2780, {0x72b1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:35:49 server.go:3197: http: panic serving [::1]:49195: template: signup.html:21: unexpected EOF
+goroutine 44 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x6311c0, 0xc000088fb0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+expert/app/controllers.generateHTML({0x72af68?, 0xc0001fa2a0}, {0x621b80, 0xc00019eb20}, {0xc0000a1980?, 0x3, 0x0?})
+	C:/Users/dvd09/go/src/expert/app/controllers/server.go:19 +0x106
+expert/app/controllers.signup({0x72af68, 0xc0001fa2a0}, 0xc000070200)
+	C:/Users/dvd09/go/src/expert/app/controllers/route_auth.go:19 +0x152
+net/http.HandlerFunc.ServeHTTP(0x22167fd0d28?, {0x72af68?, 0xc0001fa2a0?}, 0x2dd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x72af68, 0xc0001fa2a0}, 0xc000070200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000020db0?}, {0x72af68, 0xc0001fa2a0}, 0xc000070200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001a6fa0, {0x72b1f8, 0xc00018ebd0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/17 16:54:22 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/17 16:57:14 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:54)
+2023/02/17 16:59:00 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/17 16:59:56 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:55)
+2023/02/17 17:06:12 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)
+2023/02/17 23:06:33 server.go:3197: http: superfluous response.WriteHeader call from expert/app/controllers.signup (route_auth.go:56)

@@ -1,0 +1,69 @@
+package models
+
+import (
+	"crypto/sha1"
+	"database/sql"
+	"fmt"
+	"log"
+	"expert/config"
+
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/google/uuid"
+)
+
+var Db *sql.DB
+
+var err error
+
+const (
+	tableNameUser = "users"
+	tableNameTodo = "todos"
+	tableNameSession = "sessions"
+)
+
+func init() {
+	Db, err = sql.Open(config.Config.SQLDriver, "dvd09:rlaekdnlt@tcp(localhost:3306)/go_training?parseTime=true")
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	err = Db.Ping()
+	if err != nil {
+		fmt.Println("接続失敗")
+	} else {
+		fmt.Println("接続成功")
+	}
+
+	cmdU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,uuid VARCHAR(100),name VARCHAR(100),email VARCHAR(100),password VARCHAR(100),created_at DATETIME)`, tableNameUser)
+
+	_, err = Db.Exec(cmdU)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	Db.Exec(cmdU)
+
+	cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,content TEXT, user_id INTEGER, created_at DATETIME)`, tableNameTodo)
+
+
+	Db.Exec(cmdT)
+
+	cmdS := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (
+		id INTEGER PRIMARY KEY AUTO_INCREMENT,
+		uuid VARCHAR(255) NOT NULL UNIQUE,
+		email VARCHAR(255),
+		user_id INTEGER,
+		created_at DATETIME)`,tableNameSession)
+
+		Db.Exec(cmdS)
+
+}
+
+func createUUID() (uuidobj uuid.UUID) {
+	uuidobj, _ = uuid.NewUUID()
+	return uuidobj
+}
+
+func Encrypt(plaintext string) (cryptext string) {
+	cryptext = fmt.Sprintf("%x", sha1.Sum([]byte(plaintext)))
+	return cryptext
+}
