@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"expert/app/models"
-	"expert/config"
 	"fmt"
 	"html/template"
 	"net/http"
 	"regexp"
 	"strconv"
+	"votalk/app/models"
+	"votalk/config"
 )
 
 func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) {
@@ -57,13 +57,13 @@ func StartMainServer() error {
 	http.HandleFunc("/signup/viewer", signup)
 	http.HandleFunc("/signup/expert", signup)
 	http.HandleFunc("/login", login)
-	http.HandleFunc("/authenticate", authenticate)
-	http.HandleFunc("/logout", logout)
-	http.HandleFunc("/todos", index)
-	http.HandleFunc("/todos/new", todoNew)
+	// http.HandleFunc("/authenticate", authenticate)
+	// http.HandleFunc("/logout", logout)
+	// http.HandleFunc("/todos", index)
+	// http.HandleFunc("/todos/new", todoNew)
 	// http.HandleFunc("/todos/save",todoSave)
 	// http.HandleFunc("/todos/edit/",parseURL(todoEdit))
 	// http.HandleFunc("/todos/update/",parseURL(todoUpdate))
 	// http.HandleFunc("/todos/delete/",parseURL(todoDelete))
-	return http.ListenAndServe(":"+config.Config.Port, nil)
+	return http.ListenAndServe("127.0.0.1:"+config.Config.Port, nil)
 }

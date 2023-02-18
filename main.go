@@ -1,31 +1,26 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	// "log"
-	"expert/app/controllers"
-	"expert/app/models"
+	"votalk/app/controllers"
+	// "expert/app/models"
 	// "todo_app/config"
 )
 
 func main() {
-	fmt.Println(models.Db)
 
 	controllers.StartMainServer()
-
-
 
 	// u := &models.User{}
 	// u.Name = "test2"
 	// u.Email = "test2@example.com"
 	// u.Password = "testtest"
-  // fmt.Println(u)
+	// fmt.Println(u)
 
 	// u.CreateUser()
 
 	// u, _ := models.GetUser(2)
-
-
 
 	// u.Name = "test2"
 	// u.Email = "test2@example.com"
@@ -36,7 +31,7 @@ func main() {
 	// u.ID = 1
 	// u.DeleteUser()
 	// u, _ = models.GetUser(1)
-  // fmt.Println(u)
+	// fmt.Println(u)
 
 	// user, _ := models.GetUser(3)
 	// user.CreateTodo("First Todo")

@@ -1,20 +1,20 @@
 package controllers
 
 import (
-	"log"
+	// "log"
 	"net/http"
-	// "expert/app/models"
+	// "votalk/app/models"
 )
 
 func top(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)
-	if err != nil {
-		generateHTML(w, "Hello", "layout", "public_navbar", "top")
+	if err!= nil {
+	generateHTML(w, "Hello", "layout","public_navbar", "top")
 	} else {
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
-
+/*
 func index(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
 	if err != nil {
@@ -24,10 +24,10 @@ func index(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Println(err)
 		}
-		/*
+		
 			todos, _ := user.GetTodosByUser()
 			user.Todos = todos
-		*/
+		
 		generateHTML(w, user, "layout", "private_navbar", "index")
 	}
 }
@@ -41,7 +41,7 @@ func todoNew(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-/*
+
 func todoSave(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
   if err!= nil {
@@ -62,7 +62,7 @@ func todoSave(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w,r,"/todos",302)
 	}
 }
-*
+
 func todoEdit(w http.ResponseWriter, r *http.Request, id int) {
 	sess, err := session(w, r)
   if err!= nil {
