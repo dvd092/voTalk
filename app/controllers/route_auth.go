@@ -10,7 +10,7 @@ import (
 )
 
 func signup(w http.ResponseWriter, r *http.Request) {
-	s := libs.LastUrl(r.URL.String())
+	 s := libs.LastUrl(r.URL.String())
 
 	switch r.Method {
 	case http.MethodGet:
@@ -21,7 +21,6 @@ func signup(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/", 302)
 		}
 	case http.MethodPost:
-
 		err := r.ParseForm()
 		if err != nil {
 			log.Println(err)
@@ -34,22 +33,22 @@ func signup(w http.ResponseWriter, r *http.Request) {
 				Email:    r.PostFormValue("email"),
 				Password: r.PostFormValue("password"),
 			}
-			
+
 			if err := user.CreateUser(); err != nil {
 				log.Println(err)
 			}
 		}
-		http.Redirect(w, r, "/", 302)
-	}
-	//expert登録
-	if s == "expert" {
-		user := models.UserEx{
-			Name:     r.PostFormValue("name"),
-			Email:    r.PostFormValue("email"),
-			Password: r.PostFormValue("password"),
-		}
-		if err := user.CreateUser(); err != nil {
-			log.Println(err)
+		//expert登録
+		if s == "expert" {
+			user := models.UserEx{
+				Name:     r.PostFormValue("name"),
+				Email:    r.PostFormValue("email"),
+				Password: r.PostFormValue("password"),
+			}
+			if err := user.CreateUser(); err != nil {
+				log.Println(err)
+			}
+
 		}
 		http.Redirect(w, r, "/", 302)
 	}
@@ -64,6 +63,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/todos", 302)
 	}
 }
+
 /*
 func authenticate(w http.ResponseWriter, r *http.Request) {
 	err := r.ParseForm()

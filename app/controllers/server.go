@@ -1,13 +1,13 @@
 package controllers
 
 import (
-	"votalk/app/models"
-	"votalk/config"
 	"fmt"
 	"html/template"
 	"net/http"
 	"regexp"
 	"strconv"
+	"votalk/app/models"
+	"votalk/config"
 )
 
 func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) {
@@ -55,7 +55,7 @@ func StartMainServer() error {
 
 	http.HandleFunc("/", top)
 	http.HandleFunc("/signup/viewer", signup)
-	// http.HandleFunc("/signup/expert", signup)
+	http.HandleFunc("/signup/expert", signup)
 	http.HandleFunc("/login", login)
 	// http.HandleFunc("/authenticate", authenticate)
 	// http.HandleFunc("/logout", logout)

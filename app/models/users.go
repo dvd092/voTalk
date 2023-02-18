@@ -33,6 +33,7 @@ type Session struct {
 }
 //エキスパート登録
 func (u *UserEx) CreateUser() (err error) {
+	log.Println(u)
 	cmd := `insert into ex_users (
 	uuid,
 	name,
