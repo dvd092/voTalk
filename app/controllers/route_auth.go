@@ -6,7 +6,6 @@ import (
 	// "fmt"
 	"log"
 	"net/http"
-	// "net/url"
 )
 
 func signup(w http.ResponseWriter, r *http.Request) {
@@ -48,7 +47,6 @@ func signup(w http.ResponseWriter, r *http.Request) {
 			if err := user.CreateUser(); err != nil {
 				log.Println(err)
 			}
-
 		}
 		http.Redirect(w, r, "/", 302)
 	}
