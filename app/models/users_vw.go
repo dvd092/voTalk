@@ -1,36 +1,21 @@
 package models
 
 import (
-	// "log"
+	"log"
 	"time"
 	// "fmt"
 )
 
-
-type Session struct {
-	Id int
+type UserVw struct {
+	ID int
 	UUID string
+	Name string
   Email string
-	UserId int
+  Password string
 	CreatedAt time.Time
 }
-/*
-//エキスパート登録
-func (u *UserEx) CreateUser() (err error) {
-	cmd := `insert into ex_users (
-	uuid,
-	name,
-	email,
-	password,
-	created_at) values (?, ?, ?, ?, ?)`
 
-		_, err = Db.Exec(cmd, createUUID(),u.Name,u.Email,Encrypt(u.Password),time.Now())
 
-		if err != nil {
-			log.Fatalln(err)
-		}
-		return err
-}
 //ビューワー登録
 func (u *UserVw) CreateUser() (err error) {
 	cmd := `insert into vw_users (
@@ -73,9 +58,9 @@ func (u *UserVw) CreateUser() (err error) {
 // 	return err
 // }
 
-func GetUserByEmail(email string, s string) (user UserVw, err error) {
+func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 	user = UserVw{}
-	cmd := `select id, uuid, name, email, password, created_at from users where email = ?`
+	cmd := `select id, uuid, name, email, password, created_at from users_vw where email = ?`
 	err = Db.QueryRow(cmd,email).Scan(
 		&user.ID, 
 		&user.UUID,
@@ -157,4 +142,3 @@ func (sess *Session) GetUserBySession() (user UserEx, err error) {
 
 		return user, err
 }
-*/

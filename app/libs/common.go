@@ -14,3 +14,15 @@ func LastUrl(s string)  string {
 	lastar := arr[len(arr)-1]
 	return lastar
 }
+
+//url最後の値短縮系
+func LastUrlAb(s string)  string {
+	arr := UrltoSlice(s)
+	lastar := arr[len(arr)-1]
+	if lastar == "viewer" {
+		 lastar = "Vw"
+	} else if lastar == "expert" {
+		lastar = "Ex"
+	}
+	return lastar
+}

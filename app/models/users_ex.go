@@ -1,22 +1,23 @@
 package models
 
 import (
-	// "log"
+	"log"
 	"time"
 	// "fmt"
 )
 
-
-type Session struct {
-	Id int
+type UserEx struct {
+	ID int
 	UUID string
+	Name string
   Email string
-	UserId int
+  Password string
 	CreatedAt time.Time
 }
-/*
+
 //エキスパート登録
 func (u *UserEx) CreateUser() (err error) {
+	log.Println(u)
 	cmd := `insert into ex_users (
 	uuid,
 	name,
@@ -31,22 +32,7 @@ func (u *UserEx) CreateUser() (err error) {
 		}
 		return err
 }
-//ビューワー登録
-func (u *UserVw) CreateUser() (err error) {
-	cmd := `insert into vw_users (
-	uuid,
-	name,
-	email,
-	password,
-	created_at) values (?, ?, ?, ?, ?)`
 
-		_, err = Db.Exec(cmd, createUUID(),u.Name,u.Email,Encrypt(u.Password),time.Now())
-
-		if err != nil {
-			log.Fatalln(err)
-		}
-		return err
-}
 
 // func GetUser(id int) (user UserEx, err error) {
 // 	user = UserEx{}
@@ -73,9 +59,9 @@ func (u *UserVw) CreateUser() (err error) {
 // 	return err
 // }
 
-func GetUserByEmail(email string, s string) (user UserVw, err error) {
-	user = UserVw{}
-	cmd := `select id, uuid, name, email, password, created_at from users where email = ?`
+func GetUserByEmailEx(email string, s string) (user UserEx, err error) {
+	user = UserEx{}
+	cmd := `select id, uuid, name, email, password, created_at from users_ex where email = ?`
 	err = Db.QueryRow(cmd,email).Scan(
 		&user.ID, 
 		&user.UUID,
@@ -87,7 +73,8 @@ func GetUserByEmail(email string, s string) (user UserVw, err error) {
 	return user,err
 }
 
-func (u *UserVw) CreateSession() (session Session, err error) {
+
+func (u *UserEx) CreateSession() (session Session, err error) {
 	session = Session{}
 	cmd1 := `insert into sessions (
 		uuid,
@@ -113,6 +100,7 @@ func (u *UserVw) CreateSession() (session Session, err error) {
     return session, err
 }
 
+/*
 func (sess *Session) CheckSession() (valid bool, err error) {
 	cmd := `select id, uuid, email, user_id, created_at from sessions where uuid = ?`
 	
@@ -134,6 +122,7 @@ func (sess *Session) CheckSession() (valid bool, err error) {
 
 		return valid,err
 }
+
 
 func (sess *Session) DeleteSessionByUUID() (err error) {
 	cmd := `delete from sessions where uuid =?`
