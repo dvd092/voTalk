@@ -1094,3 +1094,16 @@ created by net/http.(*Server).Serve
 2023/02/18 23:01:52 route_main.go:11: Invalid session
 2023/02/18 23:01:52 route_main.go:11: Invalid session
 2023/02/19 00:51:00 users.go:36: &{0  キムダビデ kim@flying-h.co.jp afef 0001-01-01 00:00:00 +0000 UTC}
+2023/02/20 02:18:37 users_ex.go:20: &{0  キムダビデ kim@flying-h.co.jp 1234 0001-01-01 00:00:00 +0000 UTC}
+2023/02/20 02:40:37 route_auth.go:69: authenticate
+2023/02/20 02:43:57 route_auth.go:69: expert
+2023/02/20 02:43:57 route_auth.go:78: Error 1146 (42S02): Table 'ex_po.users_ex' doesn't exist
+2023/02/20 02:43:57 server.go:3197: http: superfluous response.WriteHeader call from votalk/app/controllers.authenticate (route_auth.go:95)
+2023/02/20 02:44:57 route_auth.go:69: expert
+2023/02/20 02:46:12 route_auth.go:69: expert
+2023/02/20 02:46:12 route_auth.go:96: パスワードが間違っています
+2023/02/20 02:46:25 users_ex.go:20: &{0  キムダビデ kim@flying-h.co.jp 1234 0001-01-01 00:00:00 +0000 UTC}
+2023/02/20 02:46:31 route_auth.go:69: expert
+2023/02/20 02:46:31 route_auth.go:96: パスワードが間違っています
+2023/02/20 02:47:04 users_ex.go:20: &{0  キムダビデ kim@flying-h.co.jp 1234 0001-01-01 00:00:00 +0000 UTC}
+2023/02/20 02:47:16 route_auth.go:69: expert

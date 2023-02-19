@@ -60,12 +60,13 @@ func login(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		generateHTML(w, s, "layout", "public_navbar", "login")
 	} else {
-		http.Redirect(w, r, "/todos", 302)
+		http.Redirect(w, r, "/", 302)
 	}
 }
 
 func authenticate(w http.ResponseWriter, r *http.Request) {
-	s := libs.LastUrl(r.URL.String())
+	s := r.PostFormValue("lastUrl")
+	
 	err := r.ParseForm()
 
 	//エキスパート処理
@@ -91,6 +92,7 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/", 302)
 		} else {
 			http.Redirect(w, r, "/login", 302)
+			log.Println("パスワードが間違っています")
 		}
 		//ビューワー処理
 	} else if s == "viewer" {

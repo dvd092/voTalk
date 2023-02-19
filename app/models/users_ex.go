@@ -61,7 +61,7 @@ func (u *UserEx) CreateUser() (err error) {
 
 func GetUserByEmailEx(email string, s string) (user UserEx, err error) {
 	user = UserEx{}
-	cmd := `select id, uuid, name, email, password, created_at from users_ex where email = ?`
+	cmd := `select id, uuid, name, email, password, created_at from ex_users where email = ?`
 	err = Db.QueryRow(cmd,email).Scan(
 		&user.ID, 
 		&user.UUID,
