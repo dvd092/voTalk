@@ -1,22 +1,39 @@
 package models
 
 import (
-	// "log"
+	"log"
 	"time"
 	// "fmt"
 )
 
-type Session struct {
-	Id        int
-	UUID      string
-	Email     string
-	UserId    int
+type UserEx struct {
+	ID int
+	UUID string
+	Name string
+  Email string
+  Password string
 	CreatedAt time.Time
 }
 
-/*
+type UserVw struct {
+	ID int
+	UUID string
+	Name string
+  Email string
+  Password string
+	CreatedAt time.Time
+}
+
+type Session struct {
+	Id int
+	UUID string
+  Email string
+	UserId int
+	CreatedAt time.Time
+}
 //エキスパート登録
 func (u *UserEx) CreateUser() (err error) {
+	log.Println(u)
 	cmd := `insert into ex_users (
 	uuid,
 	name,
@@ -24,7 +41,7 @@ func (u *UserEx) CreateUser() (err error) {
 	password,
 	created_at) values (?, ?, ?, ?, ?)`
 
-		_, err = Db.Exec(cmd, createUUID(),u.Name,u.Email,Encrypt(u.Password),time.Now())
+		_, err = Db.Exec(cmd, CreateUUID(),u.Name,u.Email,Encrypt(u.Password),time.Now())
 
 		if err != nil {
 			log.Fatalln(err)
@@ -40,7 +57,7 @@ func (u *UserVw) CreateUser() (err error) {
 	password,
 	created_at) values (?, ?, ?, ?, ?)`
 
-		_, err = Db.Exec(cmd, createUUID(),u.Name,u.Email,Encrypt(u.Password),time.Now())
+		_, err = Db.Exec(cmd, CreateUUID(),u.Name,u.Email,Encrypt(u.Password),time.Now())
 
 		if err != nil {
 			log.Fatalln(err)
@@ -77,7 +94,7 @@ func GetUserByEmail(email string, s string) (user UserVw, err error) {
 	user = UserVw{}
 	cmd := `select id, uuid, name, email, password, created_at from users where email = ?`
 	err = Db.QueryRow(cmd,email).Scan(
-		&user.ID,
+		&user.ID, 
 		&user.UUID,
 		&user.Name,
     &user.Email,
@@ -95,7 +112,7 @@ func (u *UserVw) CreateSession() (session Session, err error) {
 		user_id,
 		created_at) values (?,?,?,?)`
 
-		_, err = Db.Exec(cmd1, createUUID(),u.Email,u.ID,time.Now())
+		_, err = Db.Exec(cmd1, CreateUUID(),u.Email,u.ID,time.Now())
 
     if err!= nil {
       log.Fatalln(err)
@@ -104,10 +121,10 @@ func (u *UserVw) CreateSession() (session Session, err error) {
 		cmd2 := `select id, uuid, email, user_id, created_at from sessions where user_id=? and email = ?`
 
 		err = Db.QueryRow(cmd2,u.ID,u.Email).Scan(
-			&session.Id,
-			&session.UUID,
-			&session.Email,
-			&session.UserId,
+			&session.Id, 
+			&session.UUID, 
+			&session.Email, 
+			&session.UserId, 
 			&session.CreatedAt)
 
     return session, err
@@ -115,12 +132,12 @@ func (u *UserVw) CreateSession() (session Session, err error) {
 
 func (sess *Session) CheckSession() (valid bool, err error) {
 	cmd := `select id, uuid, email, user_id, created_at from sessions where uuid = ?`
-
+	
 	err = Db.QueryRow(cmd,sess.UUID).Scan(
-		&sess.Id,
-		&sess.UUID,
-		&sess.Email,
-		&sess.UserId,
+		&sess.Id, 
+		&sess.UUID, 
+		&sess.Email, 
+		&sess.UserId, 
 		&sess.CreatedAt)
 
 		if err != nil {
@@ -149,12 +166,11 @@ func (sess *Session) GetUserBySession() (user UserEx, err error) {
 	user = UserEx{}
 	cmd := `select id, uuid, name, email, created_at from users where id = ?`
 	err = Db.QueryRow(cmd,sess.UserId).Scan(
-		&user.ID,
-    &user.UUID,
-    &user.Name,
-    &user.Email,
+		&user.ID, 
+    &user.UUID, 
+    &user.Name, 
+    &user.Email, 
     &user.CreatedAt)
 
 		return user, err
 }
-*/

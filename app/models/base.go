@@ -16,8 +16,8 @@ var Db *sql.DB
 var err error
 
 const (
-	tableNameExUser = "ex_users"
-	tableNameVwUser = "vw_users"
+	tableNameExUser  = "ex_users"
+	tableNameVwUser  = "vw_users"
 	tableNameSession = "sessions"
 )
 
@@ -54,7 +54,6 @@ func init() {
 
 	// cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,content TEXT, user_id INTEGER, created_at DATETIME)`, tableNameTodo)
 
-
 	// Db.Exec(cmdT)
 
 	//セッションテーブル作成
@@ -63,9 +62,9 @@ func init() {
 		uuid VARCHAR(255) NOT NULL UNIQUE,
 		email VARCHAR(255),
 		user_id INTEGER,
-		created_at DATETIME)`,tableNameSession)
+		created_at DATETIME)`, tableNameSession)
 
-		Db.Exec(cmdS)
+	Db.Exec(cmdS)
 
 }
 
