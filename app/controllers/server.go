@@ -62,18 +62,29 @@ func StartMainServer() error {
 	http.HandleFunc("/login/viewer", login)
 	http.HandleFunc("/authenticate", authenticate)
 	http.HandleFunc("/logout", logout)
-	// expert
+	// expertページ
 	http.HandleFunc("/expert/index", index)
 	http.HandleFunc("/expert/mypage", index)
-	http.HandleFunc("/expert/note", index)
-	http.HandleFunc("/expert/match", index)//ここで討論
-	// viewer
+	http.HandleFunc("/expert/articles", index)
+	// viewerページ
 	http.HandleFunc("/viewer/index", index)
 	http.HandleFunc("/viewer/mypage", index)
+		// viewer機能ページ
+		http.HandleFunc("/viewer/matches", index)
+		http.HandleFunc("/viewer/", index)
+			// viewerマッチページ
+			http.HandleFunc("/viewer/match/new", index)
+			http.HandleFunc("/viewer/match/save", index)
+			http.HandleFunc("/viewer/match/edit", index)
+			http.HandleFunc("/viewer/match/update", index)
+
 	// common
-	http.HandleFunc("match", index)
-	http.HandleFunc("match/{id}", index)
-	http.HandleFunc("match/{topic_id}", index)
+		//公開記事
+		http.HandleFunc("articles", index)
+		// 公開討論
+		http.HandleFunc("matches", index)
+		http.HandleFunc("matches/{id}", index)
+		http.HandleFunc("matches/{topic_id}", index)//タグ付けされたexpertのみ討論可能
 
 	// http.HandleFunc("/todos/new", todoNew)
 	// http.HandleFunc("/todos/save",todoSave)
