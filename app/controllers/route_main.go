@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	// "log"
+	"log"
 	"net/http"
 	// "votalk/app/models"
 )
@@ -11,14 +11,15 @@ func top(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		generateHTML(w, nil, "layout", "public_navbar", "top")
 	} else {
-		http.Redirect(w, r, "/", 302)
+		http.Redirect(w, r, "/index", 302)
 	}
 }
 
-/*
+
 func index(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
 	if err != nil {
+		log.Println(err)
 		http.Redirect(w, r, "/", 302)
 	} else {
 		user, err := sess.GetUserBySession()
@@ -26,12 +27,13 @@ func index(w http.ResponseWriter, r *http.Request) {
 			log.Println(err)
 		}
 
-			todos, _ := user.GetTodosByUser()
-			user.Todos = todos
+			// todos, _ := user.GetTodosByUser()
+			// user.Todos = todos
 
 		generateHTML(w, user, "layout", "private_navbar", "index")
 	}
 }
+/*
 
 func todoNew(w http.ResponseWriter, r *http.Request) {
 	_, err := session(w, r)

@@ -60,7 +60,7 @@ func StartMainServer() error {
 	http.HandleFunc("/login/expert", login)
 	http.HandleFunc("/authenticate", authenticate)
 	// http.HandleFunc("/logout", logout)
-	// http.HandleFunc("/todos", index)
+	http.HandleFunc("/index", index)
 	// http.HandleFunc("/todos/new", todoNew)
 	// http.HandleFunc("/todos/save",todoSave)
 	// http.HandleFunc("/todos/edit/",parseURL(todoEdit))
