@@ -66,19 +66,22 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 func authenticate(w http.ResponseWriter, r *http.Request) {
 	s := r.PostFormValue("lastUrl")
-	
+
 	err := r.ParseForm()
+	if err != nil {
+		log.Println(err)
+		return
+	}
 
 	//エキスパート処理
 	if s == "expert" {
-		user := models.UserEx{}
-		user, err = models.GetUserByEmailEx(r.PostFormValue("email"), s)
+		user, err := models.GetUserByEmailEx(r.PostFormValue("email"), s)
 		if err != nil {
 			log.Println(err)
 			http.Redirect(w, r, "/login", 302)
 		}
 		if user.Password == models.Encrypt(r.PostFormValue("password")) {
-			session, err := user.CreateSession()
+			session, err := user.CreateSession(s)
 			if err != nil {
 				log.Println(err)
 			}
@@ -96,33 +99,31 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 		}
 		//ビューワー処理
 	} else if s == "viewer" {
-		user := models.UserVw{}
-		user, err = models.GetUserByEmailVw(r.PostFormValue("email"), s)
+		user, err := models.GetUserByEmailVw(r.PostFormValue("email"), s)
 		if err != nil {
 			log.Println(err)
 			http.Redirect(w, r, "/login", 302)
 		}
 		if user.Password == models.Encrypt(r.PostFormValue("password")) {
-			session, err := user.CreateSession()
+			session, err := user.CreateSession(s)
 			if err != nil {
 				log.Println(err)
 			}
-		
-		cookie := http.Cookie{
-			Name:     "_cookie",
-			Value:    session.UUID,
-			HttpOnly: true,
-		}
-		http.SetCookie(w, &cookie)
 
-		http.Redirect(w, r, "/", 302)
-	} else {
-		http.Redirect(w, r, "/login", 302)
+			cookie := http.Cookie{
+				Name:     "_cookie",
+				Value:    session.UUID,
+				HttpOnly: true,
+			}
+			http.SetCookie(w, &cookie)
+
+			http.Redirect(w, r, "/", 302)
+		} else {
+			http.Redirect(w, r, "/login", 302)
+		}
 	}
 }
-}
 
-/*
 func logout(w http.ResponseWriter, r *http.Request) {
 	cookie, err := r.Cookie("_cookie")
 	if err != nil {
@@ -132,8 +133,6 @@ func logout(w http.ResponseWriter, r *http.Request) {
 		session := models.Session{UUID: cookie.Value}
 		session.DeleteSessionByUUID()
 	}
-	http.Redirect(w, r, "/login", 302)
+	http.Redirect(w, r, "/", 302)
 	w.Write([]byte("Old cookie deleted. Logged out!\n"))
 }
-
-*/

@@ -1,20 +1,21 @@
 package controllers
 
 import (
+	"fmt"
 	"log"
 	"net/http"
-	// "votalk/app/models"
+	"votalk/app/libs"
 )
 
 func top(w http.ResponseWriter, r *http.Request) {
-	_, err := session(w, r)
+	s, err := session(w, r)
+	k := libs.IntToLastUrl(s.UserType)
 	if err != nil {
 		generateHTML(w, nil, "layout", "public_navbar", "top")
 	} else {
-		http.Redirect(w, r, "/index", 302)
+		http.Redirect(w, r, fmt.Sprintf("/%s/index",k), 302)
 	}
 }
-
 
 func index(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
@@ -22,17 +23,25 @@ func index(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		http.Redirect(w, r, "/", 302)
 	} else {
-		user, err := sess.GetUserBySession()
-		if err != nil {
-			log.Println(err)
+		if s := libs.SecondLastUrl(r.URL.String()); s == "viewer" {
+			user, err := sess.GetUserBySessionVw()
+			if err != nil {
+				log.Println(err)
+			}
+			generateHTML(w, user, "layout", "private_navbar", "index")
+		} else if s == "expert" {
+			user, err := sess.GetUserBySessionEx()
+			if err != nil {
+				log.Println(err)
+			}
+			generateHTML(w, user, "layout", "private_navbar", "index")
 		}
+		// todos, _ := user.GetTodosByUser()
+		// user.Todos = todos
 
-			// todos, _ := user.GetTodosByUser()
-			// user.Todos = todos
-
-		generateHTML(w, user, "layout", "private_navbar", "index")
 	}
 }
+
 /*
 
 func todoNew(w http.ResponseWriter, r *http.Request) {
