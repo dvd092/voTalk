@@ -3,6 +3,7 @@ package models
 import (
 	"log"
 	"time"
+	"votalk/app/libs"
 	// "fmt"
 )
 
@@ -59,7 +60,7 @@ func (u *UserVw) CreateUser() (err error) {
 
 func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 	user = UserVw{}
-	cmd := `select id, uuid, name, email, password, created_at from users_vw where email = ?`
+	cmd := `select id, uuid, name, email, password, created_at from vw_users where email = ?`
 	err = Db.QueryRow(cmd, email).Scan(
 		&user.ID,
 		&user.UUID,
@@ -71,40 +72,43 @@ func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 	return user, err
 }
 
-func (u *UserVw) CreateSession() (session Session, err error) {
+func (u *UserVw) CreateSession(s string) (session Session, err error) {
 	session = Session{}
 	cmd1 := `insert into sessions (
 		uuid,
 		email,
 		user_id,
-		created_at) values (?,?,?,?)`
+		user_type,
+		created_at) values (?,?,?,?,?)`
 
-	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, time.Now())
+	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, libs.LastUrltoInt(s), time.Now())
 
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	cmd2 := `select id, uuid, email, user_id, created_at from sessions where user_id=? and email = ?`
+	cmd2 := `select id, uuid, email, user_id, user_type, created_at from sessions where user_id=? and email = ?`
 
 	err = Db.QueryRow(cmd2, u.ID, u.Email).Scan(
 		&session.Id,
 		&session.UUID,
 		&session.Email,
 		&session.UserId,
+		&session.UserType,
 		&session.CreatedAt)
 
 	return session, err
 }
 
 func (sess *Session) CheckSession() (valid bool, err error) {
-	cmd := `select id, uuid, email, user_id, created_at from sessions where uuid = ?`
+	cmd := `select id, uuid, email, user_id, user_type, created_at from sessions where uuid = ?`
 
 	err = Db.QueryRow(cmd, sess.UUID).Scan(
 		&sess.Id,
 		&sess.UUID,
 		&sess.Email,
 		&sess.UserId,
+		&sess.UserType,
 		&sess.CreatedAt)
 
 	if err != nil {
@@ -129,9 +133,9 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 	return err
 }
 
-func (sess *Session) GetUserBySession() (user UserEx, err error) {
-	user = UserEx{}
-	cmd := `select id, uuid, name, email, created_at from users where id = ?`
+func (sess *Session) GetUserBySessionVw() (user UserVw, err error) {
+	user = UserVw{}
+	cmd := `select id, uuid, name, email, created_at from vw_users where id = ?`
 	err = Db.QueryRow(cmd, sess.UserId).Scan(
 		&user.ID,
 		&user.UUID,

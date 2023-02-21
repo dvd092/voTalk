@@ -4,6 +4,7 @@ import (
 	"log"
 	"time"
 	// "fmt"
+	"votalk/app/libs"
 )
 
 type UserEx struct {
@@ -72,27 +73,29 @@ func GetUserByEmailEx(email string, s string) (user UserEx, err error) {
 	return user, err
 }
 
-func (u *UserEx) CreateSession() (session Session, err error) {
+func (u *UserEx) CreateSession(s string) (session Session, err error) {
 	session = Session{}
 	cmd1 := `insert into sessions (
 		uuid,
 		email,
 		user_id,
-		created_at) values (?,?,?,?)`
+		user_type,
+		created_at) values (?,?,?,?,?)`
 
-	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, time.Now())
+	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, libs.LastUrltoInt(s), time.Now())
 
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	cmd2 := `select id, uuid, email, user_id, created_at from sessions where user_id=? and email = ?`
+	cmd2 := `select id, uuid, email, user_id, user_type, created_at from sessions where user_id=? and email = ?`
 
 	err = Db.QueryRow(cmd2, u.ID, u.Email).Scan(
 		&session.Id,
 		&session.UUID,
 		&session.Email,
 		&session.UserId,
+		&session.UserType,
 		&session.CreatedAt)
 
 	return session, err
@@ -131,10 +134,10 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 
 	return err
 }
-
-func (sess *Session) GetUserBySession() (user UserEx, err error) {
+*/
+func (sess *Session) GetUserBySessionEx() (user UserEx, err error) {
 	user = UserEx{}
-	cmd := `select id, uuid, name, email, created_at from users where id = ?`
+	cmd := `select id, uuid, name, email, created_at from ex_users where id = ?`
 	err = Db.QueryRow(cmd,sess.UserId).Scan(
 		&user.ID,
     &user.UUID,
@@ -144,4 +147,3 @@ func (sess *Session) GetUserBySession() (user UserEx, err error) {
 
 		return user, err
 }
-*/

@@ -62,6 +62,7 @@ func init() {
 		uuid VARCHAR(255) NOT NULL UNIQUE,
 		email VARCHAR(255),
 		user_id INTEGER,
+		user_type INTEGER,
 		created_at DATETIME)`, tableNameSession)
 
 	Db.Exec(cmdS)
