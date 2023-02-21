@@ -1107,3 +1107,6 @@ created by net/http.(*Server).Serve
 2023/02/20 02:46:31 route_auth.go:96: パスワードが間違っています
 2023/02/20 02:47:04 users_ex.go:20: &{0  キムダビデ kim@flying-h.co.jp 1234 0001-01-01 00:00:00 +0000 UTC}
 2023/02/20 02:47:16 route_auth.go:69: expert
+2023/02/20 13:50:09 users_ex.go:20: &{0  DAVID KIM kim@flying-h.co.jp 1234 0001-01-01 00:00:00 +0000 UTC}
+2023/02/20 14:11:04 route_auth.go:69: expert
+2023/02/21 09:25:40 base.go:42: dial tcp [::1]:3306: connectex: No connection could be made because the target machine actively refused it.

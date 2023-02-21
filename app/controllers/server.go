@@ -53,14 +53,28 @@ func StartMainServer() error {
 	files := http.FileServer(http.Dir(config.Config.Static))
 	http.Handle("/static/", http.StripPrefix("/static/", files))
 
+	// top
 	http.HandleFunc("/", top)
-	http.HandleFunc("/signup/viewer", signup)
+	// auth
 	http.HandleFunc("/signup/expert", signup)
-	http.HandleFunc("/login/viewer", login)
+	http.HandleFunc("/signup/viewer", signup)
 	http.HandleFunc("/login/expert", login)
+	http.HandleFunc("/login/viewer", login)
 	http.HandleFunc("/authenticate", authenticate)
-	// http.HandleFunc("/logout", logout)
-	// http.HandleFunc("/todos", index)
+	http.HandleFunc("/logout", logout)
+	// expert
+	http.HandleFunc("/expert/index", index)
+	http.HandleFunc("/expert/mypage", index)
+	http.HandleFunc("/expert/note", index)
+	http.HandleFunc("/expert/match", index)//ここで討論
+	// viewer
+	http.HandleFunc("/viewer/index", index)
+	http.HandleFunc("/viewer/mypage", index)
+	// common
+	http.HandleFunc("match", index)
+	http.HandleFunc("match/{id}", index)
+	http.HandleFunc("match/{topic_id}", index)
+
 	// http.HandleFunc("/todos/new", todoNew)
 	// http.HandleFunc("/todos/save",todoSave)
 	// http.HandleFunc("/todos/edit/",parseURL(todoEdit))
