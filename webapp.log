@@ -2461,3 +2461,1898 @@ created by net/http.(*Server).Serve
 2023/02/21 12:08:36 route_main.go:25: viewer
 2023/02/21 12:08:36 route_main.go:18: /viewer/index
 2023/02/21 12:08:36 route_main.go:25: viewer
+2023/02/22 15:16:35 route_mypage.go:21: {1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC}
+2023/02/22 15:46:00 server.go:3230: http: panic serving 127.0.0.1:64087: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 83 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc000055390})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0004622a0}, {0xe95920, 0xc00018c9c0}, {0xc00043b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0004622a0}, 0xc0000a4500)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00043baf0?, {0xf5a9a0?, 0xc0004622a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0004622a0}, 0xc0000a4500)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018e030?}, {0xf5a9a0, 0xc0004622a0}, 0xc0000a4500)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000000, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:00 server.go:3230: http: panic serving 127.0.0.1:64088: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 84 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f53b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc000462380}, {0xe95920, 0xc000088b40}, {0xc0004377e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc000462380}, 0xc0000a4400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000437af0?, {0xf5a9a0?, 0xc000462380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc000462380}, 0xc0000a4400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000766c0?}, {0xf5a9a0, 0xc000462380}, 0xc0000a4400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000140, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:00 server.go:3230: http: panic serving 127.0.0.1:64090: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 86 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f55f0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc000462460}, {0xe95920, 0xc000088d80}, {0xc0000bf7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc000462460}, 0xc000118400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0000bfaf0?, {0xf5a9a0?, 0xc000462460?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc000462460}, 0xc000118400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003bea80?}, {0xf5a9a0, 0xc000462460}, 0xc000118400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000500, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:00 server.go:3230: http: panic serving 127.0.0.1:64093: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 89 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc000055470})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc000462540}, {0xe95920, 0xc000088fc0}, {0xc0000bf7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc000462540}, 0xc00044ab00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000199af0?, {0xf5a9a0?, 0xc000462540?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc000462540}, 0xc00044ab00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000f7380?}, {0xf5a9a0, 0xc000462540}, 0xc00044ab00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00017e0a0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:00 server.go:3230: http: panic serving 127.0.0.1:64096: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 90 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0000556d0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc000156620}, {0xe95920, 0xc00018cd20}, {0xc0004377e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc000156620}, 0xc00044ad00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000307af0?, {0xf5a9a0?, 0xc000156620?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc000156620}, 0xc00044ad00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000f7bc0?}, {0xf5a9a0, 0xc000156620}, 0xc00044ad00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00017e140, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:01 server.go:3230: http: panic serving 127.0.0.1:64097: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 156 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0000558e0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc000462620}, {0xe95920, 0xc00018cf60}, {0xc0004377e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc000462620}, 0xc00044ae00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000199af0?, {0xf5a9a0?, 0xc000462620?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc000462620}, 0xc00044ae00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00026c270?}, {0xf5a9a0, 0xc000462620}, 0xc00044ae00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a0a0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:02 server.go:3230: http: panic serving 127.0.0.1:64100: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 169 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0001a29b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00011c0e0}, {0xe95920, 0xc0002141e0}, {0xc0000bf7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00011c0e0}, 0xc0000a4600)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000303af0?, {0xf5a9a0?, 0xc00011c0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00011c0e0}, 0xc0000a4600)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001723f0?}, {0xf5a9a0, 0xc00011c0e0}, 0xc0000a4600)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ad0e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:07 server.go:3230: http: panic serving 127.0.0.1:64101: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 158 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f5890})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00011c1c0}, {0xe95920, 0xc00018d260}, {0xc0000bf7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00011c1c0}, 0xc000118600)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000149af0?, {0xf5a9a0?, 0xc00011c1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00011c1c0}, 0xc000118600)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00047b140?}, {0xf5a9a0, 0xc00011c1c0}, 0xc000118600)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a140, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:46:07 server.go:3230: http: panic serving 127.0.0.1:64103: template: private_navbar.html:1: unexpected <.> in define clause
+goroutine 160 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f5ae0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc000462700}, {0xe95920, 0xc0000891a0}, {0xc0000bf7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc000462700}, 0xc0000a4700)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000199af0?, {0xf5a9a0?, 0xc000462700?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc000462700}, 0xc0000a4700)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000172c60?}, {0xf5a9a0, 0xc000462700}, 0xc0000a4700)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a1e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:18 server.go:3230: http: panic serving 127.0.0.1:64107: template: private_navbar.html:2: unexpected <define> in command
+goroutine 95 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f4670})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000fc000}, {0xe95920, 0xc000088180}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000fc000}, 0xc0000a4500)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000317af0?, {0xf5a9a0?, 0xc0000fc000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000fc000}, 0xc0000a4500)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00047b980?}, {0xf5a9a0, 0xc0000fc000}, 0xc0000a4500)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00017e1e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:18 server.go:3230: http: panic serving 127.0.0.1:64116: template: private_navbar.html:2: unexpected <define> in command
+goroutine 138 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f4cf0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c4000}, {0xe95920, 0xc0000884e0}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c4000}, 0xc0001fa800)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000301af0?, {0xf5a9a0?, 0xc0000c4000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c4000}, 0xc0001fa800)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000415a70?}, {0xf5a9a0, 0xc0000c4000}, 0xc0001fa800)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a0a0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:18 server.go:3230: http: panic serving 127.0.0.1:64115: template: private_navbar.html:2: unexpected <define> in command
+goroutine 198 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0001a2660})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c40e0}, {0xe95920, 0xc000088780}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c40e0}, 0xc0001fa300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000149af0?, {0xf5a9a0?, 0xc0000c40e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c40e0}, 0xc0001fa300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003bf080?}, {0xf5a9a0, 0xc0000c40e0}, 0xc0001fa300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00017e460, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:18 server.go:3230: http: panic serving 127.0.0.1:64108: template: private_navbar.html:2: unexpected <define> in command
+goroutine 96 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0001a27b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0002f6000}, {0xe95920, 0xc000088960}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0002f6000}, 0xc0000a4100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000199af0?, {0xf5a9a0?, 0xc0002f6000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0002f6000}, 0xc0000a4100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000172d80?}, {0xf5a9a0, 0xc0002f6000}, 0xc0000a4100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00017e280, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:18 server.go:3230: http: panic serving 127.0.0.1:64128: template: private_navbar.html:2: unexpected <define> in command
+goroutine 270 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f5300})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0002f60e0}, {0xe95920, 0xc000214360}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0002f60e0}, 0xc0001fa000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000149af0?, {0xf5a9a0?, 0xc0002f60e0?}, 0x4?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0002f60e0}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003be2d0?}, {0xf5a9a0, 0xc0002f60e0}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a140, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:19 server.go:3230: http: panic serving 127.0.0.1:64129: template: private_navbar.html:2: unexpected <define> in command
+goroutine 312 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f5510})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0002f61c0}, {0xe95920, 0xc000088ba0}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0002f61c0}, 0xc0000a4000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000197af0?, {0xf5a9a0?, 0xc0002f61c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0002f61c0}, 0xc0000a4000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000414a50?}, {0xf5a9a0, 0xc0002f61c0}, 0xc0000a4000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ac6e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:19 server.go:3230: http: panic serving 127.0.0.1:64131: template: private_navbar.html:2: unexpected <define> in command
+goroutine 315 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f5770})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000fc0e0}, {0xe95920, 0xc000088e40}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000fc0e0}, 0xc0000a4200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000317af0?, {0xf5a9a0?, 0xc0000fc0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000fc0e0}, 0xc0000a4200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000414b70?}, {0xf5a9a0, 0xc0000fc0e0}, 0xc0000a4200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001acd20, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:20 server.go:3230: http: panic serving 127.0.0.1:64135: template: private_navbar.html:2: unexpected <define> in command
+goroutine 319 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0001a2fc0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0002f62a0}, {0xe95920, 0xc0002145a0}, {0xc00017b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0002f62a0}, 0xc0000a4300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000317af0?, {0xf5a9a0?, 0xc0002f62a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0002f62a0}, 0xc0000a4300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000414bd0?}, {0xf5a9a0, 0xc0002f62a0}, 0xc0000a4300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ace60, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:25 server.go:3230: http: panic serving 127.0.0.1:64136: template: private_navbar.html:2: unexpected <define> in command
+goroutine 298 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0001a34b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0002f6380}, {0xe95920, 0xc000214840}, {0xc0001777e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0002f6380}, 0xc0001fa100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000161af0?, {0xf5a9a0?, 0xc0002f6380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0002f6380}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003be330?}, {0xf5a9a0, 0xc0002f6380}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000000, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:25 server.go:3230: http: panic serving 127.0.0.1:64137: template: private_navbar.html:2: unexpected <define> in command
+goroutine 271 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0001a36f0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000fc1c0}, {0xe95920, 0xc0000890e0}, {0xc0001777e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000fc1c0}, 0xc0000a4400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00015daf0?, {0xf5a9a0?, 0xc0000fc1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000fc1c0}, 0xc0000a4400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000415320?}, {0xf5a9a0, 0xc0000fc1c0}, 0xc0000a4400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a1e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:52:25 server.go:3230: http: panic serving 127.0.0.1:64140: template: private_navbar.html:2: unexpected <define> in command
+goroutine 322 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0001a3930})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c41c0}, {0xe95920, 0xc0004b6240}, {0xc00017b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c41c0}, 0xc0000e0000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00015daf0?, {0xf5a9a0?, 0xc0000c41c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c41c0}, 0xc0000e0000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00020eab0?}, {0xf5a9a0, 0xc0000c41c0}, 0xc0000e0000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001acf00, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:00 server.go:3230: http: panic serving 127.0.0.1:64141: template: private_navbar.html:2: unexpected <define> in command
+goroutine 323 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003c64d0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c4540}, {0xe95920, 0xc0004b6600}, {0xc00017b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c4540}, 0xc0000e0300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00017baf0?, {0xf5a9a0?, 0xc0000c4540?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c4540}, 0xc0000e0300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00020eb70?}, {0xf5a9a0, 0xc0000c4540}, 0xc0000e0300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001acfa0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:00 server.go:3230: http: panic serving 127.0.0.1:64145: template: private_navbar.html:2: unexpected <define> in command
+goroutine 342 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003c6c00})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0002f6620}, {0xe95920, 0xc000215080}, {0xc0001777e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0002f6620}, 0xc0000a4900)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00014faf0?, {0xf5a9a0?, 0xc0002f6620?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0002f6620}, 0xc0000a4900)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018ef00?}, {0xf5a9a0, 0xc0002f6620}, 0xc0000a4900)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000001e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:00 server.go:3230: http: panic serving 127.0.0.1:64146: template: private_navbar.html:2: unexpected <define> in command
+goroutine 360 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f5c80})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0002f6700}, {0xe95920, 0xc0004b6840}, {0xc0001777e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0002f6700}, 0xc0001fae00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0000e5af0?, {0xf5a9a0?, 0xc0002f6700?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0002f6700}, 0xc0001fae00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00047a5d0?}, {0xf5a9a0, 0xc0002f6700}, 0xc0001fae00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a500, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:00 server.go:3230: http: panic serving 127.0.0.1:64147: template: private_navbar.html:2: unexpected <define> in command
+goroutine 361 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003f5ee0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000fc460}, {0xe95920, 0xc000089680}, {0xc0001777e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000fc460}, 0xc0001faf00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000315af0?, {0xf5a9a0?, 0xc0000fc460?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000fc460}, 0xc0001faf00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00047a690?}, {0xf5a9a0, 0xc0000fc460}, 0xc0001faf00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00046a5a0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:00 server.go:3230: http: panic serving 127.0.0.1:64151: template: private_navbar.html:2: unexpected <define> in command
+goroutine 331 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc000216150})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000fc540}, {0xe95920, 0xc000089920}, {0xc0001777e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000fc540}, 0xc0000a4a00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000315af0?, {0xf5a9a0?, 0xc0000fc540?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000fc540}, 0xc0000a4a00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000076720?}, {0xf5a9a0, 0xc0000fc540}, 0xc0000a4a00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ad040, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:01 server.go:3230: http: panic serving 127.0.0.1:64152: template: private_navbar.html:2: unexpected <define> in command
+goroutine 335 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0000555c0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c4620}, {0xe95920, 0xc0004b6a80}, {0xc00017b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c4620}, 0xc0000e0400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000315af0?, {0xf5a9a0?, 0xc0000c4620?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c4620}, 0xc0000e0400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00026c2a0?}, {0xf5a9a0, 0xc0000c4620}, 0xc0000e0400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ad0e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:01 server.go:3230: http: panic serving 127.0.0.1:64154: template: private_navbar.html:2: unexpected <define> in command
+goroutine 350 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc000055670})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000fc620}, {0xe95920, 0xc000089bc0}, {0xc0001777e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000fc620}, 0xc0000e0500)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0000e5af0?, {0xf5a9a0?, 0xc0000fc620?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000fc620}, 0xc0000e0500)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00026c300?}, {0xf5a9a0, 0xc0000fc620}, 0xc0000e0500)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000320, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:48 server.go:3230: http: panic serving 127.0.0.1:64158: template: private_navbar.html:6: unexpected <define> in command
+goroutine 351 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003c6640})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c47e0}, {0xe95920, 0xc000214180}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c47e0}, 0xc0000e0600)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00007baf0?, {0xf5a9a0?, 0xc0000c47e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c47e0}, 0xc0000e0600)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00047b770?}, {0xf5a9a0, 0xc0000c47e0}, 0xc0000e0600)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000460, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:48 server.go:3230: http: panic serving 127.0.0.1:64159: template: private_navbar.html:6: unexpected <define> in command
+goroutine 352 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003bc630})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c4000}, {0xe95920, 0xc00018c480}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c4000}, 0xc0001fb100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000197af0?, {0xf5a9a0?, 0xc0000c4000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c4000}, 0xc0001fb100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00047b7d0?}, {0xf5a9a0, 0xc0000c4000}, 0xc0001fb100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000500, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:48 server.go:3230: http: panic serving 127.0.0.1:64160: template: private_navbar.html:6: unexpected <define> in command
+goroutine 372 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003c6a30})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c40e0}, {0xe95920, 0xc00018c720}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c40e0}, 0xc0001fb300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00015daf0?, {0xf5a9a0?, 0xc0000c40e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c40e0}, 0xc0001fb300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003b32c0?}, {0xf5a9a0, 0xc0000c40e0}, 0xc0001fb300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ad180, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:48 server.go:3230: http: panic serving 127.0.0.1:64164: template: private_navbar.html:6: unexpected <define> in command
+goroutine 378 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003c70c0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c41c0}, {0xe95920, 0xc0002144e0}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c41c0}, 0xc0001fa000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00015daf0?, {0xf5a9a0?, 0xc0000c41c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c41c0}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000077770?}, {0xf5a9a0, 0xc0000c41c0}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000000, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:49 server.go:3230: http: panic serving 127.0.0.1:64165: template: private_navbar.html:6: unexpected <define> in command
+goroutine 382 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc000054480})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c42a0}, {0xe95920, 0xc00018c9c0}, {0xc00065d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c42a0}, 0xc0000e0000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000161af0?, {0xf5a9a0?, 0xc0000c42a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c42a0}, 0xc0000e0000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003b2a80?}, {0xf5a9a0, 0xc0000c42a0}, 0xc0000e0000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000001e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:50 server.go:3230: http: panic serving 127.0.0.1:64168: template: private_navbar.html:6: unexpected <define> in command
+goroutine 241 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003bd610})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000b8000}, {0xe95920, 0xc00018cc60}, {0xc00065d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000b8000}, 0xc0001fa100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000313af0?, {0xf5a9a0?, 0xc0000b8000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000b8000}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000077f20?}, {0xf5a9a0, 0xc0000b8000}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ac6e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:53:55 server.go:3230: http: panic serving 127.0.0.1:64172: template: private_navbar.html:6: unexpected <define> in command
+goroutine 405 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003bd9b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000b80e0}, {0xe95920, 0xc0004b6240}, {0xc00065d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000b80e0}, 0xc0000e0100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000313af0?, {0xf5a9a0?, 0xc0000b80e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000b80e0}, 0xc0000e0100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003b36b0?}, {0xf5a9a0, 0xc0000b80e0}, 0xc0000e0100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001acd20, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:54:01 server.go:3230: http: panic serving 127.0.0.1:64173: template: private_navbar.html:6: unexpected <define> in command
+goroutine 418 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003c78d0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c4380}, {0xe95920, 0xc000214720}, {0xc00065d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c4380}, 0xc00013e000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0000e5af0?, {0xf5a9a0?, 0xc0000c4380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c4380}, 0xc00013e000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00026c330?}, {0xf5a9a0, 0xc0000c4380}, 0xc00013e000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000136000, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:54:01 server.go:3230: http: panic serving 127.0.0.1:64174: template: private_navbar.html:6: unexpected <define> in command
+goroutine 384 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003c7fb0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000b81c0}, {0xe95920, 0xc0002149c0}, {0xc00065d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000b81c0}, 0xc0000e0200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000161af0?, {0xf5a9a0?, 0xc0000b81c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000b81c0}, 0xc0000e0200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003b39b0?}, {0xf5a9a0, 0xc0000b81c0}, 0xc0000e0200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000320, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:54:01 server.go:3230: http: panic serving 127.0.0.1:64178: template: private_navbar.html:6: unexpected <define> in command
+goroutine 409 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe566e0, 0xc0003bde10})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0000c4460}, {0xe95920, 0xc000214c60}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0000c4460}, 0xc0001fa200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000161af0?, {0xf5a9a0?, 0xc0000c4460?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0000c4460}, 0xc0001fa200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000172c90?}, {0xf5a9a0, 0xc0000c4460}, 0xc0001fa200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ace60, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 15:57:38 route_mypage.go:13: http: named cookie not present
+2023/02/22 16:09:23 server.go:3230: http: panic serving 127.0.0.1:61988: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 495 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc000076750})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00006c000}, {0xe95920, 0xc000526120}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00006c000}, 0xc00038b000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0002efaf0?, {0xf5a9a0?, 0xc00006c000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00006c000}, 0xc00038b000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001738f0?}, {0xf5a9a0, 0xc00006c000}, 0xc00038b000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000001e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:23 server.go:3230: http: panic serving 127.0.0.1:61953: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 509 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc000114e70})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00006c0e0}, {0xe95920, 0xc0005264e0}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00006c0e0}, 0xc00055a000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00017baf0?, {0xf5a9a0?, 0xc00006c0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00006c0e0}, 0xc00055a000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00020e0c0?}, {0xf5a9a0, 0xc00006c0e0}, 0xc00055a000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ac6e0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:23 server.go:3230: http: panic serving 127.0.0.1:61952: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 489 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc0001155f0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00006c1c0}, {0xe95920, 0xc000526840}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00006c1c0}, 0xc00038ae00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000553af0?, {0xf5a9a0?, 0xc00006c1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00006c1c0}, 0xc00038ae00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000076600?}, {0xf5a9a0, 0xc00006c1c0}, 0xc00038ae00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000000, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:23 server.go:3230: http: panic serving 127.0.0.1:61951: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 503 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc0001156e0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00006c2a0}, {0xe95920, 0xc0002141e0}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00006c2a0}, 0xc0001fad00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00054faf0?, {0xf5a9a0?, 0xc00006c2a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00006c2a0}, 0xc0001fad00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018e240?}, {0xf5a9a0, 0xc00006c2a0}, 0xc0001fad00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ac0a0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:23 server.go:3230: http: panic serving 127.0.0.1:62142: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 776 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc000115f20})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0004da000}, {0xe95920, 0xc000526ba0}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0004da000}, 0xc00038a000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0002b5af0?, {0xf5a9a0?, 0xc0004da000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0004da000}, 0xc00038a000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001157a0?}, {0xf5a9a0, 0xc0004da000}, 0xc00038a000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001ace60, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:24 server.go:3230: http: panic serving 127.0.0.1:62143: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 753 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc00050c720})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0004da0e0}, {0xe95920, 0xc000526f00}, {0xc00007f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0004da0e0}, 0xc00038a100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0002b5af0?, {0xf5a9a0?, 0xc0004da0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0004da0e0}, 0xc00038a100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000115f80?}, {0xf5a9a0, 0xc0004da0e0}, 0xc00038a100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000320, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:24 server.go:3230: http: panic serving 127.0.0.1:62145: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 787 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc0004529f0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00006c380}, {0xe95920, 0xc0002c0360}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00006c380}, 0xc00038a200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000477af0?, {0xf5a9a0?, 0xc00006c380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00006c380}, 0xc00038a200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00050c780?}, {0xf5a9a0, 0xc00006c380}, 0xc00038a200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000460, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:30 server.go:3230: http: panic serving 127.0.0.1:62149: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 654 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc00038e000})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00006c460}, {0xe95920, 0xc0002c0540}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00006c460}, 0xc0001fa000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000477af0?, {0xf5a9a0?, 0xc00006c460?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00006c460}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000077830?}, {0xf5a9a0, 0xc00006c460}, 0xc0001fa000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002e2000, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:37 server.go:3230: http: panic serving 127.0.0.1:62150: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 789 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc00050cb70})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0004da1c0}, {0xe95920, 0xc0002c08a0}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0004da1c0}, 0xc00055a100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0002efaf0?, {0xf5a9a0?, 0xc0004da1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0004da1c0}, 0xc00055a100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000452ab0?}, {0xf5a9a0, 0xc0004da1c0}, 0xc00055a100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000500, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:37 server.go:3230: http: panic serving 127.0.0.1:62151: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 790 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc00038e7b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc00030c000}, {0xe95920, 0xc000527320}, {0xc00007b7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc00030c000}, 0xc0001fa100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0002b5af0?, {0xf5a9a0?, 0xc00030c000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc00030c000}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00038e060?}, {0xf5a9a0, 0xc00030c000}, 0xc0001fa100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000005a0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:37 server.go:3230: http: panic serving 127.0.0.1:62154: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 804 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe696c0, 0xc00050d470})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xf5a9a0?, 0xc0004da2a0}, {0xe95920, 0xc000214660}, {0xc0002fb7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xf5a9a0, 0xc0004da2a0}, 0xc0001fa200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000477af0?, {0xf5a9a0?, 0xc0004da2a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xf5a9a0, 0xc0004da2a0}, 0xc0001fa200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00038e870?}, {0xf5a9a0, 0xc0004da2a0}, 0xc0001fa200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002e20a0, {0xf5aea0, 0xc00018eb10})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:49 server.go:3230: http: panic serving 127.0.0.1:62160: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc000077b30})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc000152000}, {0xe35920, 0xc000062480}, {0xc0000737e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc000152000}, 0xc0000e0000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000073af0?, {0xefaa00?, 0xc000152000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc000152000}, 0xc0000e0000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000966c0?}, {0xefaa00, 0xc000152000}, 0xc0000e0000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000aa6e0, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:59 server.go:3230: http: panic serving 127.0.0.1:62161: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc000180810})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0000ee000}, {0xe35920, 0xc00018a180}, {0xc0000737e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0000ee000}, 0xc0000e0100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000099af0?, {0xefaa00?, 0xc0000ee000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0000ee000}, 0xc0000e0100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000967b0?}, {0xefaa00, 0xc0000ee000}, 0xc0000e0100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000aa780, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:59 server.go:3230: http: panic serving 127.0.0.1:62162: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc000180f90})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0000ee0e0}, {0xe35920, 0xc00018a4e0}, {0xc0000737e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0000ee0e0}, 0xc0000e0200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000165af0?, {0xefaa00?, 0xc0000ee0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0000ee0e0}, 0xc0000e0200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000968d0?}, {0xefaa00, 0xc0000ee0e0}, 0xc0000e0200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000fa0, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:09:59 server.go:3230: http: panic serving 127.0.0.1:62165: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc000077ce0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0000ee1c0}, {0xe35920, 0xc00018a840}, {0xc00006f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0000ee1c0}, 0xc0000e0300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000161af0?, {0xefaa00?, 0xc0000ee1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0000ee1c0}, 0xc0000e0300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000096b10?}, {0xefaa00, 0xc0000ee1c0}, 0xc0000e0300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fc000, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:07 server.go:3230: http: panic serving 127.0.0.1:62166: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc000181b60})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0001520e0}, {0xe35920, 0xc00018aa80}, {0xc0002437e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0001520e0}, 0xc000280000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000099af0?, {0xefaa00?, 0xc0001520e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0001520e0}, 0xc000280000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000181440?}, {0xefaa00, 0xc0001520e0}, 0xc000280000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000001040, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:07 server.go:3230: http: panic serving 127.0.0.1:62168: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 42 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc0002441b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0000ee2a0}, {0xe35920, 0xc000088420}, {0xc0002437e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0000ee2a0}, 0xc000280100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00009baf0?, {0xefaa00?, 0xc0000ee2a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0000ee2a0}, 0xc000280100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000181c20?}, {0xefaa00, 0xc0000ee2a0}, 0xc000280100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fc0a0, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:09 server.go:3230: http: panic serving 127.0.0.1:62172: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 43 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc000097a10})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0000ee380}, {0xe35920, 0xc000088600}, {0xc00006f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0000ee380}, 0xc000144200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00029baf0?, {0xefaa00?, 0xc0000ee380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0000ee380}, 0xc000144200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000244210?}, {0xefaa00, 0xc0000ee380}, 0xc000144200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fc140, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:26 server.go:3230: http: panic serving 127.0.0.1:62173: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc00032a1b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0001521c0}, {0xe35920, 0xc0000888a0}, {0xc00023f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0001521c0}, 0xc0000e0400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000163af0?, {0xefaa00?, 0xc0001521c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0001521c0}, 0xc0000e0400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000972f0?}, {0xefaa00, 0xc0001521c0}, 0xc0000e0400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000010e0, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:26 server.go:3230: http: panic serving 127.0.0.1:62174: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 31 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc000244ae0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0002a6000}, {0xe35920, 0xc000062a80}, {0xc0002437e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0002a6000}, 0xc000280200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00029baf0?, {0xefaa00?, 0xc0002a6000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0002a6000}, 0xc000280200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000181d70?}, {0xefaa00, 0xc0002a6000}, 0xc000280200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000aa820, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:27 server.go:3230: http: panic serving 127.0.0.1:62181: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 45 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc0002451a0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0001522a0}, {0xe35920, 0xc000062d80}, {0xc0002437e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0001522a0}, 0xc000280300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00009faf0?, {0xefaa00?, 0xc0001522a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0001522a0}, 0xc000280300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000181ef0?}, {0xefaa00, 0xc0001522a0}, 0xc000280300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fc1e0, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:27 server.go:3230: http: panic serving 127.0.0.1:62182: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 46 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc0002458f0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0002a60e0}, {0xe35920, 0xc000062fc0}, {0xc0000737e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0002a60e0}, 0xc000280400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000161af0?, {0xefaa00?, 0xc0002a60e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0002a60e0}, 0xc000280400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002aa000?}, {0xefaa00, 0xc0002a60e0}, 0xc000280400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fc280, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:28 server.go:3230: http: panic serving 127.0.0.1:62184: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 59 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0xe096c0, 0xc0002aa900})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0xefaa00?, 0xc0002a61c0}, {0xe35920, 0xc00018aea0}, {0xc0002b77e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0xefaa00, 0xc0002a61c0}, 0xc000144300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000297af0?, {0xefaa00?, 0xc0002a61c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xefaa00, 0xc0002a61c0}, 0xc000144300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002459b0?}, {0xefaa00, 0xc0002a61c0}, 0xc000144300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000001180, {0xefaf00, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:36 server.go:3230: http: panic serving 127.0.0.1:62189: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc000090270})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc0001e2000}, {0x6e5920, 0xc0001941e0}, {0xc00006f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc0001e2000}, 0xc0001d6000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00006faf0?, {0x7aa9a0?, 0xc0001e2000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc0001e2000}, 0xc0001d6000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018e6c0?}, {0x7aa9a0, 0xc0001e2000}, 0xc0001d6000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00019e6e0, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:39 server.go:3230: http: panic serving 127.0.0.1:62190: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc000077e60})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc000154000}, {0x6e5920, 0xc000062540}, {0xc00006f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc000154000}, 0xc0000b6000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000095af0?, {0x7aa9a0?, 0xc000154000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc000154000}, 0xc0000b6000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000090120?}, {0x7aa9a0, 0xc000154000}, 0xc0000b6000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b0000, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:39 server.go:3230: http: panic serving 127.0.0.1:62191: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc00018ee10})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc000210000}, {0x6e5920, 0xc000088480}, {0xc00006f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc000210000}, 0xc0000b6200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0001edaf0?, {0x7aa9a0?, 0xc000210000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc000210000}, 0xc0000b6200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000902d0?}, {0x7aa9a0, 0xc000210000}, 0xc0000b6200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000fa0, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:10:40 server.go:3230: http: panic serving 127.0.0.1:62194: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc000090ff0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc0002100e0}, {0x6e5920, 0xc0000886c0}, {0xc0002277e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc0002100e0}, 0xc0000b6300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0001f3af0?, {0x7aa9a0?, 0xc0002100e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc0002100e0}, 0xc0000b6300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000090810?}, {0x7aa9a0, 0xc0002100e0}, 0xc0000b6300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00019e780, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:10 server.go:3230: http: panic serving 127.0.0.1:62195: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc000091800})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc0002101c0}, {0x6e5920, 0xc0000889c0}, {0xc0002237e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc0002101c0}, 0xc000144100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0001efaf0?, {0x7aa9a0?, 0xc0002101c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc0002101c0}, 0xc000144100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000077fb0?}, {0x7aa9a0, 0xc0002101c0}, 0xc000144100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000001040, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:10 server.go:3230: http: panic serving 127.0.0.1:62197: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 29 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc00018f710})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc0001e20e0}, {0x6e5920, 0xc000194480}, {0xc0002237e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc0001e20e0}, 0xc0001d6100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000259af0?, {0x7aa9a0?, 0xc0001e20e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc0001e20e0}, 0xc0001d6100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018ef30?}, {0x7aa9a0, 0xc0001e20e0}, 0xc0001d6100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b00a0, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:24 server.go:3230: http: panic serving 127.0.0.1:62201: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 44 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc00017e180})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc0001e21c0}, {0x6e5920, 0xc000194780}, {0xc0002237e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc0001e21c0}, 0xc0001d6200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000259af0?, {0x7aa9a0?, 0xc0001e21c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc0001e21c0}, 0xc0001d6200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018f7d0?}, {0x7aa9a0, 0xc0001e21c0}, 0xc0001d6200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00019e820, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:33 server.go:3230: http: panic serving 127.0.0.1:62202: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 45 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc000383d70})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc000210540}, {0x6e5920, 0xc000386660}, {0xc0002277e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc000210540}, 0xc0000b6b00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000227af0?, {0x7aa9a0?, 0xc000210540?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc000210540}, 0xc0000b6b00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000918c0?}, {0x7aa9a0, 0xc000210540}, 0xc0000b6b00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00019e8c0, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:33 server.go:3230: http: panic serving 127.0.0.1:62203: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc0003a0570})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc0001e2a80}, {0x6e5920, 0xc0003869c0}, {0xc0002277e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc0001e2a80}, 0xc0001d6300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0001edaf0?, {0x7aa9a0?, 0xc0001e2a80?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc0001e2a80}, 0xc0001d6300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018fec0?}, {0x7aa9a0, 0xc0001e2a80}, 0xc0001d6300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000010e0, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:33 server.go:3230: http: panic serving 127.0.0.1:62207: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 73 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc0003a0ae0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc0001e2b60}, {0x6e5920, 0xc000386d20}, {0xc00006f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc0001e2b60}, 0xc000144600)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00032baf0?, {0x7aa9a0?, 0xc0001e2b60?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc0001e2b60}, 0xc000144600)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000321020?}, {0x7aa9a0, 0xc0001e2b60}, 0xc000144600)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000001400, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:34 server.go:3230: http: panic serving 127.0.0.1:62208: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 96 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc0003a1260})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc000210620}, {0x6e5920, 0xc000387020}, {0xc0002717e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc000210620}, 0xc000144700)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc000327af0?, {0x7aa9a0?, 0xc000210620?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc000210620}, 0xc000144700)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000321110?}, {0x7aa9a0, 0xc000210620}, 0xc000144700)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00019efa0, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:34 server.go:3230: http: panic serving 127.0.0.1:62210: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 74 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc000321950})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc000154460}, {0x6e5920, 0xc0000632c0}, {0xc00006f7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc000154460}, 0xc0001d6c00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc00032daf0?, {0x7aa9a0?, 0xc000154460?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc000154460}, 0xc0001d6c00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a12c0?}, {0x7aa9a0, 0xc000154460}, 0xc0001d6c00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000014a0, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:11:40 server.go:3230: http: panic serving 127.0.0.1:62217: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 78 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6b96c0, 0xc0003a1410})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x7aa9a0?, 0xc000210700}, {0x6e5920, 0xc0000896e0}, {0xc00026d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x7aa9a0, 0xc000210700}, 0xc0001d6d00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x307
+net/http.HandlerFunc.ServeHTTP(0xc0002efaf0?, {0x7aa9a0?, 0xc000210700?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7aa9a0, 0xc000210700}, 0xc0001d6d00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a1320?}, {0x7aa9a0, 0xc000210700}, 0xc0001d6d00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000001540, {0x7aaea0, 0xc00018e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:13:16 server.go:3230: http: panic serving 127.0.0.1:62246: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 23 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x11f96c0, 0xc00018a240})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x12ea9a0?, 0xc0001b4000}, {0x1225920, 0xc000186300}, {0xc0000997e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x12ea9a0, 0xc0001b4000}, 0xc00006e000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x326
+net/http.HandlerFunc.ServeHTTP(0xc000099af0?, {0x12ea9a0?, 0xc0001b4000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ea9a0, 0xc0001b4000}, 0xc00006e000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000240f0?}, {0x12ea9a0, 0xc0001b4000}, 0xc00006e000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00009f5e0, {0x12eaea0, 0xc0000bd920})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:13:17 server.go:3230: http: panic serving 127.0.0.1:62247: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x11f96c0, 0xc000024390})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x12ea9a0?, 0xc000078000}, {0x1225920, 0xc000062420}, {0xc0000997e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x12ea9a0, 0xc000078000}, 0xc000192000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x326
+net/http.HandlerFunc.ServeHTTP(0xc00011daf0?, {0x12ea9a0?, 0xc000078000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ea9a0, 0xc000078000}, 0xc000192000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018a030?}, {0x12ea9a0, 0xc000078000}, 0xc000192000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000000a0, {0x12eaea0, 0xc0000bd920})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:13:17 server.go:3230: http: panic serving 127.0.0.1:62248: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x11f96c0, 0xc0000bdb60})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x12ea9a0?, 0xc000136000}, {0x1225920, 0xc0001062a0}, {0xc00009d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x12ea9a0, 0xc000136000}, 0xc000192200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x326
+net/http.HandlerFunc.ServeHTTP(0xc000119af0?, {0x12ea9a0?, 0xc000136000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ea9a0, 0xc000136000}, 0xc000192200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018a2a0?}, {0x12ea9a0, 0xc000136000}, 0xc000192200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000140, {0x12eaea0, 0xc0000bd920})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:13:18 server.go:3230: http: panic serving 127.0.0.1:62251: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x11f96c0, 0xc0000245d0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x12ea9a0?, 0xc0000780e0}, {0x1225920, 0xc0000625a0}, {0xc0000997e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x12ea9a0, 0xc0000780e0}, 0xc000110100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x326
+net/http.HandlerFunc.ServeHTTP(0xc000119af0?, {0x12ea9a0?, 0xc0000780e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ea9a0, 0xc0000780e0}, 0xc000110100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000bdc20?}, {0x12ea9a0, 0xc0000780e0}, 0xc000110100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00009f680, {0x12eaea0, 0xc0000bd920})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:13:23 server.go:3230: http: panic serving 127.0.0.1:62252: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x11f96c0, 0xc0000bde30})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x12ea9a0?, 0xc0001360e0}, {0x1225920, 0xc000106420}, {0xc00009d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x12ea9a0, 0xc0001360e0}, 0xc000110200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x326
+net/http.HandlerFunc.ServeHTTP(0xc000119af0?, {0x12ea9a0?, 0xc0001360e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ea9a0, 0xc0001360e0}, 0xc000110200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000bdc80?}, {0x12ea9a0, 0xc0001360e0}, 0xc000110200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000001e0, {0x12eaea0, 0xc0000bd920})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:13:23 server.go:3230: http: panic serving 127.0.0.1:62254: open app/views/templates/viewer.html: The system cannot find the file specified.
+goroutine 27 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x11f96c0, 0xc000024720})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x12ea9a0?, 0xc0001361c0}, {0x1225920, 0xc000062720}, {0xc00009d7e0?, 0x4, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x12ea9a0, 0xc0001361c0}, 0xc000110300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:21 +0x326
+net/http.HandlerFunc.ServeHTTP(0xc000119af0?, {0x12ea9a0?, 0xc0001361c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ea9a0, 0xc0001361c0}, 0xc000110300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000bdef0?}, {0x12ea9a0, 0xc0001361c0}, 0xc000110300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00009f720, {0x12eaea0, 0xc0000bd920})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:21:06 route_mypage.go:28: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer}
+2023/02/22 16:23:56 server.go:3230: http: panic serving 127.0.0.1:62584: template: private_navbar.html:7: function "S" not defined
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x766700, 0xc0000a24b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x86aa80?, 0xc0001b0000}, {0x77fe60, 0xc0000923c0}, {0xc0000737f0?, 0x3, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x86aa80, 0xc0001b0000}, 0xc000144300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:29 +0x3da
+net/http.HandlerFunc.ServeHTTP(0xc000073af0?, {0x86aa80?, 0xc0001b0000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x86aa80, 0xc0001b0000}, 0xc000144300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000966c0?}, {0x86aa80, 0xc0001b0000}, 0xc000144300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000aa6e0, {0x86af80, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:23:56 server.go:3230: http: panic serving 127.0.0.1:62585: template: private_navbar.html:7: function "S" not defined
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x766700, 0xc0000a2710})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x86aa80?, 0xc00020c0e0}, {0x77fe60, 0xc000092580}, {0xc0000737f0?, 0x3, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x86aa80, 0xc00020c0e0}, 0xc0000e0200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:29 +0x3da
+net/http.HandlerFunc.ServeHTTP(0xc00005daf0?, {0x86aa80?, 0xc00020c0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x86aa80, 0xc00020c0e0}, 0xc0000e0200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000097170?}, {0x86aa80, 0xc00020c0e0}, 0xc0000e0200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000010e0, {0x86af80, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:23:57 server.go:3230: http: panic serving 127.0.0.1:62586: template: private_navbar.html:7: function "S" not defined
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x766700, 0xc0000a2960})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x86aa80?, 0xc00020c1c0}, {0x77fe60, 0xc000092600}, {0xc0000737f0?, 0x3, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x86aa80, 0xc00020c1c0}, 0xc0000e0300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:29 +0x3da
+net/http.HandlerFunc.ServeHTTP(0xc00009baf0?, {0x86aa80?, 0xc00020c1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x86aa80, 0xc00020c1c0}, 0xc0000e0300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000971d0?}, {0x86aa80, 0xc00020c1c0}, 0xc0000e0300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000001180, {0x86af80, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:23:57 server.go:3230: http: panic serving 127.0.0.1:62590: template: private_navbar.html:7: function "S" not defined
+goroutine 30 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x766700, 0xc00018a2c0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x86aa80?, 0xc0001b00e0}, {0x77fe60, 0xc000196040}, {0xc00006f7f0?, 0x3, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x86aa80, 0xc0001b00e0}, 0xc0000e0500)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:29 +0x3da
+net/http.HandlerFunc.ServeHTTP(0xc00009baf0?, {0x86aa80?, 0xc0001b00e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x86aa80, 0xc0001b00e0}, 0xc0000e0500)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002786f0?}, {0x86aa80, 0xc0001b00e0}, 0xc0000e0500)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000aa8c0, {0x86af80, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:23:58 server.go:3230: http: panic serving 127.0.0.1:62593: template: private_navbar.html:7: function "S" not defined
+goroutine 54 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x766700, 0xc0000a2a20})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x86aa80?, 0xc0001b01c0}, {0x77fe60, 0xc000056a20}, {0xc0003177f0?, 0x3, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x86aa80, 0xc0001b01c0}, 0xc000144400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:29 +0x3da
+net/http.HandlerFunc.ServeHTTP(0xc00009baf0?, {0x86aa80?, 0xc0001b01c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x86aa80, 0xc0001b01c0}, 0xc000144400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000179740?}, {0x86aa80, 0xc0001b01c0}, 0xc000144400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fc000, {0x86af80, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:23:58 server.go:3230: http: panic serving 127.0.0.1:62595: template: private_navbar.html:7: function "S" not defined
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x766700, 0xc00018a430})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x86aa80?, 0xc0001521c0}, {0x77fe60, 0xc000056ac0}, {0xc0003177f0?, 0x3, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x86aa80, 0xc0001521c0}, 0xc0000e0600)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:29 +0x3da
+net/http.HandlerFunc.ServeHTTP(0xc00028baf0?, {0x86aa80?, 0xc0001521c0?}, 0x4?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x86aa80, 0xc0001521c0}, 0xc0000e0600)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002788d0?}, {0x86aa80, 0xc0001521c0}, 0xc0000e0600)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000001220, {0x86af80, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/22 16:24:04 server.go:3230: http: panic serving 127.0.0.1:62599: template: private_navbar.html:7: function "S" not defined
+goroutine 57 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x766700, 0xc00018a680})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x86aa80?, 0xc0001b02a0}, {0x77fe60, 0xc000196100}, {0xc0003137f0?, 0x3, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.mypage({0x86aa80, 0xc0001b02a0}, 0xc00032a000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/route_mypage.go:29 +0x3da
+net/http.HandlerFunc.ServeHTTP(0xc000289af0?, {0x86aa80?, 0xc0001b02a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x86aa80, 0xc0001b02a0}, 0xc00032a000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00018cd20?}, {0x86aa80, 0xc0001b02a0}, 0xc00032a000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001fc0a0, {0x86af80, 0xc0000965d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db

@@ -63,12 +63,12 @@ func StartMainServer() error {
 	http.HandleFunc("/authenticate", authenticate)
 	http.HandleFunc("/logout", logout)
 	// expertページ
-	http.HandleFunc("/expert/index", index)
-	http.HandleFunc("/expert/mypage", index)
+	http.HandleFunc("/expert/index", index)//記事一覧
+	http.HandleFunc("/expert/mypage", mypage)
 	http.HandleFunc("/expert/articles", index)
 	// viewerページ
 	http.HandleFunc("/viewer/index", index)
-	http.HandleFunc("/viewer/mypage", index)
+	http.HandleFunc("/viewer/mypage", mypage)
 		// viewer機能ページ
 		http.HandleFunc("/viewer/matches", index)
 		http.HandleFunc("/viewer/", index)
@@ -80,7 +80,8 @@ func StartMainServer() error {
 
 	// common
 		//公開記事
-		http.HandleFunc("articles", index)
+		http.HandleFunc("articles", articles)
+		// http.HandleFunc("article/{id}", article)
 		// 公開討論
 		http.HandleFunc("matches", index)
 		http.HandleFunc("matches/{id}", index)

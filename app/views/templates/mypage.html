@@ -1,0 +1,12 @@
+{{ define "content" }}
+<form class="form-signin center" role="form" action="/edit" method="post">
+
+    <p1>会員情報変更</p1>
+    </br>
+    <input type="hidden" id="lastUrl" name="lastUrl" value={{.}}>
+    <label>メールアドレス</label>
+    <input type="email" name="email" class="form-control" value={{.User.Email}} required autofocus>
+    <a class="btn btn-success" href="/{{.}}/mypage/update">変更</a>
+  </form>
+  <a class="lead pull-right btn btn-danger" href="/signup/{{.}}">退会する</a>
+  {{end}}
