@@ -80,7 +80,7 @@ func StartMainServer() error {
 
 	// common
 		//公開記事
-		http.HandleFunc("articles", articles)
+		http.HandleFunc("/viewer/articles", articles)
 		// http.HandleFunc("article/{id}", article)
 		// 公開討論
 		http.HandleFunc("matches", index)

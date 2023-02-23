@@ -30,7 +30,14 @@ func mypage(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				log.Println(err)
 			}
-			generateHTML(w, user, "layout", "private_navbar", "mypage")
+			data := struct {
+				User interface{}
+				S string
+			}{
+				user,
+				s,
+			}
+			generateHTML(w, data, "layout", "private_navbar", "mypage")
 		}
 		// todos, _ := user.GetTodosByUser()
 		// user.Todos = todos
