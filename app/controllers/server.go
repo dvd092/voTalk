@@ -31,7 +31,7 @@ func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err e
 	return sess, err
 }
 
-var validPath = regexp.MustCompile("^/todos/(edit|update|delete)/([0-9]+)$")
+var validPath = regexp.MustCompile("^/article/(edit|update|delete|show)/([0-9]+)$")
 
 func parseURL(fn func(http.ResponseWriter, *http.Request, int)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -74,7 +74,7 @@ func StartMainServer() error {
 		http.HandleFunc("/viewer/", index)
 		// viewer記事ページ
 		http.HandleFunc("/viewer/articles", articles)
-		http.HandleFunc("/viewer/articles/{id}", article)
+		// http.HandleFunc("/viewer/articles/{id}", article)
 			// viewerマッチページ
 			http.HandleFunc("/viewer/match/new", index)
 			http.HandleFunc("/viewer/match/save", index)
@@ -84,7 +84,7 @@ func StartMainServer() error {
 	// common
 		//公開記事
 		
-		// http.HandleFunc("article/{id}", article)
+		http.HandleFunc("/article/show/", parseURL(article))
 		// 公開討論
 		http.HandleFunc("matches", index)
 		http.HandleFunc("matches/{id}", index)

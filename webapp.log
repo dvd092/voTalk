@@ -4943,3 +4943,644 @@ created by net/http.(*Server).Serve
 2023/02/24 00:29:25 articles.go:12: &{{{0 0} 0 0 0 0} 0xc000394000 <nil> 1 0xc0001d2340 false 0 {0xc000157e00} 0xc000390160 {{0 0} {<nil>} map[] 0} 0xc0001d2410 <nil> 0xc00038e030 false <nil>}
 2023/02/24 00:31:38 articles.go:12: &{{{0 0} 0 0 0 0} 0xc000380060 record not found 0 0xc0000a84e0 false 0 {0xc00018de50} 0xc000392160 {{0 0} {<nil>} map[] 0} 0xc0000a85b0 <nil> 0xc000390030 false <nil>}
 2023/02/24 00:31:50 articles.go:12: &{{{0 0} 0 0 0 0} 0xc0001089c0 <nil> 1 0xc0002340d0 false 0 {0xc000157e00} 0xc0000fac60 {{0 0} {<nil>} map[] 0} 0xc0002341a0 <nil> 0xc000097200 false <nil>}
+2023/02/24 13:02:45 articles.go:12: &{{{0 0} 0 0 0 0} 0xc0000890e0 record not found 0 0xc00029c8f0 false 0 {0xc00018be50} 0xc0000c4dc0 {{0 0} {<nil>} map[] 0} 0xc00029c9c0 <nil> 0xc0000be720 false <nil>}
+2023/02/24 13:02:45 articles.go:46: Error 1054 (42S22): Unknown column 'likes' in 'field list'
+2023/02/24 13:03:59 articles.go:12: &{{{0 0} 0 0 0 0} 0xc000314000 record not found 0 0xc0001f1d40 false 0 {0xc00018be50} 0xc000310160 {{0 0} {<nil>} map[] 0} 0xc0001f1e10 <nil> 0xc00030e030 false <nil>}
+2023/02/24 13:03:59 articles.go:46: Error 1054 (42S22): Unknown column 'created_at' in 'field list'
+2023/02/24 13:07:19 articles.go:12: &{{{0 0} 0 0 0 0} 0xc000062420 record not found 0 0xc0001f1ba0 false 0 {0xc00018be50} 0xc00012eb00 {{0 0} {<nil>} map[] 0} 0xc0001f1c70 <nil> 0xc000008ba0 false <nil>}
+2023/02/24 13:08:15 articles.go:12: &{{{0 0} 0 0 0 0} 0xc000088600 <nil> 1 0xc00029ac30 false 0 {0xc00018be50} 0xc0000d6580 {{0 0} {<nil>} map[] 0} 0xc00029ad00 <nil> 0xc000092318 false <nil>}
+2023/02/24 13:09:37 articles.go:12: &{{{0 0} 0 0 0 0} 0xc000063800 <nil> 1 0xc00031c340 false 0 {0xc00018be50} 0xc00012f8c0 {{0 0} {<nil>} map[] 0} 0xc00031c410 <nil> 0xc0000093b0 false <nil>}
+2023/02/24 13:20:45 server.go:3230: http: panic serving 127.0.0.1:61412: runtime error: invalid memory address or nil pointer dereference
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0xc?, {0x6c1c80?, 0x7e5d40}, {0xc0001bebf0, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0x400000?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc0001e8000}, 0xc0001c0b00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc00009daf0?, {0x7e8980?, 0xc0001e8000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc0001e8000}, 0xc0001c0b00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019adb0?}, {0x7e8980, 0xc0001e8000}, 0xc0001c0b00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00020c6e0, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:20:46 server.go:3230: http: panic serving 127.0.0.1:61413: runtime error: invalid memory address or nil pointer dereference
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0x3147e5?, {0x6c1c80?, 0x7e5d40}, {0xc000222140, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0x400000?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc000262000}, 0xc0001c0d00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc000255af0?, {0x7e8980?, 0xc000262000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc000262000}, 0xc0001c0d00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019af00?}, {0x7e8980, 0xc000262000}, 0xc0001c0d00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00020c780, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:20:46 server.go:3230: http: panic serving 127.0.0.1:61414: runtime error: invalid memory address or nil pointer dereference
+goroutine 27 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0x2d8f9463600?, {0x6c1c80?, 0x7e5d40}, {0xc000054090, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0x580?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc000070000}, 0xc000258000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc000251af0?, {0x7e8980?, 0xc000070000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc000070000}, 0xc000258000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000208690?}, {0x7e8980, 0xc000070000}, 0xc000258000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00019f0e0, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:20:46 server.go:3230: http: panic serving 127.0.0.1:61417: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0x2d8f946362c?, {0x6c1c80?, 0x7e5d40}, {0xc0000540d0, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0xffffffffffffff?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc0000700e0}, 0xc0001c0e00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc0001d5af0?, {0x7e8980?, 0xc0000700e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc0000700e0}, 0xc0001c0e00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00019afc0?}, {0x7e8980, 0xc0000700e0}, 0xc0001c0e00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000000a0, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:20:52 server.go:3230: http: panic serving 127.0.0.1:61418: runtime error: invalid memory address or nil pointer dereference
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0x2d8f9463658?, {0x6c1c80?, 0x7e5d40}, {0xc000054110, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0x580?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc0000701c0}, 0xc000258100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc0001d5af0?, {0x7e8980?, 0xc0000701c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc0000701c0}, 0xc000258100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002087b0?}, {0x7e8980, 0xc0000701c0}, 0xc000258100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000140, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:20:52 server.go:3230: http: panic serving 127.0.0.1:53889: runtime error: invalid memory address or nil pointer dereference
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0x2d8f9463684?, {0x6c1c80?, 0x7e5d40}, {0xc000054150, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0x580?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc0000702a0}, 0xc000258200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc0001d5af0?, {0x7e8980?, 0xc0000702a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc0000702a0}, 0xc000258200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000208810?}, {0x7e8980, 0xc0000702a0}, 0xc000258200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000001e0, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:21:22 server.go:3230: http: panic serving 127.0.0.1:53895: runtime error: invalid memory address or nil pointer dereference
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0x2d8f9467c58?, {0x6c1c80?, 0x7e5d40}, {0xc0001bec60, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0x580?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc0001e80e0}, 0xc0003e0000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc000253af0?, {0x7e8980?, 0xc0001e80e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc0001e80e0}, 0xc0003e0000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000244e0?}, {0x7e8980, 0xc0001e80e0}, 0xc0003e0000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00019f180, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:22:23 server.go:3230: http: panic serving 127.0.0.1:53917: runtime error: invalid memory address or nil pointer dereference
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x6dd700, 0xa2a400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+github.com/jinzhu/gorm.(*DB).clone(0x0)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:853 +0x1d
+github.com/jinzhu/gorm.(*DB).Where(0x2d8f94636b0?, {0x6c1c80?, 0x7e5d40}, {0xc0000541c0, 0x1, 0x1})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:235 +0x47
+votalk/app/models.GetArticle(0x580?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:62 +0x5a
+votalk/app/controllers.articles({0x7e8980, 0xc000070380}, 0xc0003e0200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:12 +0x49
+net/http.HandlerFunc.ServeHTTP(0xc0001d5af0?, {0x7e8980?, 0xc000070380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x7e8980, 0xc000070380}, 0xc0003e0200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000245a0?}, {0x7e8980, 0xc000070380}, 0xc0003e0200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00020c820, {0x7e8e80, 0xc000208540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 13:50:28 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000062360 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00012e840 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc000008be8 false <nil>}
+2023/02/24 13:52:45 articles.go:13: &{{{0 0} 0 0 0 0} 0xc0003065a0 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00035c2c0 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc00030a1e0 false <nil>}
+2023/02/24 13:53:05 articles.go:13: &{{{0 0} 0 0 0 0} 0xc0000885a0 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00024e6e0 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc000008ee8 false <nil>}
+2023/02/24 13:54:17 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000206960 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00012e9a0 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc000247608 false <nil>}
+2023/02/24 13:54:52 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000206300 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00012e160 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc0000081b0 false <nil>}
+2023/02/24 13:55:30 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000207200 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00012f760 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc000009350 false <nil>}
+2023/02/24 13:55:49 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000062960 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc000556580 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc0002465d0 false <nil>}
+2023/02/24 13:56:50 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000089f80 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc0004d3a20 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc00030bba8 false <nil>}
+2023/02/24 13:57:20 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000306720 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00012e580 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc0000723f0 false <nil>}
+2023/02/24 13:57:59 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000206a20 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc0000b66e0 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc0002461f8 false <nil>}
+2023/02/24 13:58:06 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000088300 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc0002ee6e0 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc000073920 false <nil>}
+2023/02/24 14:02:41 articles.go:13: &{{{0 0} 0 0 0 0} 0xc000062180 <nil> 1 0xc0001f1ad0 false 0 {0xc00018be50} 0xc00012e160 {{0 0} {<nil>} map[] 0} 0xc0001f1ba0 <nil> 0xc0000081b0 false <nil>}
+2023/02/24 14:02:58 articles.go:13: &{{{0 0} 0 0 0 0} 0xc0000623c0 <nil> 1 0xc0001f1ba0 false 0 {0xc00018be50} 0xc00012e9a0 {{0 0} {<nil>} map[] 0} 0xc0001f1c70 <nil> 0xc000008be8 false <nil>}
+2023/02/24 14:08:18 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:12:57 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:16:08 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:16:09 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:18:57 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:22:58 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:40:48 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:50:49 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 14:51:08 articles.go:36: {{1 02643ddf-b195-11ed-85a4-a46bb645bf1a ダビデ kim@flying-h.co.jp  2023-02-21 03:08:26 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/24 15:20:24 server.go:3230: http: panic serving 127.0.0.1:63420: html/template: pattern matches no files: `templates/*`
+goroutine 23 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1254fe0, 0xc0000902e0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1369d40?, 0xc0000ee000}, {0x126f7e0, 0xc00008e2e0}, {0xc00006f7f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x1369d40, 0xc0000ee000}, 0xc000290000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc00006faf0?, {0x1369d40?, 0xc0000ee000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1369d40, 0xc0000ee000}, 0xc000290000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000284030?}, {0x1369d40, 0xc0000ee000}, 0xc000290000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000098780, {0x136a240, 0xc000094750})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:20:25 server.go:3230: http: panic serving 127.0.0.1:63421: html/template: pattern matches no files: `templates/*`
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1254fe0, 0xc000090450})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1369d40?, 0xc0000ee0e0}, {0x126f7e0, 0xc00008e4c0}, {0xc00006f7f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x1369d40, 0xc0000ee0e0}, 0xc0000dc000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc000209af0?, {0x1369d40?, 0xc0000ee0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1369d40, 0xc0000ee0e0}, 0xc0000dc000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000094840?}, {0x1369d40, 0xc0000ee0e0}, 0xc0000dc000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000298000, {0x136a240, 0xc000094750})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:20:25 server.go:3230: http: panic serving 127.0.0.1:63422: html/template: pattern matches no files: `templates/*`
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1254fe0, 0xc0000905b0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1369d40?, 0xc0000ee1c0}, {0x126f7e0, 0xc00008e500}, {0xc00006f7f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x1369d40, 0xc0000ee1c0}, 0xc0001f6b00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc0000d9af0?, {0x1369d40?, 0xc0000ee1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1369d40, 0xc0000ee1c0}, 0xc0001f6b00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001cec60?}, {0x1369d40, 0xc0000ee1c0}, 0xc0001f6b00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000098820, {0x136a240, 0xc000094750})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:20:26 server.go:3230: http: panic serving 127.0.0.1:63425: html/template: pattern matches no files: `templates/*`
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1254fe0, 0xc000090710})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1369d40?, 0xc0000ee2a0}, {0x126f7e0, 0xc00008e560}, {0xc00006f7f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x1369d40, 0xc0000ee2a0}, 0xc0001f6c00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc0000d9af0?, {0x1369d40?, 0xc0000ee2a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1369d40, 0xc0000ee2a0}, 0xc0001f6c00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001cecf0?}, {0x1369d40, 0xc0000ee2a0}, 0xc0001f6c00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000988c0, {0x136a240, 0xc000094750})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:20:31 server.go:3230: http: panic serving 127.0.0.1:63431: html/template: pattern matches no files: `templates/*`
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1254fe0, 0xc0000908a0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1369d40?, 0xc0000ee380}, {0x126f7e0, 0xc00008e5a0}, {0xc0003877f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x1369d40, 0xc0000ee380}, 0xc0000dc300)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc0000d3af0?, {0x1369d40?, 0xc0000ee380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1369d40, 0xc0000ee380}, 0xc0000dc300)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000095170?}, {0x1369d40, 0xc0000ee380}, 0xc0000dc300)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000298140, {0x136a240, 0xc000094750})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:21:51 server.go:3230: http: panic serving 127.0.0.1:53792: html/template: pattern matches no files: `app/views/templates/templates/*`
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1094fe0, 0xc00030e280})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x11a9d40?, 0xc00036e000}, {0x10af7e0, 0xc000310220}, {0xc00006f7f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x11a9d40, 0xc00036e000}, 0xc00035a000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc00006faf0?, {0x11a9d40?, 0xc00036e000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x11a9d40, 0xc00036e000}, 0xc00035a000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003066c0?}, {0x11a9d40, 0xc00036e000}, 0xc00035a000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00031a6e0, {0x11aa240, 0xc0003065d0})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:22:07 server.go:3230: http: panic serving 127.0.0.1:53803: template: article.html:32: unexpected {{end}}
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1064fe0, 0xc00028c060})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1179d40?, 0xc000350000}, {0x107f7e0, 0xc000306140}, {0xc00006f7f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x1179d40, 0xc000350000}, 0xc00032c000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc00006faf0?, {0x1179d40?, 0xc000350000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1179d40, 0xc000350000}, 0xc00032c000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00030c240?}, {0x1179d40, 0xc000350000}, 0xc00032c000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001537c0, {0x117a240, 0xc00014f170})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:36:02 server.go:3230: http: panic serving 127.0.0.1:60401: template: article.html:32: unexpected {{end}}
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x1064fe0, 0xc000308400})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1179d40?, 0xc0002fe000}, {0x107f7e0, 0xc0003062a0}, {0xc00006f7f0?, 0x3?, 0x12?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0xf8
+votalk/app/controllers.mypage({0x1179d40, 0xc0002fe000}, 0xc0002c4100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/mypage.go:27 +0x348
+net/http.HandlerFunc.ServeHTTP(0xc000331af0?, {0x1179d40?, 0xc0002fe000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1179d40, 0xc0002fe000}, 0xc0002c4100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00028a2d0?}, {0x1179d40, 0xc0002fe000}, 0xc0002c4100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002f00a0, {0x117a240, 0xc00014f170})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 15:41:18 articles.go:51: success
+2023/02/24 15:42:51 articles.go:53: 
+2023/02/24 16:17:19 articles.go:52: 1
+2023/02/24 16:21:21 articles.go:51: 1
+2023/02/24 16:21:22 articles.go:51: 1
+2023/02/24 16:46:20 articles.go:56: 1
+2023/02/24 16:46:51 articles.go:56: 1
+2023/02/24 16:49:43 articles.go:56: 1
+2023/02/24 16:54:28 articles.go:56: 1
+2023/02/24 16:58:33 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002da0d0}
+2023/02/24 16:58:33 server.go:3230: http: panic serving 127.0.0.1:54876: template: article.html:32: unexpected {{end}}
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc0001f4cc0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc0002bc000}, {0x136e940, 0xc0002c64c8}, {0xc00006f870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc0002bc000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc0002bc000}, 0xc00029c000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc00006faf0?, {0x1468ca0?, 0xc0002bc000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc0002bc000}, 0xc00029c000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002880c0?}, {0x1468ca0, 0xc0002bc000}, 0xc00029c000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000906e0, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 16:58:34 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002daa90}
+2023/02/24 16:58:34 server.go:3230: http: panic serving 127.0.0.1:54877: template: article.html:32: unexpected {{end}}
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc0000a4380})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc0002bc0e0}, {0x136e940, 0xc0002c6840}, {0xc00006f870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc0002bc0e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc0002bc0e0}, 0xc00029c100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc0000dbaf0?, {0x1468ca0?, 0xc0002bc0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc0002bc0e0}, 0xc00029c100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000288150?}, {0x1468ca0, 0xc0002bc0e0}, 0xc00029c100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000090780, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 16:58:34 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc00008e8f0}
+2023/02/24 16:58:34 server.go:3230: http: panic serving 127.0.0.1:54878: template: article.html:32: unexpected {{end}}
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc00028ea30})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc000398000}, {0x136e940, 0xc0000aa438}, {0xc00006f870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc000398000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc000398000}, 0xc0001f6b00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc0000d7af0?, {0x1468ca0?, 0xc000398000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc000398000}, 0xc0001f6b00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001cf050?}, {0x1468ca0, 0xc000398000}, 0xc0001f6b00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00030c000, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 16:58:34 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000204750}
+2023/02/24 16:58:34 server.go:3230: http: panic serving 127.0.0.1:54881: template: article.html:32: unexpected {{end}}
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc00028ead0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc00023e000}, {0x136e940, 0xc000008fc0}, {0xc00006f870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc00023e000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc00023e000}, 0xc00029c400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc00020baf0?, {0x1468ca0?, 0xc00023e000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc00023e000}, 0xc00029c400)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc000289b60?}, {0x1468ca0, 0xc00023e000}, 0xc00029c400)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001d30e0, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 16:58:39 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000205040}
+2023/02/24 16:58:39 server.go:3230: http: panic serving 127.0.0.1:54882: template: article.html:32: unexpected {{end}}
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc0001f5730})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc00023e0e0}, {0x136e940, 0xc000009380}, {0xc000073870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc00023e0e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc00023e0e0}, 0xc0001f6c00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc00039daf0?, {0x1468ca0?, 0xc00023e0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc00023e0e0}, 0xc0001f6c00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00024c060?}, {0x1468ca0, 0xc00023e0e0}, 0xc0001f6c00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00030c0a0, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 16:58:39 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc00008f040}
+2023/02/24 16:58:39 server.go:3230: http: panic serving 127.0.0.1:54884: template: article.html:32: unexpected {{end}}
+goroutine 55 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc0000a4c70})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc0003980e0}, {0x136e940, 0xc0000aa7b0}, {0xc000073870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc0003980e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc0003980e0}, 0xc0001f6d00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc000209af0?, {0x1468ca0?, 0xc0003980e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc0003980e0}, 0xc0001f6d00)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc00024d080?}, {0x1468ca0, 0xc0003980e0}, 0xc0001f6d00)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001d3180, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 16:59:10 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc00008fad0}
+2023/02/24 16:59:10 server.go:3230: http: panic serving 127.0.0.1:54893: template: article.html:32: unexpected {{end}}
+goroutine 56 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc0000a51d0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc0003981c0}, {0x136e940, 0xc0000aabb8}, {0xc0003cb870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc0003981c0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc0003981c0}, 0xc0003be000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc00039daf0?, {0x1468ca0?, 0xc0003981c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc0003981c0}, 0xc0003be000)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a8a20?}, {0x1468ca0, 0xc0003981c0}, 0xc0003be000)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0001d3220, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 17:00:10 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000205ad0}
+2023/02/24 17:00:10 server.go:3230: http: panic serving 127.0.0.1:54895: template: article.html:32: unexpected {{end}}
+goroutine 29 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc00028ece0})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc0003982a0}, {0x136e940, 0xc000009770}, {0xc0003c7870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc0003982a0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc0003982a0}, 0xc0003be100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc000351af0?, {0x1468ca0?, 0xc0003982a0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc0003982a0}, 0xc0003be100)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a9a40?}, {0x1468ca0, 0xc0003982a0}, 0xc0003be100)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00030c140, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 17:00:10 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002dba00}
+2023/02/24 17:00:10 server.go:3230: http: panic serving 127.0.0.1:57060: template: article.html:32: unexpected {{end}}
+goroutine 32 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1850 +0xbf
+panic({0x13540c0, 0xc00028f230})
+	C:/Program Files/Go/src/runtime/panic.go:890 +0x262
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:368
+votalk/app/controllers.generateHTML({0x1468ca0?, 0xc0002bc1c0}, {0x136e940, 0xc0002c6cf0}, {0xc0003c7870?, 0x3, 0x13?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:19 +0x106
+votalk/app/controllers.article({0x1468ca0, 0xc0002bc1c0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x3e5
+votalk/app/controllers.parseURL.func1({0x1468ca0, 0xc0002bc1c0}, 0xc0003be200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:48 +0xcb
+net/http.HandlerFunc.ServeHTTP(0xc000353af0?, {0x1468ca0?, 0xc0002bc1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2109 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1468ca0, 0xc0002bc1c0}, 0xc0003be200)
+	C:/Program Files/Go/src/net/http/server.go:2487 +0x149
+net/http.serverHandler.ServeHTTP({0xc0003a9b90?}, {0x1468ca0, 0xc0002bc1c0}, 0xc0003be200)
+	C:/Program Files/Go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00030c1e0, {0x14691a0, 0xc00008c540})
+	C:/Program Files/Go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3102 +0x4db
+2023/02/24 17:02:22 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0003ce5b0}
+2023/02/24 17:02:46 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000027040}
+2023/02/24 17:02:53 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002921a0}
+2023/02/24 17:03:55 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0000c40d0}
+2023/02/24 17:04:37 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0000c4680}
+2023/02/24 17:04:38 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000292410}
+2023/02/24 17:05:01 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc00028e1a0}
+2023/02/24 17:11:03 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002a80d0}
+2023/02/24 17:11:51 articles.go:70: &{{{0 0} 0 0 0 0} 0xc00018c4e0 <nil> 1 0xc000171ba0 false 0 {0xc00010be50} 0xc0001e2160 {{0 0} {<nil>} map[] 0} 0xc000171c70 <nil> 0xc000196180 false <nil>}
+2023/02/24 17:12:59 articles.go:70: &{{{0 0} 0 0 0 0} 0xc000202240 <nil> 1 0xc000171ba0 false 0 {0xc00010be50} 0xc0005602c0 {{0 0} {<nil>} map[] 0} 0xc000171c70 <nil> 0xc000196360 false <nil>}
