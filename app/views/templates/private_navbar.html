@@ -1,7 +1,7 @@
 {{ define "navbar"}}
 <div class="container">
     <a href="/logout">ログアウト</a>
-    <a href="/articles">記事</a>
+    <a href="/{{.S}}/articles">記事</a>
     <a href="/viewer/mypage">マイページ</a>
     <h2 class="text-right">
           ようこそ、{{.S}} {{.User.Name}}さん

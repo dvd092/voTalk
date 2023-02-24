@@ -28,13 +28,27 @@ func index(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				log.Println(err)
 			}
-			generateHTML(w, user, "layout", "private_navbar", "index")
+			data := struct {
+				User interface{}
+				S string
+			}{
+				user,
+				s,
+			}
+			generateHTML(w, data, "layout", "private_navbar", "index")
 		} else if s == "expert" {
 			user, err := sess.GetUserBySessionEx()
 			if err != nil {
 				log.Println(err)
 			}
-			generateHTML(w, user, "layout", "private_navbar", "index")
+			data := struct {
+				User interface{}
+				S string
+			}{
+				user,
+				s,
+			}
+			generateHTML(w, data, "layout", "private_navbar", "index")
 		}
 		// todos, _ := user.GetTodosByUser()
 		// user.Todos = todos

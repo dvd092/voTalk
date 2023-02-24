@@ -1,0 +1,38 @@
+{{ define "content" }}
+
+<h1>記事一覧</h1>
+ 
+<p>[<a href="/voTalk/new">Create</a>]</p>
+<hr>
+ 
+<div class="table-responsive">
+<table class="table-success table-striped table-hover col-12 text-nowrap" >
+  <thead>
+      <tr>
+          <th>タイトル</th>
+          <th>カテゴリ</th>
+          <th>内容</th>
+          <th>いいね</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+  {{ range $i, $v := .Art }}
+  <td>
+    {{ if eq $i 0}}
+    <i class="fa-solid fa-crown"></i>
+    {{ end }}{{ .Title }}</td>
+  <td>{{ .CategoryId }}</td>
+  <td>{{ .Plot }}</td>
+  <td>{{ .Likes }}</td>
+</tr>
+{{end}}
+<!-- <p>[<a href="/voTalk/edit/{{.ID}}">Edit</a>]</p>
+<p>[<a href="/voTalk/delete/{{.ID}}">Delete</a>]</p> -->
+</tbody>
+</table>
+</div>
+<hr>
+
+
+{{end}}
