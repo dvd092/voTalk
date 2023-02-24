@@ -18,13 +18,16 @@
   <tbody>
     <tr>
   {{ range $i, $v := .Art }}
+  
   <td>
     {{ if eq $i 0}}
     <i class="fa-solid fa-crown"></i>
-    {{ end }}{{ .Title }}</td>
+    {{ end }}
+    <a href="/article/show/{{.ID}}">{{ .Title }}</a></td>
   <td>{{ .CategoryId }}</td>
   <td>{{ .Plot }}</td>
   <td>{{ .Likes }}</td>
+
 </tr>
 {{end}}
 <!-- <p>[<a href="/voTalk/edit/{{.ID}}">Edit</a>]</p>
