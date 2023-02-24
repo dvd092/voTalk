@@ -5,6 +5,10 @@ import (
 	// "fmt"
 	"log"
 	"time"
+	"net/http"
+	// gorm mysql
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
 type Article struct {
@@ -51,6 +55,31 @@ func GetArticles() (arts []Article, err error) {
 	}
 	rows.Close()
 	return arts, err
+}
+
+func GetArticle(r *http.Request)  (db *gorm.DB)/*(arts []Article, err error)*/ {
+	db, err = gorm.Open("mysql", "dvd09:rlaekdnlt@/ex_po?charset=utf8&parseTime=True&loc=Local")
+	// id := r.FormValue("id")
+	result := db.Where("id = ?", 2).Find(&Article{})
+	return result
+	
+	/*
+	cmd := `select id, ex_id, categories_id, title, plot, likes, created_at from articles where id = $1 `
+	rows, err := Db.Query(cmd).Scan(&id)
+		if err!= nil {
+      log.Fatalln(err)
+    }
+		for rows.Next() {
+			var art Article
+			err = rows.Scan(&art.ID, &art.ExId, &art.CategoryId, &art.Title, &art.Plot, &art.Likes, &art.CreatedAt)
+		if err!= nil {
+      log.Fatalln(err)
+		}
+		arts = append(arts,art)
+	}
+	rows.Close()
+	return arts, err
+	*/
 }
 
 /*
