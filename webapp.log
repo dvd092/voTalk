@@ -5584,3 +5584,34 @@ created by net/http.(*Server).Serve
 2023/02/24 17:11:03 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002a80d0}
 2023/02/24 17:11:51 articles.go:70: &{{{0 0} 0 0 0 0} 0xc00018c4e0 <nil> 1 0xc000171ba0 false 0 {0xc00010be50} 0xc0001e2160 {{0 0} {<nil>} map[] 0} 0xc000171c70 <nil> 0xc000196180 false <nil>}
 2023/02/24 17:12:59 articles.go:70: &{{{0 0} 0 0 0 0} 0xc000202240 <nil> 1 0xc000171ba0 false 0 {0xc00010be50} 0xc0005602c0 {{0 0} {<nil>} map[] 0} 0xc000171c70 <nil> 0xc000196360 false <nil>}
+2023/02/24 17:47:58 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002de0d0}
+2023/02/24 17:48:50 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000288270}
+2023/02/24 17:49:42 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0001f0a90}
+2023/02/24 17:50:26 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002ac0d0}
+2023/02/24 17:52:48 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002124e0}
+2023/02/24 22:25:31 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0002124e0}
+2023/02/24 22:44:55 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0000271e0}
+2023/02/24 22:53:53 articles.go:91: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC}}
+2023/02/24 22:54:24 articles.go:91: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC}}
+2023/02/24 23:14:48 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0000da0d0}
+2023/02/24 23:15:46 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc0000961a0}
+2023/02/24 23:19:16 articles.go:71: {0xc000212340}
+2023/02/24 23:20:34 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000290680}
+2023/02/24 23:26:32 articles.go:68: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} 0xc000214410}
+2023/02/24 23:26:32 server.go:23: template: private_navbar.html:4:16: executing "navbar" at <.S>: can't evaluate field S in type struct { User interface {}; Art *gorm.DB }
+2023/02/24 23:33:55 server.go:23: template: index.html:2:11: executing "content" at <.Name>: can't evaluate field Name in type struct { User interface {}; S string }
+2023/02/24 23:36:19 server.go:23: template: index.html:2:11: executing "content" at <.Name>: can't evaluate field Name in type struct { User interface {}; S string }
+2023/02/24 23:37:42 server.go:23: template: index.html:2:11: executing "content" at <.Name>: can't evaluate field Name in type struct { User interface {}; S string }
+2023/02/25 07:14:10 server.go:23: template: index.html:2:11: executing "content" at <.Name>: can't evaluate field Name in type struct { User interface {}; S string }
+2023/02/25 07:16:48 server.go:23: template: private_navbar.html:7:34: executing "navbar" at <.Name>: can't evaluate field Name in type struct { User interface {}; S string }
+2023/02/25 07:17:09 server.go:23: template: index.html:2:11: executing "content" at <.Name>: can't evaluate field Name in type struct { User interface {}; S string }
+2023/02/25 07:18:08 server.go:23: template: index.html:8:9: executing "content" at <.Todos>: can't evaluate field Todos in type struct { User interface {}; S string }
+2023/02/25 07:19:18 server.go:23: template: index.html:8:8: executing "content" at <.Content>: can't evaluate field Content in type struct { User interface {}; S string }
+2023/02/25 07:19:42 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
+2023/02/25 07:20:37 server.go:23: template: articles.html:26:34: executing "content" at <.User.ID>: can't evaluate field User in type models.Article
+2023/02/25 07:21:03 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
+2023/02/25 07:36:31 articles.go:36: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer [{1 2 1 test test 2 2023-02-24 05:07:30 +0000 UTC} {2 3 4 test2 teset2 0 2023-02-24 05:07:30 +0000 UTC}]}
+2023/02/25 07:36:32 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
+2023/02/25 07:40:24 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
+2023/02/25 07:41:16 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
+2023/02/25 07:41:43 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }

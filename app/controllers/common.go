@@ -1,7 +1,5 @@
 package controllers
 
-
-
 // func dataPack(s string, user interface{}) struct {
 // 	 data := struct{
 // 		User interface{}
