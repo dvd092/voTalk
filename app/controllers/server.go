@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"regexp"
 	"strconv"
@@ -17,7 +18,10 @@ func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) 
 	}
 
 	templates := template.Must(template.ParseFiles(files...))
-	templates.ExecuteTemplate(w, "layout", data)
+	err := templates.ExecuteTemplate(w, "layout", data)
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
 
 func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
@@ -63,32 +67,33 @@ func StartMainServer() error {
 	http.HandleFunc("/authenticate", authenticate)
 	http.HandleFunc("/logout", logout)
 	// expertページ
-	http.HandleFunc("/expert/index", index)//記事一覧
+	http.HandleFunc("/expert/index", index) //記事一覧
 	http.HandleFunc("/expert/mypage", mypage)
 	http.HandleFunc("/expert/articles", index)
 	// viewerページ
 	http.HandleFunc("/viewer/index", index)
 	http.HandleFunc("/viewer/mypage", mypage)
-		// viewer機能ページ
-		http.HandleFunc("/viewer/matches", index)
-		http.HandleFunc("/viewer/", index)
-		// viewer記事ページ
-		http.HandleFunc("/viewer/articles", articles)
-		// http.HandleFunc("/viewer/articles/{id}", article)
-			// viewerマッチページ
-			http.HandleFunc("/viewer/match/new", index)
-			http.HandleFunc("/viewer/match/save", index)
-			http.HandleFunc("/viewer/match/edit", index)
-			http.HandleFunc("/viewer/match/update", index)
+	// viewer機能ページ
+	http.HandleFunc("/viewer/matches", index)
+	http.HandleFunc("/viewer/", index)
+	// viewer記事ページ
+	http.HandleFunc("/viewer/articles", articles)
+	http.HandleFunc("/viewer/article", parseURL(article))
+	// http.HandleFunc("/viewer/articles/{id}", article)
+	// viewerマッチページ
+	http.HandleFunc("/viewer/match/new", index)
+	http.HandleFunc("/viewer/match/save", index)
+	http.HandleFunc("/viewer/match/edit", index)
+	http.HandleFunc("/viewer/match/update", index)
 
 	// common
-		//公開記事
-		
-		http.HandleFunc("/article/show/", parseURL(article))
-		// 公開討論
-		http.HandleFunc("matches", index)
-		http.HandleFunc("matches/{id}", index)
-		http.HandleFunc("matches/{topic_id}", index)//タグ付けされたexpertのみ討論可能
+	//公開記事
+
+	// http.HandleFunc("/article/show/", parseURL(article))
+	// 公開討論
+	http.HandleFunc("matches", index)
+	http.HandleFunc("matches/{id}", index)
+	http.HandleFunc("matches/{topic_id}", index) //タグ付けされたexpertのみ討論可能
 
 	// http.HandleFunc("/todos/new", todoNew)
 	// http.HandleFunc("/todos/save",todoSave)

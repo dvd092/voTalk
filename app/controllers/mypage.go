@@ -19,7 +19,7 @@ func mypage(w http.ResponseWriter, r *http.Request) {
 			}
 			data := struct {
 				User interface{}
-				S string
+				S    string
 			}{
 				user,
 				s,
@@ -32,7 +32,7 @@ func mypage(w http.ResponseWriter, r *http.Request) {
 			}
 			data := struct {
 				User interface{}
-				S string
+				S    string
 			}{
 				user,
 				s,

@@ -13,7 +13,7 @@ func top(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		generateHTML(w, nil, "layout", "public_navbar", "top")
 	} else {
-		http.Redirect(w, r, fmt.Sprintf("/%s/index",k), 302)
+		http.Redirect(w, r, fmt.Sprintf("/%s/index", k), 302)
 	}
 }
 
@@ -30,7 +30,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 			}
 			data := struct {
 				User interface{}
-				S string
+				S    string
 			}{
 				user,
 				s,
@@ -43,7 +43,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 			}
 			data := struct {
 				User interface{}
-				S string
+				S    string
 			}{
 				user,
 				s,
