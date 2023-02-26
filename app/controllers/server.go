@@ -90,6 +90,7 @@ func StartMainServer() error {
 	//公開記事
 
 	http.HandleFunc("/article/show/", parseURL(article))
+	http.HandleFunc("/like-article", likeButton)
 	// 公開討論
 	http.HandleFunc("matches", index)
 	http.HandleFunc("matches/{id}", index)

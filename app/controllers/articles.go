@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"votalk/app/libs"
 	"votalk/app/models"
+	"encoding/json"
 
 )
 
@@ -76,5 +77,19 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 			generateHTML(w, user, "layout", "private_navbar", "articles")
 		}
 	
+	}
+}
+
+func likeButton(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case http.MethodPost:
+		articleID := r.FormValue("articleId")
+		art := models.Article{}
+		record := models.DB.Where("id = ?", articleID).First(&art)
+		record.Update("likes", art.Likes + 1)
+
+		w.Header().Set("Content-Type", "application/json")
+		response := map[string]interface{}{"likes": art.Likes}
+		json.NewEncoder(w).Encode(response)
 	}
 }
