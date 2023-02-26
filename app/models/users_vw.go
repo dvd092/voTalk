@@ -12,6 +12,7 @@ type UserVw struct {
 	Name      string
 	Email     string
 	Password  string
+	LikeNum   int
 	CreatedAt time.Time
 }
 
@@ -22,9 +23,10 @@ func (u *UserVw) CreateUser() (err error) {
 	name,
 	email,
 	password,
+	like_num,
 	created_at) values (?, ?, ?, ?, ?)`
 
-	_, err = Db.Exec(cmd, createUUID(), u.Name, u.Email, Encrypt(u.Password), time.Now())
+	_, err = Db.Exec(cmd, createUUID(), u.Name, u.Email, Encrypt(u.Password), 1, time.Now())
 
 	if err != nil {
 		log.Fatalln(err)
@@ -59,13 +61,14 @@ func (u *UserVw) CreateUser() (err error) {
 
 func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 	user = UserVw{}
-	cmd := `select id, uuid, name, email, password, created_at from vw_users where email = ?`
+	cmd := `select id, uuid, name, email, password, like_num, created_at from vw_users where email = ?`
 	err = Db.QueryRow(cmd, email).Scan(
 		&user.ID,
 		&user.UUID,
 		&user.Name,
 		&user.Email,
 		&user.Password,
+		&user.LikeNum,
 		&user.CreatedAt)
 
 	return user, err
@@ -134,12 +137,13 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 
 func (sess *Session) GetUserBySessionVw() (user UserVw, err error) {
 	user = UserVw{}
-	cmd := `select id, uuid, name, email, created_at from vw_users where id = ?`
+	cmd := `select id, uuid, name, email, like_num, created_at from vw_users where id = ?`
 	err = Db.QueryRow(cmd, sess.UserId).Scan(
 		&user.ID,
 		&user.UUID,
 		&user.Name,
 		&user.Email,
+		&user.LikeNum,
 		&user.CreatedAt)
 
 	return user, err

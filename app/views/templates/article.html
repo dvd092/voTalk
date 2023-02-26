@@ -4,6 +4,7 @@
   <div class="row">
       <div class="col-md-8 offset-md-2">
           <input type="hidden" id="articleId" value="{{ .Art.ID }}">
+          <input type="hidden" id="userId" value="{{ .User.ID }}">
           <h1 class="my-4">{{ .Art.Title }}</h1>
           <p><strong>著者:</strong> {{ .Art.ExId }}</p>
           <p><strong>投稿日:</strong> {{ .Art.CreatedAt }}</p>
@@ -11,15 +12,20 @@
           <p>{{ .Art.Plot }}</p>
       </div>
   </div>
-  {{ if eq .S "viewer"}}
+  {{ if and (eq .S "viewer") (.User.LikeNum)}}
   <button type="button" class="btn btn-outline-primary" id="like-button" value="{{ .Art.Likes }}">いいね {{ .Art.Likes }}</button>
-  {{ end}}
+  {{ else if not .User.LikeNum }}
+  <button type="button" class="btn btn-dark disabled" id="disabled-like-button" value="{{ .Art.Likes }}">本日いいね済み</button>
+  {{ end }}
 </div>
 
 <script>
   $('#like-button').click(function() {
   // 記事のIDを取得
   var articleId = $("#articleId").val();
+
+  // ユーザーid
+  var userId = $("#userId").val();
 
   // CSRFトークンを取得
   var csrfToken = $('meta[name="csrf-token"]').attr('content');
@@ -30,6 +36,7 @@
     type: 'POST',
     data: {
       'articleId': articleId,
+      'userId': userId,
       '_csrf': csrfToken
     },
     success: function(res) {

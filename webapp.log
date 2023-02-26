@@ -6134,3 +6134,228 @@ created by net/http.(*Server).Serve
 2023/02/27 00:49:06 articles.go:90: 0xc000026340
 2023/02/27 00:49:28 articles.go:90: 5
 2023/02/27 01:13:27 server.go:23: html/template:layout: "<" in attribute name: "\r\n          <h1 class=\"my-4\">"
+2023/02/27 01:26:08 server.go:3197: http: panic serving 127.0.0.1:53290: template: article.html:16: unexpected "!" in if
+goroutine 11 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc00043a920})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc000258380}, {0x8f67e0, 0xc000098780}, {0xc00050b548?, 0x3, 0xc00012e400?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc000258380}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc000258380}, 0xc0000d8800)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe857f8?, {0x9db948?, 0xc000258380?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc000258380}, 0xc0000d8800)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c6c0?}, {0x9db948, 0xc000258380}, 0xc0000d8800)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d8fa0, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:08 server.go:3197: http: panic serving 127.0.0.1:53294: template: article.html:16: unexpected "!" in if
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc000050fe0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc0000d02a0}, {0x8f67e0, 0xc0001fe700}, {0xc00060f548?, 0x3, 0xc00015a000?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc0000d02a0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc0000d02a0}, 0xc0002b0600)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe85708?, {0x9db948?, 0xc0000d02a0?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc0000d02a0}, 0xc0002b0600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008cbd0?}, {0x9db948, 0xc0000d02a0}, 0xc0002b0600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d9220, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:08 server.go:3197: http: panic serving 127.0.0.1:53289: template: article.html:16: unexpected "!" in if
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc00043bd30})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc0002ac0e0}, {0x8f67e0, 0xc0002ba680}, {0xc000237548?, 0x3, 0xc00047c000?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc0002ac0e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc0002ac0e0}, 0xc0002b0400)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe858e8?, {0x9db948?, 0xc0002ac0e0?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc0002ac0e0}, 0xc0002b0400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d6b70?}, {0x9db948, 0xc0002ac0e0}, 0xc0002b0400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a26e0, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:08 server.go:3197: http: panic serving 127.0.0.1:53295: template: article.html:16: unexpected "!" in if
+goroutine 24 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc000494980})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc0000d0380}, {0x8f67e0, 0xc0001feb80}, {0xc00060f548?, 0x3, 0xc00015a400?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc0000d0380}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc0000d0380}, 0xc0002b0700)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe85618?, {0x9db948?, 0xc0000d0380?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc0000d0380}, 0xc0002b0700)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000436180?}, {0x9db948, 0xc0000d0380}, 0xc0002b0700)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a2780, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:08 server.go:3197: http: panic serving 127.0.0.1:53296: template: article.html:16: unexpected "!" in if
+goroutine 43 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc000196580})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc000258460}, {0x8f67e0, 0xc000098d00}, {0xc00060b548?, 0x3, 0xc00012e800?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc000258460}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc000258460}, 0xc0000d8600)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe85528?, {0x9db948?, 0xc000258460?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc000258460}, 0xc0000d8600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008cd80?}, {0x9db948, 0xc000258460}, 0xc0000d8600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d8320, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:09 server.go:3197: http: panic serving 127.0.0.1:53299: template: article.html:16: unexpected "!" in if
+goroutine 83 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc000494b00})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc0000d0460}, {0x8f67e0, 0xc0001ff080}, {0xc00060b548?, 0x3, 0xc00015a800?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc0000d0460}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc0000d0460}, 0xc0000d8b00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe85528?, {0x9db948?, 0xc0000d0460?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc0000d0460}, 0xc0000d8b00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000288d50?}, {0x9db948, 0xc0000d0460}, 0xc0000d8b00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d8460, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:10 server.go:3197: http: panic serving 127.0.0.1:53300: template: article.html:16: unexpected "!" in if
+goroutine 75 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc000197470})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc0000d0540}, {0x8f67e0, 0xc0001ff480}, {0xc00050b548?, 0x3, 0xc00015ac00?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc0000d0540}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc0000d0540}, 0xc0002b0b00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe85528?, {0x9db948?, 0xc0000d0540?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc0000d0540}, 0xc0002b0b00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002708a0?}, {0x9db948, 0xc0000d0540}, 0xc0002b0b00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001540a0, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:10 server.go:3197: http: panic serving 127.0.0.1:53302: template: article.html:16: unexpected "!" in if
+goroutine 91 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc000197ce0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc0000d0620}, {0x8f67e0, 0xc0001ff900}, {0xc00050b548?, 0x3, 0xc00015b000?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc0000d0620}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc0000d0620}, 0xc0000d8c00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe85528?, {0x9db948?, 0xc0000d0620?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc0000d0620}, 0xc0000d8c00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000289140?}, {0x9db948, 0xc0000d0620}, 0xc0000d8c00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d85a0, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:26:15 server.go:3197: http: panic serving 127.0.0.1:53307: template: article.html:16: unexpected "!" in if
+goroutine 96 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x8d0ca0, 0xc0001f82a0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+html/template.Must(...)
+	C:/Program Files/Go/src/html/template/template.go:374
+votalk/app/controllers.generateHTML({0x9db948?, 0xc000258540}, {0x8f67e0, 0xc000099180}, {0xc00038b548?, 0x3, 0xc00012ec00?})
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:20 +0x13f
+votalk/app/controllers.article({0x9db948, 0xc000258540}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:71 +0x545
+votalk/app/controllers.parseURL.func1({0x9db948, 0xc000258540}, 0xc0000d8d00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x176ebe85528?, {0x9db948?, 0xc000258540?}, 0x52d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x9db948, 0xc000258540}, 0xc0000d8d00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002891a0?}, {0x9db948, 0xc000258540}, 0xc0000d8d00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d86e0, {0x9dbbd8, 0xc00008c5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/27 01:43:42 users_ex.go:20: &{0  専門家2 tomo@flying-h.co.jp 1234 0001-01-01 00:00:00 +0000 UTC}
+2023/02/27 01:54:02 articles.go:36: [{1 2 1 test testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest 33 2023-02-24 05:07:30 +0000 UTC {0     0001-01-01 00:00:00 +0000 UTC}} {2 3 4 test2 teset2 1 2023-02-24 05:07:30 +0000 UTC {0     0001-01-01 00:00:00 +0000 UTC}}]
+2023/02/27 01:54:02 server.go:23: template: articles.html:29:9: executing "content" at <.ExId>: can't evaluate field ExId in type models.Article
+2023/02/27 01:54:48 articles.go:36: [{1 2 1 test testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest 33 2023-02-24 05:07:30 +0000 UTC {0     0001-01-01 00:00:00 +0000 UTC}} {2 3 4 test2 teset2 1 2023-02-24 05:07:30 +0000 UTC {0     0001-01-01 00:00:00 +0000 UTC}}]
+2023/02/27 01:57:58 articles.go:49: Error 1054 (42S22): Unknown column 'ex_id' in 'field list'
+2023/02/27 01:58:30 articles.go:36: 0xc000146a88
+2023/02/27 01:58:43 articles.go:36: 2
+2023/02/27 01:59:14 articles.go:36: {0     0001-01-01 00:00:00 +0000 UTC}
+2023/02/27 01:59:42 articles.go:36: 
