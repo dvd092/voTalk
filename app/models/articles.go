@@ -13,12 +13,15 @@ import (
 
 type Article struct {
 	ID int
-	ExId string
+	UserExID int
 	CategoryId int
 	Title string
 	Plot string
 	Likes int
 	CreatedAt	time.Time
+
+	// リレーション
+	UserEx UserEx
 }
 
 // func (u *User) CreateTodo(content string) (err error) {
@@ -40,14 +43,14 @@ type Article struct {
 // }
 
 func GetArticles() (arts []Article, err error) {
-	cmd := `select id, ex_id, categories_id, title, plot, likes, created_at from articles`
+	cmd := `select id, user_ex_id, categories_id, title, plot, likes, created_at from articles`
 	rows, err := Db.Query(cmd)
 		if err!= nil {
       log.Fatalln(err)
     }
 		for rows.Next() {
 			var art Article
-			err = rows.Scan(&art.ID, &art.ExId, &art.CategoryId, &art.Title, &art.Plot, &art.Likes, &art.CreatedAt)
+			err = rows.Scan(&art.ID, &art.UserExID, &art.CategoryId, &art.Title, &art.Plot, &art.Likes, &art.CreatedAt)
 		if err!= nil {
       log.Fatalln(err)
 		}

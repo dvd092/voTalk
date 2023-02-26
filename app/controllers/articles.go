@@ -33,6 +33,7 @@ func articles(w http.ResponseWriter, r *http.Request) {
 				s,
 				arts,
 			}
+			log.Println(arts[0].UserEx.Name)
 			generateHTML(w, data, "layout", "private_navbar", "articles")
 		} else if s == "expert" {
 			user, err := sess.GetUserBySessionEx()
@@ -83,10 +84,16 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 func likeButton(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodPost:
+		// likes増分処理
 		articleID := r.FormValue("articleId")
 		art := models.Article{}
 		record := models.DB.Where("id = ?", articleID).First(&art)
 		record.Update("likes", art.Likes + 1)
+		// like_num処理
+		userID := r.FormValue("userId")
+		user := models.UserVw{}
+		recordUser := models.DB.Table("vw_users").Where("id = ?", userID).First(&user)
+		recordUser.Update("like_num", user.LikeNum - 1)
 
 		w.Header().Set("Content-Type", "application/json")
 		response := map[string]interface{}{"likes": art.Likes}
