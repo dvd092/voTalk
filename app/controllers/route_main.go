@@ -9,11 +9,10 @@ import (
 
 func top(w http.ResponseWriter, r *http.Request) {
 	s, err := session(w, r)
-	k := libs.IntToLastUrl(s.UserType)
 	if err != nil {
 		generateHTML(w, nil, "layout", "public_navbar", "top")
 	} else {
-		http.Redirect(w, r, fmt.Sprintf("/%s/index", k), 302)
+		http.Redirect(w, r, fmt.Sprintf("/%s/index", s.UserType), 302)
 	}
 }
 

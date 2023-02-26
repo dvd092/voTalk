@@ -5615,3 +5615,494 @@ created by net/http.(*Server).Serve
 2023/02/25 07:40:24 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
 2023/02/25 07:41:16 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
 2023/02/25 07:41:43 server.go:23: template: articles.html:33:33: executing "content" at <.ID>: can't evaluate field ID in type struct { User interface {}; S string; Art []models.Article }
+2023/02/25 21:02:14 server.go:23: template: articles.html:26:15: executing "content" at <.S>: can't evaluate field S in type models.Article
+2023/02/25 21:03:11 server.go:23: template: articles.html:27:16: executing "content" at <.S>: can't evaluate field S in type models.Article
+2023/02/25 21:03:31 server.go:23: template: articles.html:27:16: executing "content" at <.S>: can't evaluate field S in type models.Article
+2023/02/26 14:06:39 articles.go:54: viewer
+2023/02/26 14:06:39 articles.go:72: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer 0xc0004d3380}
+2023/02/26 14:31:14 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer 0xc0000941a0}
+2023/02/26 14:31:14 server.go:23: template: article.html:3:11: executing "content" at <.Art.Title>: can't evaluate field Title in type *gorm.DB
+2023/02/26 14:31:31 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer 0xc00028a410}
+2023/02/26 14:32:56 articles.go:71: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer 0xc0000941a0}
+2023/02/26 14:32:56 server.go:23: template: article.html:3:11: executing "content" at <.Art.ID>: can't evaluate field ID in type *gorm.DB
+2023/02/26 14:53:16 server.go:3197: http: panic serving 127.0.0.1:54987: reflect.Value.Addr of unaddressable value
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0xb32ca0?, 0xc000282420?, 0xc00006f338?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0002b4200)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0002b4200, {0xc0001f1c80, 0x3, 0xadeda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00028a340, {0xb32ca0?, 0xc000282420?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006f5e0?, 0xc0001f8b00?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0xbfa6e8, 0xc0002cc0e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2a5
+votalk/app/controllers.parseURL.func1({0xbfa6e8, 0xc0002cc0e0}, 0xc0001f8b00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x1d657ac58c8?, {0xbfa6e8?, 0xc0002cc0e0?}, 0x74d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbfa6e8, 0xc0002cc0e0}, 0xc0001f8b00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d4c00?}, {0xbfa6e8, 0xc0002cc0e0}, 0xc0001f8b00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00028c6e0, {0xbfa978, 0xc000288540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:53:17 server.go:3197: http: panic serving 127.0.0.1:54988: reflect.Value.Addr of unaddressable value
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0xb32ca0?, 0xc0000268a0?, 0xc00006b338?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0001fc380)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0001fc380, {0xc0001f1c80, 0x3, 0xadeda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00020a820, {0xb32ca0?, 0xc0000268a0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006b5e0?, 0xc0002d4000?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0xbfa6e8, 0xc000228000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2a5
+votalk/app/controllers.parseURL.func1({0xbfa6e8, 0xc000228000}, 0xc0002d4000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x1d657ac57d8?, {0xbfa6e8?, 0xc000228000?}, 0x74d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbfa6e8, 0xc000228000}, 0xc0002d4000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000288630?}, {0xbfa6e8, 0xc000228000}, 0xc0002d4000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d6fa0, {0xbfa978, 0xc000288540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:53:17 server.go:3197: http: panic serving 127.0.0.1:54989: reflect.Value.Addr of unaddressable value
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0xb32ca0?, 0xc000026de0?, 0xc00006b338?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0001fc600)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0001fc600, {0xc0001f1c80, 0x3, 0xadeda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00020b1e0, {0xb32ca0?, 0xc000026de0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006b5e0?, 0xc0001f8c00?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0xbfa6e8, 0xc0002280e0}, 0xf?, 0x200?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2a5
+votalk/app/controllers.parseURL.func1({0xbfa6e8, 0xc0002280e0}, 0xc0001f8c00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x1d657a612a0?, {0xbfa6e8?, 0xc0002280e0?}, 0x74d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbfa6e8, 0xc0002280e0}, 0xc0001f8c00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d4d20?}, {0xbfa6e8, 0xc0002280e0}, 0xc0001f8c00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00028c780, {0xbfa978, 0xc000288540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:53:17 server.go:3197: http: panic serving 127.0.0.1:54992: reflect.Value.Addr of unaddressable value
+goroutine 16 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0xb32ca0?, 0xc000088300?, 0xc0000bd338?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0000c4100)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000c4100, {0xc0001f1c80, 0x3, 0xadeda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0000c8000, {0xb32ca0?, 0xc000088300?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc0000bd5e0?, 0xc00009c000?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0xbfa6e8, 0xc0000b2000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2a5
+votalk/app/controllers.parseURL.func1({0xbfa6e8, 0xc0000b2000}, 0xc00009c000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x1d657ac58c8?, {0xbfa6e8?, 0xc0000b2000?}, 0x74d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbfa6e8, 0xc0000b2000}, 0xc00009c000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008e0c0?}, {0xbfa6e8, 0xc0000b2000}, 0xc00009c000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d7040, {0xbfa978, 0xc000288540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:53:22 server.go:3197: http: panic serving 127.0.0.1:54993: reflect.Value.Addr of unaddressable value
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0xb32ca0?, 0xc0000887e0?, 0xc0000bd338?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0000c4380)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000c4380, {0xc0001f1c80, 0x3, 0xadeda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0000c8a90, {0xb32ca0?, 0xc0000887e0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc0000bd5e0?, 0xc0002d4200?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0xbfa6e8, 0xc0000b20e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2a5
+votalk/app/controllers.parseURL.func1({0xbfa6e8, 0xc0000b20e0}, 0xc0002d4200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x1d657ac58c8?, {0xbfa6e8?, 0xc0000b20e0?}, 0x74d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbfa6e8, 0xc0000b20e0}, 0xc0002d4200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000288cf0?}, {0xbfa6e8, 0xc0000b20e0}, 0xc0002d4200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fa000, {0xbfa978, 0xc000288540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:53:22 server.go:3197: http: panic serving 127.0.0.1:54995: reflect.Value.Addr of unaddressable value
+goroutine 23 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0xadeda0, 0xbf76c0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0xb32ca0?, 0xc0000272c0?, 0xc00006b338?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0001fc900)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0001fc900, {0xc0001f1c80, 0x3, 0xadeda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00020bba0, {0xb32ca0?, 0xc0000272c0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006b5e0?, 0xc0001f8d00?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0xbfa6e8, 0xc0002281c0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2a5
+votalk/app/controllers.parseURL.func1({0xbfa6e8, 0xc0002281c0}, 0xc0001f8d00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x1d657ac58c8?, {0xbfa6e8?, 0xc0002281c0?}, 0x74d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0xbfa6e8, 0xc0002281c0}, 0xc0001f8d00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d5740?}, {0xbfa6e8, 0xc0002281c0}, 0xc0001f8d00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fa0a0, {0xbfa978, 0xc000288540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:57:18 server.go:3197: http: panic serving 127.0.0.1:63483: reflect.Value.Addr of unaddressable value
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x12a2ca0?, 0xc000026840?, 0xc00006f2e0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc000200380)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000200380, {0xc0001f3c80, 0x3, 0x124eda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0001feb60, {0x12a2ca0?, 0xc000026840?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006f5e0?, 0xc0001fab00?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x136a708, 0xc000226000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c5
+votalk/app/controllers.parseURL.func1({0x136a708, 0xc000226000}, 0xc0001fab00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x254cbc458e8?, {0x136a708?, 0xc000226000?}, 0xebd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x136a708, 0xc000226000}, 0xc0001fab00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d6c00?}, {0x136a708, 0xc000226000}, 0xc0001fab00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000926e0, {0x136a998, 0xc00008e540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:57:48 server.go:3197: http: panic serving 127.0.0.1:63484: reflect.Value.Addr of unaddressable value
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x12a2ca0?, 0xc0000884e0?, 0xc00006b2e0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0000b8200)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000b8200, {0xc0001f3c80, 0x3, 0x124eda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000090340, {0x12a2ca0?, 0xc0000884e0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006b5e0?, 0xc0000d8000?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x136a708, 0xc0000d00e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c5
+votalk/app/controllers.parseURL.func1({0x136a708, 0xc0000d00e0}, 0xc0000d8000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x254cbc457f8?, {0x136a708?, 0xc0000d00e0?}, 0xebd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x136a708, 0xc0000d00e0}, 0xc0000d8000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008e630?}, {0x136a708, 0xc0000d00e0}, 0xc0000d8000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d8fa0, {0x136a998, 0xc00008e540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:57:48 server.go:3197: http: panic serving 127.0.0.1:63485: reflect.Value.Addr of unaddressable value
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x12a2ca0?, 0xc0000889c0?, 0xc00006b2e0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0000b8480)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000b8480, {0xc0001f3c80, 0x3, 0x124eda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc000090d00, {0x12a2ca0?, 0xc0000889c0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006b5e0?, 0xc0000d8100?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x136a708, 0xc0000d01c0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c5
+votalk/app/controllers.parseURL.func1({0x136a708, 0xc0000d01c0}, 0xc0000d8100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x254cbc458e8?, {0x136a708?, 0xc0000d01c0?}, 0xebd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x136a708, 0xc0000d01c0}, 0xc0000d8100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008e6c0?}, {0x136a708, 0xc0000d01c0}, 0xc0000d8100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001d9040, {0x136a998, 0xc00008e540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:57:48 server.go:3197: http: panic serving 127.0.0.1:63489: reflect.Value.Addr of unaddressable value
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x124eda0, 0x13676e0})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x12a2ca0?, 0xc000026de0?, 0xc00006f2e0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc000200600)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000200600, {0xc0001f3c80, 0x3, 0x124eda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0001ff5f0, {0x12a2ca0?, 0xc000026de0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006f5e0?, 0xc0001fad00?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x136a708, 0xc0002260e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c5
+votalk/app/controllers.parseURL.func1({0x136a708, 0xc0002260e0}, 0xc0001fad00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x254cbc458e8?, {0x136a708?, 0xc0002260e0?}, 0xebd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x136a708, 0xc0002260e0}, 0xc0001fad00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d7350?}, {0x136a708, 0xc0002260e0}, 0xc0001fad00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000092780, {0x136a998, 0xc00008e540})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 14:59:14 server.go:3197: http: panic serving 127.0.0.1:51784: reflect.Value.Addr of unaddressable value
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x1332ca0?, 0xc000088480?, 0xc00006b2d0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0000ba200)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000ba200, {0xc0001f3c80, 0x3, 0x12deda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00009e410, {0x1332ca0?, 0xc000088480?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006b5e0?, 0xc0002a8000?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x13fa728, 0xc0000d20e0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c7
+votalk/app/controllers.parseURL.func1({0x13fa728, 0xc0000d20e0}, 0xc0002a8000)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x20fda9b58e8?, {0x13fa728?, 0xc0000d20e0?}, 0xf4d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13fa728, 0xc0000d20e0}, 0xc0002a8000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002860c0?}, {0x13fa728, 0xc0000d20e0}, 0xc0002a8000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a06e0, {0x13fa9b8, 0xc00008e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 15:00:14 server.go:3197: http: panic serving 127.0.0.1:51786: reflect.Value.Addr of unaddressable value
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x1332ca0?, 0xc0000889c0?, 0xc00006b2d0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc0000ba600)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc0000ba600, {0xc0001f3c80, 0x3, 0x12deda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00009eea0, {0x1332ca0?, 0xc0000889c0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006b5e0?, 0xc0002a8100?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x13fa728, 0xc0000d21c0}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c7
+votalk/app/controllers.parseURL.func1({0x13fa728, 0xc0000d21c0}, 0xc0002a8100)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x20fda9b58e8?, {0x13fa728?, 0xc0000d21c0?}, 0xf4d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13fa728, 0xc0000d21c0}, 0xc0002a8100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002861e0?}, {0x13fa728, 0xc0000d21c0}, 0xc0002a8100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a0780, {0x13fa9b8, 0xc00008e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 15:00:14 server.go:3197: http: panic serving 127.0.0.1:51801: reflect.Value.Addr of unaddressable value
+goroutine 40 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x1332ca0?, 0xc000282480?, 0xc0002cf2d0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc000292180)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000292180, {0xc0001f3c80, 0x3, 0x12deda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc00028e0d0, {0x1332ca0?, 0xc000282480?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc0002cf5e0?, 0xc0002a8200?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x13fa728, 0xc0002c2000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c7
+votalk/app/controllers.parseURL.func1({0x13fa728, 0xc0002c2000}, 0xc0002a8200)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x20fda9b58e8?, {0x13fa728?, 0xc0002c2000?}, 0xf4d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13fa728, 0xc0002c2000}, 0xc0002a8200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000286270?}, {0x13fa728, 0xc0002c2000}, 0xc0002a8200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000a0820, {0x13fa9b8, 0xc00008e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 15:05:15 server.go:3197: http: panic serving 127.0.0.1:51870: reflect.Value.Addr of unaddressable value
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+github.com/jinzhu/gorm.(*Scope).callCallbacks.func1()
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:865 +0x74
+panic({0x12deda0, 0x13f7700})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+reflect.Value.Addr({0x1332ca0?, 0xc0000266c0?, 0xc00006f2d0?})
+	C:/Program Files/Go/src/reflect/value.go:273 +0x65
+github.com/jinzhu/gorm.queryCallback(0xc000200300)
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/callback_query.go:84 +0x88e
+github.com/jinzhu/gorm.(*Scope).callCallbacks(0xc000200300, {0xc0001f3c80, 0x3, 0x12deda0?})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/scope.go:869 +0x99
+github.com/jinzhu/gorm.(*DB).First(0xc0001fe9c0, {0x1332ca0?, 0xc0000266c0?}, {0x0, 0x0, 0x0})
+	C:/Users/dvd09/go/pkg/mod/github.com/jinzhu/gorm@v1.9.16/main.go:334 +0x291
+votalk/app/models.GetArticle(0xc00006f5e0?, 0xc0001fab00?)
+	C:/Users/dvd09/go/src/votalk/app/models/articles.go:61 +0x125
+votalk/app/controllers.article({0x13fa728, 0xc00021e000}, 0xf?, 0x0?)
+	C:/Users/dvd09/go/src/votalk/app/controllers/articles.go:57 +0x2c7
+votalk/app/controllers.parseURL.func1({0x13fa728, 0xc00021e000}, 0xc0001fab00)
+	C:/Users/dvd09/go/src/votalk/app/controllers/server.go:52 +0xcb
+net/http.HandlerFunc.ServeHTTP(0x20fda9b58e8?, {0x13fa728?, 0xc00021e000?}, 0xf4d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13fa728, 0xc00021e000}, 0xc0001fab00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001d6b70?}, {0x13fa728, 0xc00021e000}, 0xc0001fab00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002ae0a0, {0x13fa9b8, 0xc00008e5d0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+2023/02/26 15:06:22 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer {1 2 0 test test 2 2023-02-24 05:07:30 +0900 JST}}
+2023/02/26 15:06:42 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer {1 2 0 test test 2 2023-02-24 05:07:30 +0900 JST}}
+2023/02/26 15:06:52 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer {1 2 0 test test 2 2023-02-24 05:07:30 +0900 JST}}
+2023/02/26 15:08:29 articles.go:70: {{2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  2023-02-24 07:16:00 +0000 UTC} viewer {1 2 0 test test 2 2023-02-24 05:07:30 +0900 JST}}
+2023/02/26 15:08:29 server.go:23: template: article.html:4:10: executing "content" at <.Art.plot>: can't evaluate field plot in type models.Article

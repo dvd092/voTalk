@@ -78,7 +78,7 @@ func StartMainServer() error {
 	http.HandleFunc("/viewer/", index)
 	// viewer記事ページ
 	http.HandleFunc("/viewer/articles", articles)
-	http.HandleFunc("/viewer/article", parseURL(article))
+	// http.HandleFunc("/viewer/article/show", parseURL(article))
 	// http.HandleFunc("/viewer/articles/{id}", article)
 	// viewerマッチページ
 	http.HandleFunc("/viewer/match/new", index)
@@ -89,7 +89,7 @@ func StartMainServer() error {
 	// common
 	//公開記事
 
-	// http.HandleFunc("/article/show/", parseURL(article))
+	http.HandleFunc("/article/show/", parseURL(article))
 	// 公開討論
 	http.HandleFunc("matches", index)
 	http.HandleFunc("matches/{id}", index)

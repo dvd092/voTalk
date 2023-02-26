@@ -1,6 +1,9 @@
 package libs
 
-import "strings"
+import (
+	"strings"
+	"votalk/app/models"
+)
 
 //url->スライス
 func UrltoSlice(s string)  []string {
@@ -57,4 +60,9 @@ func IntToLastUrl(n int) string {
 		lastarS = "viewer"
 	}
 	return lastarS
+}
+
+// セッションからユーザータイプ取得
+func GetUTypeFromSess(sess models.Session) (string) {
+	return sess.UserType
 }
