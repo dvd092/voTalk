@@ -67,7 +67,6 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 				s,
 				art,
 			}
-			log.Println(data)
 			generateHTML(w, data, "layout", "private_navbar", "article")
 		} else if s == "expert" {
 			user, err := sess.GetUserBySessionEx()

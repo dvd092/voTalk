@@ -1,6 +1,47 @@
 {{ define "content" }}
 
-<h1> {{ .Art.Title }}</h1>
-<p>{{ .Art.Plot }}</p>
+<div class="container my-5">
+  <div class="row">
+      <div class="col-md-8 offset-md-2">
+          <h1 class="my-4">{{ .Art.Title }}</h1>
+          <p><strong>著者:</strong> {{ .Art.ExId }}</p>
+          <p><strong>投稿日:</strong> {{ .Art.CreatedAt }}</p>
+          <hr>
+          <p>{{ .Art.Plot }}</p>
+      </div>
+  </div>
+  {{ if eq .S "viewer"}}
+  <button type="button" class="btn btn-outline-primary" id="like-button">いいね {{ .Art.Likes }}</button>
+  {{ end}}
+</div>
+
+<script>
+  $('#like-button').click(function() {
+  // 記事のIDを取得
+  var articleId = 123;
+
+  // CSRFトークンを取得
+  var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
+  // Ajaxリクエストを送信
+  $.ajax({
+    url: '/like-article',
+    type: 'POST',
+    data: {
+      'articleId': articleId,
+      '_csrf': csrfToken
+    },
+    success: function(data) {
+      // いいね数を更新
+      var likesCount = $('#likes-count').text();
+      $('#likes-count').text(parseInt(likesCount) + 1);
+    },
+    error: function(xhr, status, error) {
+      // エラー処理
+    }
+  });
+});
+
+</script>
 
 {{end}}
