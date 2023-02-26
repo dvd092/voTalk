@@ -6,7 +6,6 @@ import (
 	"votalk/app/libs"
 	"votalk/app/models"
 
-	"github.com/jinzhu/gorm"
 )
 
 func articles(w http.ResponseWriter, r *http.Request) {
@@ -50,23 +49,23 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 		log.Println(err)
 		http.Redirect(w, r, "/", 302)
 	} else {
-		if s := libs.SecondLastUrl(r.URL.String()); s == "viewer" {
+		if s := libs.GetUTypeFromSess(sess); s == "viewer" {
 			user, err := sess.GetUserBySessionVw()
 			if err != nil {
 				log.Println(err)
 			}
-			arts := models.GetArticle(id)
+			art, err := models.GetArticle(models.DB,id)
 			if err != nil{
 				log.Fatalln(err)
 			}
 			data := struct {
 				User interface{}
 				S string
-				Art *gorm.DB
+				Art models.Article
 			}{
 				user,
 				s,
-				arts,
+				art,
 			}
 			log.Println(data)
 			generateHTML(w, data, "layout", "private_navbar", "article")

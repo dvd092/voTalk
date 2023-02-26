@@ -3,7 +3,6 @@ package models
 import (
 	"log"
 	"time"
-	"votalk/app/libs"
 	// "fmt"
 )
 
@@ -81,7 +80,7 @@ func (u *UserVw) CreateSession(s string) (session Session, err error) {
 		user_type,
 		created_at) values (?,?,?,?,?)`
 
-	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, libs.LastUrltoInt(s), time.Now())
+	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, s, time.Now())
 
 	if err != nil {
 		log.Fatalln(err)

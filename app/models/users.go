@@ -11,7 +11,7 @@ type Session struct {
 	UUID      string
 	Email     string
 	UserId    int
-	UserType  int
+	UserType  string
 	CreatedAt time.Time
 }
 

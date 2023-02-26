@@ -57,9 +57,12 @@ func GetArticles() (arts []Article, err error) {
 	return arts, err
 }
 
-func GetArticle(id int)  (gorm *gorm.DB) {
-	result := db.Where("id = ?", id).Find(&Article{})
-	return result
+func GetArticle(db *gorm.DB,id int)  (art Article, err error) {
+	err = db.Where("id = ?", id).First(&art).Error
+	if err != nil {
+		return Article{},err
+	}
+	return art,nil
 }
 
 /*
