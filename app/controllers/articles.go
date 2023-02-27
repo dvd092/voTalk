@@ -15,8 +15,8 @@ func articles(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		http.Redirect(w, r, "/", 302)
 	} else {
-		if s := libs.SecondLastUrl(r.URL.String()); s == "viewer" {
 			user, err := sess.GetUserBySessionVw()
+			s := libs.GetUTypeFromSess(sess)
 			if err != nil {
 				log.Println(err)
 			}
@@ -34,15 +34,8 @@ func articles(w http.ResponseWriter, r *http.Request) {
 				s,
 				arts,
 			}
-			log.Println(arts[0].ExUser.Name)
 			generateHTML(w, data, "layout", "private_navbar", "articles")
-		} else if s == "expert" {
-			user, err := sess.GetUserBySessionEx()
-			if err != nil {
-				log.Println(err)
-			}
-			generateHTML(w, user, "layout", "private_navbar", "articles")
-		}
+
 	}
 }
 
@@ -52,7 +45,7 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 		log.Println(err)
 		http.Redirect(w, r, "/", 302)
 	} else {
-		if s := libs.GetUTypeFromSess(sess); s == "viewer" {
+		s := libs.GetUTypeFromSess(sess);
 			user, err := sess.GetUserBySessionVw()
 			if err != nil {
 				log.Println(err)
@@ -72,15 +65,7 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 				art,
 			}
 			generateHTML(w, data, "layout", "private_navbar", "article")
-		} else if s == "expert" {
-			user, err := sess.GetUserBySessionEx()
-			if err != nil {
-				log.Println(err)
-			}
-			generateHTML(w, user, "layout", "private_navbar", "articles")
 		}
-	
-	}
 }
 
 func likeButton(w http.ResponseWriter, r *http.Request) {
