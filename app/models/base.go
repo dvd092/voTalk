@@ -26,8 +26,8 @@ const (
 )
 
 func init() {
-	Db, err = sql.Open(config.Config.SQLDriver, "dvd09:rlaekdnlt@tcp(localhost:3306)/ex_po?parseTime=true")
-	 DB, err = gorm.Open("mysql", "dvd09:rlaekdnlt@/ex_po?charset=utf8&parseTime=True&loc=Local")
+	Db, err = sql.Open(config.Config.SQLDriver, "dvd09:@tcp(localhost:3306)/ex_po?parseTime=true")
+	 DB, err = gorm.Open("mysql", "dvd09:@/ex_po?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Fatalln(err)
 	}
