@@ -2,7 +2,6 @@ package libs
 
 import (
 	"strings"
-	"votalk/app/models"
 )
 
 //url->スライス
@@ -62,7 +61,4 @@ func IntToLastUrl(n int) string {
 	return lastarS
 }
 
-// セッションからユーザータイプ取得
-func GetUTypeFromSess(sess models.Session) (string) {
-	return sess.UserType
-}
+
