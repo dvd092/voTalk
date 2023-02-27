@@ -92,7 +92,7 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 			}
 			http.SetCookie(w, &cookie)
 
-			http.Redirect(w, r, "/", 302)
+			http.Redirect(w, r, "/articles", 302)
 		} else {
 			http.Redirect(w, r, "/login", 302)
 			log.Println("パスワードが間違っています")
@@ -117,7 +117,7 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 			}
 			http.SetCookie(w, &cookie)
 
-			http.Redirect(w, r, "/viewer/articles", 302)
+			http.Redirect(w, r, "/articles", 302)
 		} else {
 			http.Redirect(w, r, "/login", 302)
 		}

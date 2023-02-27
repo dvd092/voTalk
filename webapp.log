@@ -6853,3 +6853,15 @@ created by net/http.(*Server).Serve
 2023/02/27 15:52:55 articles.go:37: DAVID KIM
 2023/02/27 15:53:45 articles.go:37: DAVID KIM
 2023/02/27 15:54:35 articles.go:37: DAVID KIM
+2023/02/27 15:55:51 articles.go:37: DAVID KIM
+2023/02/27 15:55:54 articles.go:37: DAVID KIM
+2023/02/27 15:56:00 articles.go:37: DAVID KIM
+2023/02/27 15:58:30 articles.go:37: DAVID KIM
+2023/02/27 15:58:31 articles.go:37: DAVID KIM
+2023/02/27 16:05:32 articles.go:37: DAVID KIM
+2023/02/27 16:05:34 articles.go:37: DAVID KIM
+2023/02/27 16:05:46 articles.go:37: DAVID KIM
+2023/02/27 16:05:56 articles.go:37: DAVID KIM
+2023/02/27 16:06:50 articles.go:37: DAVID KIM
+2023/02/27 16:07:04 articles.go:37: DAVID KIM
+2023/02/27 16:13:02 server.go:23: template: private_navbar.html:5:16: executing "navbar" at <.S>: can't evaluate field S in type models.UserEx

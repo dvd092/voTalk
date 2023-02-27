@@ -77,9 +77,8 @@ func StartMainServer() error {
 	http.HandleFunc("/viewer/matches", index)
 	http.HandleFunc("/viewer/", index)
 	// viewer記事ページ
-	http.HandleFunc("/viewer/articles", articles)
-	// http.HandleFunc("/viewer/article/show", parseURL(article))
-	// http.HandleFunc("/viewer/articles/{id}", article)
+	http.HandleFunc("/articles", articles)
+
 	// viewerマッチページ
 	http.HandleFunc("/viewer/match/new", index)
 	http.HandleFunc("/viewer/match/save", index)
