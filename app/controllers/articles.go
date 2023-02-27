@@ -3,7 +3,6 @@ package controllers
 import (
 	"log"
 	"net/http"
-	"votalk/app/libs"
 	"votalk/app/models"
 	"encoding/json"
 
@@ -15,8 +14,20 @@ func articles(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 		http.Redirect(w, r, "/", 302)
 	} else {
-			user, err := sess.GetUserBySessionVw()
-			s := libs.GetUTypeFromSess(sess)
+		var user interface{}
+		// ユーザータイプ別にセッションから情報取得
+		if sess.UserType == "expert" {
+			user, err = sess.GetUserBySessionEx()
+			if err != nil {
+				log.Fatalln(err,user)
+			}
+		} else if sess.UserType == "viewer" {
+			user, err = sess.GetUserBySessionVw()
+			if err != nil {
+				log.Fatalln(err,user)
+			}
+		}
+
 			if err != nil {
 				log.Println(err)
 			}
@@ -31,7 +42,7 @@ func articles(w http.ResponseWriter, r *http.Request) {
 				Art []models.Article
 			}{
 				user,
-				s,
+				sess.UserType,
 				arts,
 			}
 			generateHTML(w, data, "layout", "private_navbar", "articles")
@@ -45,8 +56,19 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 		log.Println(err)
 		http.Redirect(w, r, "/", 302)
 	} else {
-		s := libs.GetUTypeFromSess(sess);
-			user, err := sess.GetUserBySessionVw()
+		var user interface{}
+		// ユーザータイプ別にセッションから情報取得
+		if sess.UserType == "expert" {
+			user, err = sess.GetUserBySessionEx()
+			if err != nil {
+				log.Fatalln(err,user)
+			}
+		} else if sess.UserType == "viewer" {
+			user, err = sess.GetUserBySessionVw()
+			if err != nil {
+				log.Fatalln(err,user)
+			}
+		}
 			if err != nil {
 				log.Println(err)
 			}
@@ -61,7 +83,7 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 				Art models.Article
 			}{
 				user,
-				s,
+				sess.UserType,
 				art,
 			}
 			generateHTML(w, data, "layout", "private_navbar", "article")

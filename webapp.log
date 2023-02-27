@@ -6865,3 +6865,16 @@ created by net/http.(*Server).Serve
 2023/02/27 16:06:50 articles.go:37: DAVID KIM
 2023/02/27 16:07:04 articles.go:37: DAVID KIM
 2023/02/27 16:13:02 server.go:23: template: private_navbar.html:5:16: executing "navbar" at <.S>: can't evaluate field S in type models.UserEx
+2023/02/27 17:09:33 articles.go:19: sess.UserType
+2023/02/27 17:09:44 articles.go:19: expert
+2023/02/27 17:11:31 articles.go:21: {2 0db1bb0d-b0da-11ed-a686-a46bb645bf1a DAVID KIM kim@flying-h.co.jp  2023-02-20 04:50:09 +0000 UTC}
+2023/02/27 17:11:57 articles.go:25: {2 16ec2a9f-b413-11ed-8beb-a46bb645bf1a ともや tomo@flying-h.co.jp  0 2023-02-24 07:16:00 +0000 UTC}
+2023/02/27 17:13:05 articles.go:30: <nil>
+2023/02/27 17:13:05 server.go:23: template: private_navbar.html:7:39: executing "navbar" at <.User.Name>: nil pointer evaluating interface {}.Name
+2023/02/27 17:13:29 articles.go:30: {2 0db1bb0d-b0da-11ed-a686-a46bb645bf1a DAVID KIM kim@flying-h.co.jp  2023-02-20 04:50:09 +0000 UTC}
+2023/02/27 17:13:32 articles.go:30: {2 0db1bb0d-b0da-11ed-a686-a46bb645bf1a DAVID KIM kim@flying-h.co.jp  2023-02-20 04:50:09 +0000 UTC}
+2023/02/27 17:13:44 articles.go:30: {2 0db1bb0d-b0da-11ed-a686-a46bb645bf1a DAVID KIM kim@flying-h.co.jp  2023-02-20 04:50:09 +0000 UTC}
+2023/02/27 17:13:46 articles.go:30: {2 0db1bb0d-b0da-11ed-a686-a46bb645bf1a DAVID KIM kim@flying-h.co.jp  2023-02-20 04:50:09 +0000 UTC}
+2023/02/27 17:17:35 articles.go:30: {2 0db1bb0d-b0da-11ed-a686-a46bb645bf1a DAVID KIM kim@flying-h.co.jp  2023-02-20 04:50:09 +0000 UTC}
+2023/02/27 17:17:48 articles.go:30: {2 0db1bb0d-b0da-11ed-a686-a46bb645bf1a DAVID KIM kim@flying-h.co.jp  2023-02-20 04:50:09 +0000 UTC}
+2023/02/27 17:21:16 server.go:23: template: article.html:17:27: executing "content" at <.User.LikeNum>: can't evaluate field LikeNum in type interface {}

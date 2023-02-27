@@ -14,7 +14,7 @@
   </div>
   {{ if and (eq .S "viewer") (.User.LikeNum)}}
   <button type="button" class="btn btn-outline-primary" id="like-button" value="{{ .Art.Likes }}">いいね {{ .Art.Likes }}</button>
-  {{ else if and (not .User.LikeNum)  (eq .S "viewer")}}
+  {{ else if and (eq .S "viewer") (not .User.LikeNum)  }}
   <button type="button" class="btn btn-dark disabled" id="disabled-like-button" value="{{ .Art.Likes }}">本日いいね済み</button>
   {{ end }}
 </div>

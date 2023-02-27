@@ -141,12 +141,12 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 func (sess *Session) GetUserBySessionEx() (user UserEx, err error) {
 	user = UserEx{}
 	cmd := `select id, uuid, name, email, created_at from ex_users where id = ?`
-	err = Db.QueryRow(cmd,sess.UserId).Scan(
+	err = Db.QueryRow(cmd, sess.UserId).Scan(
 		&user.ID,
-    &user.UUID,
-    &user.Name,
-    &user.Email,
-    &user.CreatedAt)
+		&user.UUID,
+		&user.Name,
+		&user.Email,
+		&user.CreatedAt)
 
-		return user, err
+	return user, err
 }
