@@ -109,3 +109,7 @@ func likeButton(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(response)
 	}
 }
+
+func myArticles(w http.ResponseWriter, r *http.Request) {
+	generateHTML(w, nil, "layout", "private_navbar", "my_articles")
+}
