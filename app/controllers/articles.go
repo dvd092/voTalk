@@ -21,6 +21,7 @@ func articles(w http.ResponseWriter, r *http.Request) {
 				log.Println(err)
 			}
 			arts,err := models.GetArticles()
+			models.DB.Preload("ExUser").Find(&arts)
 			if err != nil{
 				log.Fatalln(err)
 			}
@@ -33,7 +34,7 @@ func articles(w http.ResponseWriter, r *http.Request) {
 				s,
 				arts,
 			}
-			log.Println(arts[0].UserEx.Name)
+			log.Println(arts[0].ExUser.Name)
 			generateHTML(w, data, "layout", "private_navbar", "articles")
 		} else if s == "expert" {
 			user, err := sess.GetUserBySessionEx()
@@ -57,6 +58,7 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 				log.Println(err)
 			}
 			art, err := models.GetArticle(models.DB,id)
+			models.DB.Preload("ExUser").First(&art)
 			if err != nil{
 				log.Fatalln(err)
 			}

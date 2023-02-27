@@ -21,8 +21,9 @@ type Article struct {
 	CreatedAt	time.Time
 
 	// リレーション
-	UserEx UserEx
+	ExUser UserEx `gorm:"foreignKey:UserExID"`
 }
+
 
 // func (u *User) CreateTodo(content string) (err error) {
 // 	cmd := `insert into todos (content, user_id, created_at) values(?, ?, ?)`

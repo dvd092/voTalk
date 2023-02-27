@@ -17,7 +17,6 @@
   </thead>
   <tbody>
     <tr>
-      
   {{ range $i, $v := .Art }}
   
   <td>
@@ -26,7 +25,7 @@
     {{ end }}
     <a href="/article/show/{{.ID}}">{{ .Title }}</a></td>
   <td>{{ .CategoryId }}</td>
-  <td>{{ .UserExID }}</td>
+  <td>{{ .ExUser.Name }}</td>
   <td>{{ .Likes }}</td>
 </tr>
 {{end}}
