@@ -3,7 +3,7 @@
     <a href="/logout">ログアウト</a>
     <a href="/articles">記事一覧</a>
     {{ if eq .S "expert"}}
-    <a href="/articles/mine">マイ記事</a>
+    <a href="/{{.S}}/articles/mine">マイ記事</a>
     {{ end }}
     <a href="/{{.S}}/mypage">マイページ</a>
     <h2 class="text-right">
