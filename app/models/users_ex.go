@@ -7,7 +7,7 @@ import (
 )
 
 type UserEx struct {
-	ID        int
+	ID        int    `gorm:"primaryKey"`
 	UUID      string
 	Name      string
 	Email     string
@@ -15,6 +15,10 @@ type UserEx struct {
 	CreatedAt time.Time
 }
 
+// UserExテーブル名を設定する
+func (UserEx) TableName() string {
+	return "ex_users"
+}
 
 //エキスパート登録
 func (u *UserEx) CreateUser() (err error) {

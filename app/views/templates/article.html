@@ -6,7 +6,7 @@
           <input type="hidden" id="articleId" value="{{ .Art.ID }}">
           <input type="hidden" id="userId" value="{{ .User.ID }}">
           <h1 class="my-4">{{ .Art.Title }}</h1>
-          <p><strong>著者:</strong> {{ .Art.UserExID }}</p>
+          <p><strong>著者:</strong> {{ .Art.ExUser.Name }}</p>
           <p><strong>投稿日:</strong> {{ .Art.CreatedAt }}</p>
           <hr>
           <p>{{ .Art.Plot }}</p>
