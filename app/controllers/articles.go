@@ -1,11 +1,10 @@
 package controllers
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 	"votalk/app/models"
-	"encoding/json"
-
 )
 
 func articles(w http.ResponseWriter, r *http.Request) {
@@ -72,7 +71,7 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 			if err != nil {
 				log.Println(err)
 			}
-			art, err := models.GetArticle(models.DB,id)
+			art, err := models.GetArticle(id)
 			models.DB.Preload("ExUser").First(&art)
 			if err != nil{
 				log.Fatalln(err)
@@ -111,5 +110,30 @@ func likeButton(w http.ResponseWriter, r *http.Request) {
 }
 
 func myArticles(w http.ResponseWriter, r *http.Request) {
-	generateHTML(w, nil, "layout", "private_navbar", "my_articles")
+	sess, err := session(w, r)
+	if err != nil {
+		log.Println(err)
+		http.Redirect(w, r, "/", 302)
+	} else {
+		var user interface{}
+		// ユーザータイプ別にセッションから情報取得
+			user, err = sess.GetUserBySessionEx()
+			if err != nil {
+				log.Fatalln(err,user)
+			}
+			arts,err := models.GetArticlesByUser(sess.UserId)
+			if err != nil {
+				log.Fatalln(err,arts)
+			}
+			data := struct {
+				User interface{}
+				S string
+				Art []models.Article
+			}{
+				user,
+				sess.UserType,
+				arts,
+			}
+			generateHTML(w, data, "layout", "private_navbar", "my_articles")
+		}
 }
