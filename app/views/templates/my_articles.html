@@ -1,3 +1,32 @@
 {{ define "content" }}
-myarticles
+<h2 class="p-4">マイ記事一覧</h2>
+<div class="text-right">
+  <a href="/expert/article/new">
+<button type="button" class="m-2 btn btn-success">投稿✙</button>
+</a>
+</div>
+<div class="table-responsive">
+  <table class="table-success table-striped table-hover col-12 text-nowrap" >
+    <thead>
+        <tr>
+            <th>タイトル</th>
+            <th>カテゴリ</th>
+            <th>いいね</th>
+            <th>投稿日</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+    {{ range $i, $v := .Art }}
+    
+    <td>
+      <a href="/article/show/{{.ID}}">{{ .Title }}</a></td>
+    <td>{{ .CategoryId }}</td>
+    <td>{{ .Likes }}</td>
+    <td>{{ .CreatedAt }}</td>
+  </tr>
+  {{end}}
+  </tbody>
+  </table>
+  </div>
 {{ end }}

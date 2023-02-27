@@ -7,13 +7,16 @@
     <title>voTalk</title>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" href="/static/css/form.css">
-    <link rel="stylesheet" href="/static/css/article.css">
+    <link rel="stylesheet" href="/static/css/body.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/ee8bc9c382.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     {{template "navbar" .}}
-    <h1 class="text-center">voTalk</h1>
+    <h1 class="text-center pt-2 title">voTalk</h1>
     <div class="container text-center">
         {{template "content" . }}
     </div>
