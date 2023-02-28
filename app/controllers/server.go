@@ -71,6 +71,8 @@ func StartMainServer() error {
 	http.HandleFunc("/expert/mypage", mypage)
 	http.HandleFunc("/expert/articles", index)
 	http.HandleFunc("/expert/articles/mine", myArticles)
+	// expert記事作成
+	http.HandleFunc("/expert/article/new", newArticles)
 	// viewerページ
 	http.HandleFunc("/viewer/index", index)
 	http.HandleFunc("/viewer/mypage", mypage)

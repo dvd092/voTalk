@@ -137,3 +137,24 @@ func myArticles(w http.ResponseWriter, r *http.Request) {
 			generateHTML(w, data, "layout", "private_navbar", "my_articles")
 		}
 }
+
+func newArticles(w http.ResponseWriter, r *http.Request) {
+	sess, err := session(w, r)
+	if err != nil {
+		log.Println(err)
+		http.Redirect(w, r, "/", 302)
+	} else {
+			user, err := sess.GetUserBySessionEx()
+			if err != nil {
+				log.Fatalln(err,user)
+			}
+			data := struct {
+				User interface{}
+				S string
+			}{
+				user,
+				sess.UserType,
+			}
+	generateHTML(w, data, "layout", "private_navbar", "article_new")
+		}
+}
