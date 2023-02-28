@@ -1,11 +1,11 @@
 {{ define "navbar"}}
 <div class="container">
-    <a href="/logout">ログアウト</a>
-    <a href="/articles">記事ランキング</a>
+    <a class="btn btn-danger" href="/logout">ログアウト</a>
+    <a class="btn btn-info" href="/articles">記事ランキング</a>
     {{ if eq .S "expert"}}
-    <a href="/{{.S}}/articles/mine">マイ記事</a>
+    <a class="btn btn-warning" href="/{{.S}}/articles/mine">マイ記事</a>
     {{ end }}
-    <a href="/{{.S}}/mypage">マイページ</a>
+    <a class="btn btn-light" href="/{{.S}}/mypage">基本情報</a>
     <h2 class="text-right">
           ようこそ、{{.S}} {{.User.Name}}さん
       </h2>
