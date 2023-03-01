@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"html/template"
 	"votalk/app/models"
 )
 
@@ -163,14 +164,53 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 		}
 		art := models.Article{
 			Title : r.FormValue("title"),
-			Plot : r.FormValue("text"),
+			Plot : template.HTML(r.FormValue("text")),
 			CategoryId : 1,
 			UserExID : sess.UserId,
 			Likes: 0,
 	}
-	log.Println(art)
 	models.DB.Create(&art)
 		
 	http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
 }
+}
+
+func deleteArticle(w http.ResponseWriter, r *http.Request, id int) {
+	var art models.Article
+	models.DB.Where("id = ?", id).First(&art)
+	models.DB.Delete(art)
+	http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
+}
+
+
+func editArticle(w http.ResponseWriter, r *http.Request, id int) {
+	switch r.Method{
+	case http.MethodGet:
+		sess, err := session(w, r)
+		if err != nil {
+			log.Println(err)
+			http.Redirect(w, r, "/", http.StatusFound)
+		} else {
+				art,err := models.GetArticle(id)
+				if err != nil {
+					log.Fatalln(err)
+				} 
+				user, err := sess.GetUserBySessionEx()
+				if err != nil {
+					log.Fatalln(err,user)
+				}
+				data := struct {
+					User interface{}
+					S string
+					Art models.Article
+				}{
+					user,
+					sess.UserType,
+					art,
+				}
+		generateHTML(w, data, "layout", "private_navbar", "article_new")
+			}
+	}
+
+	
 }

@@ -1,5 +1,35 @@
 {{ define "content" }}
 
+{{ if .Art }}
+<h1 class="mt-5">記事編集</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-11">
+      <form action="/expert/article/edit" method="PUT">
+        <div class="form-group text-center">
+          <input type="text" name="title" class="form-control" value={{ .Art.Title }} />
+        </div>
+        <div class="form-group text-left">
+          <select class="form-select" name="CategoryId" aria-label="Default select example">
+            <option selected>カテゴリを選択</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      <div class="form-group text-center">
+        <div id="editor" class="form-control" style="height: 400px">{{ .Art.Plot }}</div>
+        <input type="hidden" name="text" id="hiddenInput">
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary">確定する</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+{{ else }}
 <h1 class="mt-5">新規投稿</h1>
 
 <div class="container">
@@ -28,5 +58,9 @@
     </div>
   </div>
 </div>
+{{ end }}
+
+
+
 
 {{ end }}

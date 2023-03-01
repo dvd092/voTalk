@@ -5,6 +5,7 @@ import (
 	// "fmt"
 	// "log"
 	"time"
+	"html/template"
 	// "net/http"
 	// gorm mysql
 )
@@ -14,7 +15,7 @@ type Article struct {
 	UserExID int
 	CategoryId int
 	Title string
-	Plot string
+	Plot template.HTML
 	Likes int
 	CreatedAt	time.Time
 
@@ -33,6 +34,8 @@ func GetArticle(id int)  (art Article, err error) {
 	if err != nil {
 		return Article{},err
 	}
+
+	art.Plot = template.HTML(art.Plot)
 	return art,nil
 }
 

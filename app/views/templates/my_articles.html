@@ -24,6 +24,14 @@
     <td>{{ .CategoryId }}</td>
     <td>{{ .Likes }}</td>
     <td>{{ .CreatedAt }}</td>
+    <td>
+      <a href="/article/edit/{{.ID}}">
+        <button type="button" class="btn btn-primary btn-sm">編集</button>
+      </a>
+      <a href="/article/delete/{{.ID}}">
+        <button type="button" class="btn btn-danger btn-sm">削除</button>
+      </a>
+    </td>
   </tr>
   {{end}}
   </tbody>
