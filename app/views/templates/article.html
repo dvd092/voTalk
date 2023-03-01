@@ -9,7 +9,7 @@
           <p><strong>著者:</strong> {{ .Art.ExUser.Name }}</p>
           <p><strong>投稿日:</strong> {{ .Art.CreatedAt }}</p>
           <hr>
-          <p>{{ .Art.Plot }}</p>
+          <textarea>{{ .Art.Plot }}</textarea>
       </div>
   </div>
   {{ if and (eq .S "viewer") (.User.LikeNum)}}
