@@ -26,12 +26,8 @@ func articles(w http.ResponseWriter, r *http.Request) {
 				log.Fatalln(err,user)
 			}
 		}
-
-			if err != nil {
-				log.Println(err)
-			}
 			arts,err := models.GetArticles()
-			models.DB.Preload("ExUser").Find(&arts)
+			models.DB.Preload("ExUser").Order("likes desc").Find(&arts)
 			if err != nil{
 				log.Fatalln(err)
 			}
@@ -139,6 +135,9 @@ func myArticles(w http.ResponseWriter, r *http.Request) {
 }
 
 func newArticles(w http.ResponseWriter, r *http.Request) {
+	
+	switch r.Method {
+	case http.MethodGet:
 	sess, err := session(w, r)
 	if err != nil {
 		log.Println(err)
@@ -157,4 +156,21 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 			}
 	generateHTML(w, data, "layout", "private_navbar", "article_new")
 		}
+	case http.MethodPost:
+		sess,err := session(w, r)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		art := models.Article{
+			Title : r.FormValue("title"),
+			Plot : r.FormValue("text"),
+			CategoryId : 1,
+			UserExID : sess.UserId,
+			Likes: 0,
+	}
+	log.Println(art)
+	models.DB.Create(&art)
+		
+	http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
+}
 }
