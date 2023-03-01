@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"html/template"
 	"votalk/app/models"
+	"strconv"
 )
 
 func articles(w http.ResponseWriter, r *http.Request) {
@@ -162,10 +163,11 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatalln(err)
 		}
+		categoryId,err := strconv.Atoi(r.FormValue("categoryId"))
 		art := models.Article{
 			Title : r.FormValue("title"),
 			Plot : template.HTML(r.FormValue("text")),
-			CategoryId : 1,
+			CategoryId : categoryId,
 			UserExID : sess.UserId,
 			Likes: 0,
 	}
@@ -210,7 +212,20 @@ func editArticle(w http.ResponseWriter, r *http.Request, id int) {
 				}
 		generateHTML(w, data, "layout", "private_navbar", "article_new")
 			}
+		case http.MethodPost:
+			id := r.FormValue("id")
+			title := r.FormValue("title")
+			categoryId,err := strconv.Atoi(r.FormValue("categoryId"))
+				if err != nil {
+					log.Printf(err.Error())
+				}
+			
+			Plot := template.HTML(r.FormValue("text"))
+			models.DB.Table("articles").Where("id = ?",id).Updates(models.Article{Title: title, Plot: Plot, CategoryId: categoryId})
+			
+			http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
 	}
+	
 
 	
 }
