@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"html/template"
 	"votalk/app/models"
 )
 
@@ -163,14 +164,30 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 		}
 		art := models.Article{
 			Title : r.FormValue("title"),
-			Plot : r.FormValue("text"),
+			Plot : template.HTML(r.FormValue("text")),
 			CategoryId : 1,
 			UserExID : sess.UserId,
 			Likes: 0,
 	}
-	log.Println(art)
 	models.DB.Create(&art)
 		
 	http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
 }
+}
+
+func deleteArticle(w http.ResponseWriter, r *http.Request, id int) {
+	var art models.Article
+	models.DB.Where("id = ?", id).First(&art)
+	models.DB.Delete(art)
+	http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
+}
+
+
+func editArticle(w http.ResponseWriter, r *http.Request, id int) {
+	switch r.Method{
+	case http.MethodGet:
+		generateHTML(w, data, "layout", "private_navbar", "article_new")
+	}
+
+	
 }
