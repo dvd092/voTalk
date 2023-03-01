@@ -186,7 +186,30 @@ func deleteArticle(w http.ResponseWriter, r *http.Request, id int) {
 func editArticle(w http.ResponseWriter, r *http.Request, id int) {
 	switch r.Method{
 	case http.MethodGet:
+		sess, err := session(w, r)
+		if err != nil {
+			log.Println(err)
+			http.Redirect(w, r, "/", http.StatusFound)
+		} else {
+				art,err := models.GetArticle(id)
+				if err != nil {
+					log.Fatalln(err)
+				} 
+				user, err := sess.GetUserBySessionEx()
+				if err != nil {
+					log.Fatalln(err,user)
+				}
+				data := struct {
+					User interface{}
+					S string
+					Art models.Article
+				}{
+					user,
+					sess.UserType,
+					art,
+				}
 		generateHTML(w, data, "layout", "private_navbar", "article_new")
+			}
 	}
 
 	
