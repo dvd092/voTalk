@@ -1,5 +1,15 @@
 {{ define "content" }}
 <h2 class="p-4">マイ記事一覧</h2>
+<div class="row">
+  <div class="form-group text-lef col-3">
+    <select class="form-select" name="CategoryId" aria-label="Default select example">
+      <option selected>カテゴリから絞り込む</option>
+      {{ range $i,$v := .Category }}
+      <option value={{.ID}}>{{.Name}}</option>
+      {{ end }}
+    </select>
+  </div>
+  </div>
 <div class="text-right">
   <a href="/expert/article/new">
 <button type="button" class="m-2 btn btn-success">投稿✙</button>

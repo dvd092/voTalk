@@ -29,6 +29,7 @@ func articles(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 			arts,err := models.GetArticles()
+			categories := models.AllCategories()
 			models.DB.Preload("ExUser").Preload("Category").Order("likes desc").Find(&arts)
 			if err != nil{
 				log.Fatalln(err)
@@ -37,10 +38,13 @@ func articles(w http.ResponseWriter, r *http.Request) {
 				User interface{}
 				S string
 				Art []models.Article
+				Category []models.Category
+
 			}{
 				user,
 				sess.UserType,
 				arts,
+				categories,
 			}
 			generateHTML(w, data, "layout", "private_navbar", "articles")
 
@@ -113,6 +117,7 @@ func myArticles(w http.ResponseWriter, r *http.Request) {
 		var user interface{}
 		// ユーザータイプ別にセッションから情報取得
 			user, err = sess.GetUserBySessionEx()
+			categories := models.AllCategories()
 			if err != nil {
 				log.Fatalln(err,user)
 			}
@@ -124,10 +129,12 @@ func myArticles(w http.ResponseWriter, r *http.Request) {
 				User interface{}
 				S string
 				Art []models.Article
+				Category []models.Category
 			}{
 				user,
 				sess.UserType,
 				arts,
+				categories,
 			}
 			generateHTML(w, data, "layout", "private_navbar", "my_articles")
 		}

@@ -1,10 +1,16 @@
 {{ define "content" }}
 
 <h1>記事一覧</h1>
- 
-<p>[<a href="/voTalk/new">Create</a>]</p>
-<hr>
- 
+<div class="row">
+<div class="form-group text-lef col-3">
+  <select class="form-select" name="CategoryId" aria-label="Default select example">
+    <option selected>カテゴリから絞り込む</option>
+    {{ range $i,$v := .Category }}
+    <option value={{.ID}}>{{.Name}}</option>
+    {{ end }}
+  </select>
+</div>
+</div>
 <div class="table-responsive">
 <table class="table-success table-striped table-hover col-12 text-nowrap" >
   <thead>

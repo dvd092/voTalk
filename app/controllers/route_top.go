@@ -12,7 +12,7 @@ func top(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		generateHTML(w, nil, "layout", "public_navbar", "top")
 	} else {
-		http.Redirect(w, r, fmt.Sprintf("/%s/index", s.UserType), 302)
+		http.Redirect(w, r, fmt.Sprintf("/%s/mypage", s.UserType), 302)
 	}
 }
 
