@@ -21,6 +21,7 @@ type Article struct {
 
 	// リレーション
 	ExUser UserEx `gorm:"foreignKey:UserExID"`
+	Category Category `gorm:"foreignKey:CategoryId"`
 }
 
 
@@ -40,7 +41,7 @@ func GetArticle(id int)  (art Article, err error) {
 }
 
 func GetArticlesByUser(userId int) (arts []Article, err error) {
-	err = DB.Where("user_ex_id = ?", userId).Find(&arts).Error
+	err = DB.Where("user_ex_id = ?", userId).Preload("Category").Find(&arts).Error
 	if err != nil {
 		return []Article{},err
 	}

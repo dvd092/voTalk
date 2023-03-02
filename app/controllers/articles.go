@@ -29,7 +29,7 @@ func articles(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 			arts,err := models.GetArticles()
-			models.DB.Preload("ExUser").Order("likes desc").Find(&arts)
+			models.DB.Preload("ExUser").Preload("Category").Order("likes desc").Find(&arts)
 			if err != nil{
 				log.Fatalln(err)
 			}
@@ -66,11 +66,8 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 				log.Fatalln(err,user)
 			}
 		}
-			if err != nil {
-				log.Println(err)
-			}
 			art, err := models.GetArticle(id)
-			models.DB.Preload("ExUser").First(&art)
+			models.DB.Preload("ExUser").Preload("Category").First(&art)
 			if err != nil{
 				log.Fatalln(err)
 			}
@@ -146,15 +143,18 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/", 302)
 	} else {
 			user, err := sess.GetUserBySessionEx()
+			categories := models.AllCategories()
 			if err != nil {
 				log.Fatalln(err,user)
 			}
 			data := struct {
 				User interface{}
 				S string
+				Category []models.Category
 			}{
 				user,
 				sess.UserType,
+				categories,
 			}
 	generateHTML(w, data, "layout", "private_navbar", "article_new")
 		}
@@ -163,7 +163,7 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			log.Fatalln(err)
 		}
-		categoryId,err := strconv.Atoi(r.FormValue("categoryId"))
+		categoryId,err := strconv.Atoi(r.FormValue("CategoryId"))
 		art := models.Article{
 			Title : r.FormValue("title"),
 			Plot : template.HTML(r.FormValue("text")),
@@ -172,7 +172,6 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 			Likes: 0,
 	}
 	models.DB.Create(&art)
-		
 	http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
 }
 }
@@ -198,6 +197,7 @@ func editArticle(w http.ResponseWriter, r *http.Request, id int) {
 					log.Fatalln(err)
 				} 
 				user, err := sess.GetUserBySessionEx()
+				categories := models.AllCategories()
 				if err != nil {
 					log.Fatalln(err,user)
 				}
@@ -205,12 +205,14 @@ func editArticle(w http.ResponseWriter, r *http.Request, id int) {
 					User interface{}
 					S string
 					Art models.Article
+					Category []models.Category
 				}{
 					user,
 					sess.UserType,
 					art,
+					categories,
 				}
-		generateHTML(w, data, "layout", "private_navbar", "article_new")
+		generateHTML(w, data, "layout", "private_navbar", "article_edit")
 			}
 		case http.MethodPost:
 			id := r.FormValue("id")
