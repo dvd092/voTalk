@@ -4,16 +4,16 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11">
-      <form action="/article/edit/{{ .Art.ID }}" method="POST">
+      <form action="/article/edit/{{ .Art.ID }}" method="POST" id="editForm">
         <input type="hidden" name="id" value="{{ .Art.ID }}" />
         <div class="form-group text-center">
           <input
             type="text"
             name="title"
             class="form-control"
-            value="{{"
+            value="{{
             .Art.Title
-            }}
+            }}"
           />
         </div>
         <div class="form-group text-left">
@@ -37,11 +37,55 @@
           <input type="hidden" name="text" id="hiddenInput" />
         </div>
         <div class="form-group text-center">
-          <button type="submit" class="btn btn-primary">確定する</button>
+          <button type="button" class="btn btn-primary" id="submitBtn">確定する</button>
         </div>
+<!-- モーダルhtml -->
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">確認</h5>
+
+              </div>
+              <div class="modal-body">
+                記事の編集を確定しますか？
+              </div>
+              <div class="modal-footer">
+                <button type="button" id="close" class="btn btn-secondary" data-dismiss="modal">いいえ</button>
+                <button type="button" class="btn btn-primary" id="confirmBtn">はい</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </form>
     </div>
   </div>
 </div>
+
+<!-- モーダル処理 -->
+
+
+<script>
+  $(document).ready(function(){
+    // 確認ダイアログを表示する関数
+    function confirmModal() {
+      $('#confirmModal').modal('show'); // モーダルを表示
+      $('#confirmBtn').on('click', function () { // 確定ボタンがクリックされたら
+        $('#editForm').submit(); // フォームを送信
+      });
+    }
+    
+    // 確定ボタンがクリックされたら
+    $('#submitBtn').on('click', function (event) {
+      event.preventDefault(); // デフォルトの動作をキャンセル
+      confirmModal(); // 確認ダイアログを表示
+    });
+    $('#close').on('click', function (event) {
+      $('#confirmModal').modal('hide');
+    });
+    
+  });
+  </script>
 
 {{ end }}

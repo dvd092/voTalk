@@ -94,7 +94,7 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 
 			http.Redirect(w, r, "/articles", 302)
 		} else {
-			http.Redirect(w, r, "/login", 302)
+			http.Redirect(w, r, "/login/expert", 302)
 			log.Println("パスワードが間違っています")
 		}
 		//ビューワー処理
@@ -102,7 +102,7 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 		user, err := models.GetUserByEmailVw(r.PostFormValue("email"), s)
 		if err != nil {
 			log.Println(err)
-			http.Redirect(w, r, "/login", 302)
+			http.Redirect(w, r, "/login/viewer", 302)
 		}
 		if user.Password == models.Encrypt(r.PostFormValue("password")) {
 			session, err := user.CreateSession(s)
@@ -119,7 +119,8 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 
 			http.Redirect(w, r, "/articles", 302)
 		} else {
-			http.Redirect(w, r, "/login", 302)
+			http.Redirect(w, r, "/login/viewer", 302)
+			log.Println("パスワードが間違っています")
 		}
 	}
 }

@@ -16,6 +16,10 @@ type UserVw struct {
 	CreatedAt time.Time
 }
 
+func (UserVw) TableName() string {
+	return "vw_users"
+}
+
 //ビューワー登録
 func (u *UserVw) CreateUser() (err error) {
 	cmd := `insert into vw_users (
@@ -34,30 +38,6 @@ func (u *UserVw) CreateUser() (err error) {
 	return err
 }
 
-// func GetUser(id int) (user UserEx, err error) {
-// 	user = UserEx{}
-// 	cmd := `select id, uuid, name, email, password, created_at from users where id = ?`
-// 	err = Db.QueryRow(cmd, id).Scan(&user.ID, &user.UUID, &user.Name, &user.Email, &user.Password, &user.CreatedAt)
-// 	return user,err
-// }
-
-// func (u *UserEx) UpdateUser() (err error) {
-// 	cmd := `update users set name =?, email =? where id =?`
-//   _, err = Db.Exec(cmd, u.Name, u.Email, u.ID)
-// 	if err!= nil {
-//     log.Fatalln(err)
-// 	}
-// 	return err
-// }
-
-// func (u *UserEx) DeleteUser() (err error) {
-// 	cmd := `delete from users where id =?`
-//   _, err = Db.Exec(cmd, u.ID)
-//   if err!= nil {
-//     log.Fatalln(err)
-//   }
-// 	return err
-// }
 
 func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 	user = UserVw{}
