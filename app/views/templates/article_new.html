@@ -7,24 +7,33 @@
     <div class="col-11">
       <form action="/expert/article/new" method="POST">
         <div class="form-group text-center">
-          <input type="text" name="title" class="form-control" placeholder="記事タイトル" />
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            placeholder="記事タイトル"
+          />
         </div>
         <div class="form-group text-left">
-          <select class="form-select" name="CategoryId" aria-label="Default select example">
+          <select
+            class="form-select"
+            name="CategoryId"
+            aria-label="Default select example"
+          >
             <option selected>カテゴリを選択</option>
             {{ range $i,$v := .Category }}
-            <option value={{.ID}}>{{.Name}}</option>
+            <option value="{{.ID}}">{{.Name}}</option>
             {{ end }}
           </select>
         </div>
-      <div class="form-group text-center">
-        <div id="editor" class="form-control" style="height: 400px"></div>
-        <input type="hidden" name="text" id="hiddenInput">
-      </div>
-      <div class="form-group text-center">
-        <button type="submit" class="btn btn-primary">投稿する</button>
-      </div>
-    </form>
+        <div class="form-group text-center">
+          <div id="editor" class="form-control" style="height: 400px"></div>
+          <input type="hidden" name="text" id="hiddenInput" />
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">投稿する</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

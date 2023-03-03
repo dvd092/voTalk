@@ -3,12 +3,14 @@
 <h1>記事一覧</h1>
 <div class="row">
 <div class="form-group text-lef col-3">
-  <select class="form-select" name="CategoryId" aria-label="Default select example">
+  <form method="post" action="/articles" id="categoryForm">
+  <select class="form-select" name="CategoryId" id="categoryId" onchange="document.getElementById('categoryForm').submit()" aria-label="Default select example">
     <option selected>カテゴリから絞り込む</option>
     {{ range $i,$v := .Category }}
     <option value={{.ID}}>{{.Name}}</option>
     {{ end }}
   </select>
+  </form>
 </div>
 </div>
 <div class="table-responsive">
@@ -40,5 +42,15 @@
 </div>
 <hr>
 
-
+<!-- <script>
+  var $j = jQuery.noConflict();
+$j(document).ready(function() {
+  $j('#categoryId').on('change', function() {
+    console.log($j(this).val())
+    $j.post('/articles', {CategoryId: $j(this).val()}, function(data) {
+      console.log(data)
+    });
+  });
+});
+</script> -->
 {{end}}

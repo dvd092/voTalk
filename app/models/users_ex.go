@@ -7,7 +7,7 @@ import (
 )
 
 type UserEx struct {
-	ID        int    `gorm:"primaryKey"`
+	ID        int `gorm:"primaryKey"`
 	UUID      string
 	Name      string
 	Email     string
