@@ -2,17 +2,14 @@ package models
 
 import "log"
 
-
-
 type Category struct {
-	ID int
+	ID   int
 	Name string
-
 }
 
 // 基本データ追加
 func InsertCategory() error {
-	
+
 	var categories = []Category{}
 	categories = []Category{
 		{ID: 4, Name: "スポーツ"},
@@ -44,15 +41,14 @@ func InsertCategory() error {
 		{ID: 30, Name: "宗教"},
 	}
 	log.Println(&categories)
-	for _,v := range categories {
+	for _, v := range categories {
 		DB.Table("categories").Create(v)
 	}
 	return nil
 }
 
-
 // 全データ取得
-func AllCategories() []Category{
+func AllCategories() []Category {
 	categories := []Category{}
 	err := DB.Find(&categories).Error
 	if err != nil {
