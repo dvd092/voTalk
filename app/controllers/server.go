@@ -16,7 +16,7 @@ func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) 
 	for _, file := range filenames {
 		files = append(files, fmt.Sprintf("app/views/templates/%s.html", file))
 	}
-	
+
 	templates := template.Must(template.ParseFiles(files...))
 	err := templates.ExecuteTemplate(w, "layout", data)
 	if err != nil {
@@ -69,24 +69,24 @@ func StartMainServer() error {
 	// expertページ
 	http.HandleFunc("/expert/index", index) //記事一覧
 	http.HandleFunc("/expert/mypage", mypage)
-	http.HandleFunc("/expert/articles", index)
+	http.HandleFunc("/expert/delete", deleteUser)
 	http.HandleFunc("/expert/articles/mine", myArticles)
 	// expert記事作成
 	http.HandleFunc("/expert/article/new", newArticles)
 	// viewerページ
 	http.HandleFunc("/viewer/index", index)
 	http.HandleFunc("/viewer/mypage", mypage)
+	http.HandleFunc("/viewer/delete", deleteUser)
 	// viewer機能ページ
-	http.HandleFunc("/viewer/matches", index)
-	http.HandleFunc("/viewer/", index)
+	// http.HandleFunc("/viewer/matches", index)
 	// viewer記事ページ
 	http.HandleFunc("/articles", articles)
 
 	// viewerマッチページ
-	http.HandleFunc("/viewer/match/new", index)
-	http.HandleFunc("/viewer/match/save", index)
-	http.HandleFunc("/viewer/match/edit", index)
-	http.HandleFunc("/viewer/match/update", index)
+	// http.HandleFunc("/viewer/match/new", index)
+	// http.HandleFunc("/viewer/match/save", index)
+	// http.HandleFunc("/viewer/match/edit", index)
+	// http.HandleFunc("/viewer/match/update", index)
 
 	// common
 	//公開記事
@@ -96,14 +96,9 @@ func StartMainServer() error {
 	http.HandleFunc("/article/edit/", parseURL(editArticle))
 	http.HandleFunc("/like-article", likeButton)
 	// 公開討論
-	http.HandleFunc("matches", index)
-	http.HandleFunc("matches/{id}", index)
-	http.HandleFunc("matches/{topic_id}", index) //タグ付けされたexpertのみ討論可能
+	// http.HandleFunc("matches", index)
+	// http.HandleFunc("matches/{id}", index)
+	// http.HandleFunc("matches/{topic_id}", index) //タグ付けされたexpertのみ討論可能
 
-	// http.HandleFunc("/todos/new", todoNew)
-	// http.HandleFunc("/todos/save",todoSave)
-	// http.HandleFunc("/todos/edit/",parseURL(todoEdit))
-	// http.HandleFunc("/todos/update/",parseURL(todoUpdate))
-	// http.HandleFunc("/todos/delete/",parseURL(todoDelete))
 	return http.ListenAndServe("127.0.0.1:"+config.Config.Port, nil)
 }
