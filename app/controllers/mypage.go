@@ -1,15 +1,20 @@
 package controllers
 
 import (
-	"io"
 	"log"
 	"net/http"
-	"votalk/app/libs"
+	"github.com/gorilla/sessions"
 	"votalk/app/models"
+	// "votalk/app/libs"
 )
+
+var store = sessions.NewCookieStore([]byte("secret-key"))
 
 func mypage(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
+	session, _ := store.Get(r, "edit_success")
+	flashMessages := session.Flashes()
+	session.Save(r, w)
 	if err != nil {
 		log.Println(err)
 		http.Redirect(w, r, "/", 302)
@@ -29,9 +34,11 @@ func mypage(w http.ResponseWriter, r *http.Request) {
 			data := struct {
 				User interface{}
 				S    string
+				Flash interface{}
 			}{
 				user,
 				sess.UserType,
+				flashMessages,
 			}
 			generateHTML(w, data, "layout", "private_navbar", "mypage")
 		}
@@ -39,9 +46,10 @@ func mypage(w http.ResponseWriter, r *http.Request) {
 }
 
 func mypageEdit(w http.ResponseWriter, r *http.Request) {
+
 	userType := r.FormValue("userType")
 	userId := r.FormValue("userId")
-	email := r.FormValue("email")
+	email := r.FormValue("new-email")
 
 	if userType == "viewer" {
 		err := models.DB.Table("vw_users").Where("id = ?", userId).Update("email", email).Error
@@ -55,8 +63,11 @@ func mypageEdit(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	http.Redirect(w, r, "/", http.StatusFound)
-	io.WriteString(w, string(libs.JsonStatus("メールアドレスを変更しました")))
+	session, _ := store.Get(r, "edit_success")
+	session.AddFlash("変更が保存されました。")
+	session.Save(r, w)
+
+	http.Redirect(w, r, "/viewer/mypage", http.StatusFound)	
 }
 
 
