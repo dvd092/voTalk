@@ -1,8 +1,10 @@
 package controllers
 
 import (
+	"io"
 	"log"
 	"net/http"
+	"votalk/app/libs"
 	"votalk/app/models"
 )
 
@@ -35,6 +37,28 @@ func mypage(w http.ResponseWriter, r *http.Request) {
 		}
 	
 }
+
+func mypageEdit(w http.ResponseWriter, r *http.Request) {
+	userType := r.FormValue("userType")
+	userId := r.FormValue("userId")
+	email := r.FormValue("email")
+
+	if userType == "viewer" {
+		err := models.DB.Table("vw_users").Where("id = ?", userId).Update("email", email).Error
+		if err != nil { 
+			log.Println(err.Error())
+		}
+	} else if userType == "expert" {
+		err := models.DB.Table("ex_users").Where("id = ?", userId).Update("email", email).Error
+		if err != nil {
+			log.Println(err.Error())
+		}
+	}
+
+	http.Redirect(w, r, "/", http.StatusFound)
+	io.WriteString(w, string(libs.JsonStatus("メールアドレスを変更しました")))
+}
+
 
 func deleteUser(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
