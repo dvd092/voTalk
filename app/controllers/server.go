@@ -69,6 +69,7 @@ func StartMainServer() error {
 	// expertページ
 	http.HandleFunc("/expert/index", index) //記事一覧
 	http.HandleFunc("/expert/mypage", mypage)
+	http.HandleFunc("/expert/mypage/edit", mypageEdit)
 	http.HandleFunc("/expert/delete", deleteUser)
 	http.HandleFunc("/expert/articles/mine", myArticles)
 	// expert記事作成
@@ -76,6 +77,7 @@ func StartMainServer() error {
 	// viewerページ
 	http.HandleFunc("/viewer/index", index)
 	http.HandleFunc("/viewer/mypage", mypage)
+	http.HandleFunc("/viewer/mypage/edit", mypageEdit)
 	http.HandleFunc("/viewer/delete", deleteUser)
 	// viewer機能ページ
 	// http.HandleFunc("/viewer/matches", index)
