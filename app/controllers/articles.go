@@ -9,7 +9,7 @@ import (
 	"votalk/app/models"
 )
 
-// 記事ランキング
+// 記事ランキングページ
 func articles(w http.ResponseWriter, r *http.Request) {
 	switch r.Method{
 	case http.MethodGet:
