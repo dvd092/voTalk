@@ -10,7 +10,7 @@ import (
 func top(w http.ResponseWriter, r *http.Request) {
 	s, err := session(w, r)
 	if err != nil {
-		generateHTML(w, nil, "layout", "public_navbar", "top")
+		generateHTML(w, nil, "layout", "public_navbar", "index")
 	} else {
 		http.Redirect(w, r, fmt.Sprintf("/%s/mypage", s.UserType), 302)
 	}

@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "predeploy": [
+      "go build"
+    ],
+    "source": "functions",
+    "public": "/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

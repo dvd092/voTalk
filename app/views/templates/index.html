@@ -1,26 +1,20 @@
-{{ define "content" }}
+{{define "content"}}
 
- 
-<title>404 Not Found</title>
-</head>
-<body>
-  <div class="container my-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="text-center">
-          <h1 class="display-1">404</h1>
-          <h2 class="h1">Not Found</h2>
-        </div>
-        <div class="text-center mt-4">
-          <p class="lead">お探しのページが見つかりませんでした。</p>
-          <p>もう一度お試しください。</p>
-        </div>
-        <div class="text-center mt-5">
-          <a href="/" class="btn btn-primary">トップページに戻る</a>
-        </div>
-      </div>
+<div class="container d-flex justify-content-center align-items-center" style="height: 60vh;">
+  <p class="text-center">voTalkへようこそ。<br>このアプリはGoで作られた専門家に特化した記事投稿サイトです。viewer(閲覧者)は投稿を閲覧でき、いいねボタンを押すことができます。</p>
+  
+<div class="container py-5">
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-content" aria-expanded="false" aria-controls="toggle-content">
+    作者紹介
+  </button>
+  <div class="collapse" id="toggle-content">
+    <div class="card card-body">
+      <p>東京都新宿区出身。大学在学中にアメリカアラバマ州に1年交換留学。帰国後TOEIC900点を取る。</p>
     </div>
   </div>
- 
+</div>
+</div>
+
+
 
 {{end}}
