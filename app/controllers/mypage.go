@@ -3,6 +3,7 @@ package controllers
 import (
 	"log"
 	"net/http"
+	"fmt"
 	"github.com/gorilla/sessions"
 	"votalk/app/models"
 	// "votalk/app/libs"
@@ -67,7 +68,7 @@ func mypageEdit(w http.ResponseWriter, r *http.Request) {
 	session.AddFlash("変更が保存されました。")
 	session.Save(r, w)
 
-	http.Redirect(w, r, "/viewer/mypage", http.StatusFound)	
+	http.Redirect(w, r, fmt.Sprintf("/%s/mypage", userType), http.StatusFound)	
 }
 
 
