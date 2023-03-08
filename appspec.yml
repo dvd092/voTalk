@@ -3,3 +3,8 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
+hooks:
+  AfterInstall:
+    - location: /var/www/html/main
+      timeout: 180
+      runas: root
