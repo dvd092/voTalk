@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - go build -o app
+      - GOOS=linux GOARCH=amd64 go build  main.go
 artifacts:
     files:
         - '**/*'
