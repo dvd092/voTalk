@@ -3,6 +3,3 @@ phases:
   build:
     commands:
       - go build -o app
-artifacts:
-  files:
-    - app
