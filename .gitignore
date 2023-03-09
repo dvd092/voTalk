@@ -15,5 +15,3 @@
 *.log
 *.cache
 # vendor/
-server.go
-base.go
