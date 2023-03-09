@@ -5,6 +5,6 @@ files:
     destination: /var/www/html
 # hooks:
 #   AfterInstall:
-#     - location: /var/www/html/main
+#     - location: /var/www/html
 #       timeout: 180
 #       runas: root
