@@ -15,5 +15,5 @@
 *.log
 *.cache
 # vendor/
-/app/controllers/server.go
-/app/models/base.go
+app\controllers\server.go
+app\models\base.go
