@@ -1,3 +1,4 @@
+
 package models
 
 import (
@@ -26,8 +27,8 @@ const (
 )
 
 func init() {
-	Db, err = sql.Open(config.Config.SQLDriver, "ex_po_user:kdash@tcp(votalk-database.c1ifgotpjxxn.ap-northeast-1.rds.amazonaws.com:3306)/ex_po?parseTime=true")
-	DB, err = gorm.Open("mysql", "ex_po_user:kdash@tcp(votalk-database.c1ifgotpjxxn.ap-northeast-1.rds.amazonaws.com:3306)/ex_po?charset=utf8&parseTime=True&loc=Local")
+	Db, err = sql.Open(config.Config.SQLDriver, "dvd09:@tcp(localhost:3306)/ex_po?parseTime=true")
+	DB, err = gorm.Open("mysql", "dvd09:@/ex_po?charset=utf8&parseTime=True&loc=Local")
 	if err != nil {
 		log.Fatalln(err)
 	}

@@ -22,18 +22,12 @@ func (UserVw) TableName() string {
 
 //ビューワー登録
 func (u *UserVw) CreateUser() (err error) {
-	cmd := `insert into vw_users (
-	uuid,
-	name,
-	email,
-	password,
-	like_num,
-	created_at) values (?, ?, ?, ?, ?)`
-
-	_, err = Db.Exec(cmd, createUUID(), u.Name, u.Email, Encrypt(u.Password), 1, time.Now())
-
+	u.UUID = createUUID().String()
+	u.Password = Encrypt(u.Password)
+	u.LikeNum = 1
+	err = DB.Create(&u).Error
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatalln(err.Error())
 	}
 	return err
 }
