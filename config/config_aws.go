@@ -27,7 +27,7 @@ func LoadConfig() {
 		log.Fatalln(err)
 	}
 	Config = ConfigList{
-		Port: cfg.Section("web").Key("Port").MustString("80"),
+		Port: cfg.Section("web").Key("Port").MustString("8080"),
 		SQLDriver: cfg.Section("db").Key("driver").String(),
 		DbName: cfg.Section("db").Key("name").String(),
 		LogFile: cfg.Section("web").Key("logfile").String(),
