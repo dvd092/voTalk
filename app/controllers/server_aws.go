@@ -102,5 +102,5 @@ func StartMainServer() error {
 	// http.HandleFunc("matches/{id}", index)
 	// http.HandleFunc("matches/{topic_id}", index) //タグ付けされたexpertのみ討論可能
 
-	return http.ListenAndServe("18.177.104.166:"+config.Config.Port, nil)
+	return http.ListenAndServe("0.0.0.0:"+config.Config.Port, nil)
 }
