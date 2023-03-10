@@ -3,9 +3,5 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
-hooks:
-  AfterInstall:
-    - location: /var/www/html/script/run-main.sh
-      timeout: 300
-      runas: root
+
 
