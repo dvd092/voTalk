@@ -6,7 +6,6 @@ files:
 hooks:
   AfterInstall:
       - "cd /var/www/html"
+      - "chmod +x main"
       - "./main"
-    # - location: /var/www/html/script/run-main.sh
-    #   timeout: 300
-    #   runas: root
+
