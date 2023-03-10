@@ -9,6 +9,7 @@ import (
 	"strconv"
 	"votalk/app/models"
 	"votalk/config"
+	"os"
 )
 
 func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) {
@@ -101,6 +102,6 @@ func StartMainServer() error {
 	// http.HandleFunc("matches", index)
 	// http.HandleFunc("matches/{id}", index)
 	// http.HandleFunc("matches/{topic_id}", index) //タグ付けされたexpertのみ討論可能
-
-	return http.ListenAndServe("0.0.0.0:"+config.Config.Port, nil)
+	models.EnvLoad()
+	return http.ListenAndServe(os.Getenv("HOST")+":"+config.Config.Port, nil)
 }

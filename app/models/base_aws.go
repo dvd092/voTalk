@@ -29,7 +29,7 @@ const (
 )
 
 func init() {
-	envLoad()
+	EnvLoad()
 	connection := fmt.Sprintf("%s:%s@%s(%s:%s)/%s?parseTime=true",os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PROTOCOL"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB"))
 	Db, err = sql.Open(config.Config.SQLDriver, connection)
 	DB, err = gorm.Open("mysql", connection)
@@ -90,7 +90,7 @@ func Encrypt(plaintext string) (cryptext string) {
 }
 
 // envLoad 環境変数のロード
-func envLoad() {
+func EnvLoad() {
 	err := godotenv.Load("aws.env")
 	if err != nil {
 		err := godotenv.Load("local.env")
