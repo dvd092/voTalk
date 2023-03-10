@@ -4,8 +4,8 @@ files:
   - source: /
     destination: /var/www/html
 hooks:
-  ApplicationStart:
-      - "cd /var/www/html"
-      - "chmod +x main"
-      - "./main"
+  AfterInstall:
+    - location: /var/www/html/run-main.sh
+      timeout: 300
+      runas: root
 
