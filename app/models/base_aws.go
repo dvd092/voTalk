@@ -12,6 +12,9 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
+
+	"github.com/joho/godotenv"
+	"os"
 )
 
 var Db *sql.DB
@@ -26,8 +29,10 @@ const (
 )
 
 func init() {
-	Db, err = sql.Open(config.Config.SQLDriver, "ex_po_user:kdash@tcp(votalk-database.c1ifgotpjxxn.ap-northeast-1.rds.amazonaws.com:3306)/ex_po?parseTime=true")
-	DB, err = gorm.Open("mysql", "ex_po_user:kdash@tcp(votalk-database.c1ifgotpjxxn.ap-northeast-1.rds.amazonaws.com:3306)/ex_po?charset=utf8&parseTime=True&loc=Local")
+	envLoad()
+	connection := fmt.Sprintf("%s:%s@%s(%s:%s)/%s?parseTime=true",os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PROTOCOL"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB"))
+	Db, err = sql.Open(config.Config.SQLDriver, connection)
+	DB, err = gorm.Open("mysql", connection)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -82,4 +87,12 @@ func createUUID() (uuidobj uuid.UUID) {
 func Encrypt(plaintext string) (cryptext string) {
 	cryptext = fmt.Sprintf("%x", sha1.Sum([]byte(plaintext)))
 	return cryptext
+}
+
+// envLoad 環境変数のロード
+func envLoad() {
+	err := godotenv.Load("local.env")
+	if err != nil {
+		log.Fatalf("Error loading env target")
+	}
 }
