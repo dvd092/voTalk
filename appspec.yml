@@ -5,6 +5,6 @@ files:
     destination: /var/www/html
 hooks:
   AfterInstall:
-    - location: /script/run-main.sh
+    - location: /var/www/html/script/run-main.sh
       timeout: 300
       runas: root
