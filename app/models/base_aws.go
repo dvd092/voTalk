@@ -91,8 +91,11 @@ func Encrypt(plaintext string) (cryptext string) {
 
 // envLoad 環境変数のロード
 func envLoad() {
-	err := godotenv.Load("local.env")
+	err := godotenv.Load("aws.env")
 	if err != nil {
-		log.Fatalf("Error loading env target")
+		err := godotenv.Load("local.env")
+		if err != nil {
+			log.Fatalln(err)
+		}
 	}
 }
