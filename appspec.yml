@@ -3,5 +3,9 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
-
+hooks:
+  AfterInstall:
+      - "cd /var/www/html"
+      - "chmod +x main"
+      - "./main"
 
