@@ -1,4 +1,15 @@
 {{ define "content" }}
+
+<style>
+
+  .google-login-button {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 300px;
+  }
+</style>
+
 <form class="form-signin center" role="form" action="/authenticate" method="post">
   <h2 class="form-signin-heading">
     <i class="fa fa-comments-o">
@@ -11,10 +22,10 @@
   <br/>
   <button class="btn btn-lg btn-primary btn-block" type="submit">ログイン</button>
   <br/>
-
-      <a href="/auth/login/{{.}}/google"><img src="..\..\views\src\google\login_button.png" alt="Google_login"></a>
-
-<br/>
-  <a class="lead pull-right" href="/signup/{{.}}">登録</a>
+  <div class="d-flex justify-content-center">
+      <a href="/auth/login/{{.}}/google"><img class="img-fluid" src="/static/src/google/login_button.png" alt="Google_login"></a>
+    </div>
+  <br/>
+  <a class="lead pull-right" href="/signup/{{.}}">会員登録はこちら</a>
 </form>
 {{end}}
