@@ -12,6 +12,8 @@ type UserEx struct {
 	Name      string
 	Email     string
 	Password  string
+	IsValid   int
+	IsOauth   int
 	CreatedAt time.Time
 }
 
@@ -29,7 +31,7 @@ func (u *UserEx) CreateUser() (err error) {
 	password,
 	created_at) values (?, ?, ?, ?, ?)`
 
-	_, err = Db.Exec(cmd, createUUID(), u.Name, u.Email, Encrypt(u.Password), time.Now())
+	_, err = Db.Exec(cmd, CreateUUID(), u.Name, u.Email, Encrypt(u.Password), time.Now())
 
 	if err != nil {
 		log.Fatalln(err)
@@ -85,7 +87,7 @@ func (u *UserEx) CreateSession(s string) (session Session, err error) {
 		user_type,
 		created_at) values (?,?,?,?,?)`
 
-	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, s, time.Now())
+	_, err = Db.Exec(cmd1, CreateUUID(), u.Email, u.ID, s, time.Now())
 
 	if err != nil {
 		log.Fatalln(err)
@@ -140,13 +142,10 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 */
 func (sess *Session) GetUserBySessionEx() (user UserEx, err error) {
 	user = UserEx{}
-	cmd := `select id, uuid, name, email, created_at from ex_users where id = ?`
-	err = Db.QueryRow(cmd, sess.UserId).Scan(
-		&user.ID,
-		&user.UUID,
-		&user.Name,
-		&user.Email,
-		&user.CreatedAt)
+	err = DB.Where("id = ?", sess.UserId).First(&user).Error
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	return user, err
 }

@@ -13,8 +13,21 @@ type UserVw struct {
 	Email     string
 	Password  string
 	LikeNum   int
+	IsValid   int
+	IsOauth   int
 	CreatedAt time.Time
 }
+
+type Session struct {
+	Id        int
+	UUID      string
+	Name      string
+	Email     string
+	UserId    int
+	UserType  string
+	CreatedAt time.Time
+}
+
 
 func (UserVw) TableName() string {
 	return "vw_users"
@@ -22,7 +35,7 @@ func (UserVw) TableName() string {
 
 //ビューワー登録
 func (u *UserVw) CreateUser() (err error) {
-	u.UUID = createUUID().String()
+	u.UUID = CreateUUID().String()
 	u.Password = Encrypt(u.Password)
 	u.LikeNum = 1
 	err = DB.Create(&u).Error
@@ -57,7 +70,7 @@ func (u *UserVw) CreateSession(s string) (session Session, err error) {
 		user_type,
 		created_at) values (?,?,?,?,?)`
 
-	_, err = Db.Exec(cmd1, createUUID(), u.Email, u.ID, s, time.Now())
+	_, err = Db.Exec(cmd1, CreateUUID(), u.Email, u.ID, s, time.Now())
 
 	if err != nil {
 		log.Fatalln(err)
@@ -95,7 +108,6 @@ func (sess *Session) CheckSession() (valid bool, err error) {
 	if sess.Id != 0 {
 		valid = true
 	}
-
 	return valid, err
 }
 
@@ -111,14 +123,10 @@ func (sess *Session) DeleteSessionByUUID() (err error) {
 
 func (sess *Session) GetUserBySessionVw() (user UserVw, err error) {
 	user = UserVw{}
-	cmd := `select id, uuid, name, email, like_num, created_at from vw_users where id = ?`
-	err = Db.QueryRow(cmd, sess.UserId).Scan(
-		&user.ID,
-		&user.UUID,
-		&user.Name,
-		&user.Email,
-		&user.LikeNum,
-		&user.CreatedAt)
+	err = DB.Where("id = ?", sess.UserId).First(&user).Error
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	return user, err
 }

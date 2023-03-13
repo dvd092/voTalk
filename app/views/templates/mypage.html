@@ -13,12 +13,15 @@
         <input type="hidden" id="userId" name="userId" value="{{.User.ID}}">
         <label for="email">メールアドレス</label>
         <input type="email" id="email" name="email" class="form-control mb-3" value="{{.User.Email}}" required autofocus disabled>
+        {{ if eq .User.IsOauth 0 }}
+        {{.User}}
         <label for="new-email">新しいメールアドレス</label>
         <input type="email" id="new-email" name="new-email" class="form-control mb-3" value="" required autofocus>
         <label for="confirm-email">確認用</label>
         <input type="email" id="confirm-email" name="confirm-email" class="form-control mb-3" value="" required autofocus>
         <div id="email-match-error" class="invalid-feedback">新しいメールアドレスと確認用のメールアドレスが一致しません。</div>
         <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">変更</button>
+        {{ end }}
       </form>
       <a class="btn btn-danger btn-block col-5" data-toggle="modal" data-target="#confirmModal">退会する</a>
 

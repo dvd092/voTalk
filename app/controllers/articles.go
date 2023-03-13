@@ -26,7 +26,7 @@ func articles(w http.ResponseWriter, r *http.Request) {
 			if err != nil {
 				log.Fatalln(err, user)
 			}
-		} else if sess.UserType == "viewer" {
+		} else if sess.UserType == "viewer" {	
 			user, err = sess.GetUserBySessionVw()
 			if err != nil {
 				log.Fatalln(err, user)
@@ -284,43 +284,3 @@ func editArticle(w http.ResponseWriter, r *http.Request, id int) {
 
 }
 
-/*
-func GetCategoryArticles(w http.ResponseWriter, r *http.Request) {
-
-		categoryId,err := strconv.Atoi(r.FormValue("categoryId"))
-		if err != nil {
-			log.Println(err)
-		}
-		var user interface{}
-		// ユーザータイプ別にセッションから情報取得
-		if sess.UserType == "expert" {
-			user, err = sess.GetUserBySessionEx()
-			if err != nil {
-				log.Fatalln(err, user)
-			}
-		} else if sess.UserType == "viewer" {
-			user, err = sess.GetUserBySessionVw()
-			if err != nil {
-				log.Fatalln(err, user)
-			}
-		}
-		arts, err := models.GetCategoryArticles(categoryId)
-		categories := models.AllCategories()
-		models.DB.Preload("ExUser").Preload("Category").Order("likes desc").Find(&arts)
-		if err != nil {
-			log.Fatalln(err)
-		}
-		data := struct {
-			User     interface{}
-			S        string
-			Art      []models.Article
-			Category []models.Category
-		}{
-			user,
-			sess.UserType,
-			arts,
-			categories,
-		}
-		 return data
-	}
-	*/

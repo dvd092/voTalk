@@ -79,7 +79,7 @@ func init() {
 
 }
 
-func createUUID() (uuidobj uuid.UUID) {
+func CreateUUID() (uuidobj uuid.UUID) {
 	uuidobj, _ = uuid.NewUUID()
 	return uuidobj
 }
