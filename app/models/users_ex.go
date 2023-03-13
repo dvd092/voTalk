@@ -24,45 +24,12 @@ func (UserEx) TableName() string {
 
 //エキスパート登録
 func (u *UserEx) CreateUser() (err error) {
-	cmd := `insert into ex_users (
-	uuid,
-	name,
-	email,
-	password,
-	created_at) values (?, ?, ?, ?, ?)`
-
-	_, err = Db.Exec(cmd, CreateUUID(), u.Name, u.Email, Encrypt(u.Password), time.Now())
-
+	err = DB.Create(&u).Error
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatalln(err.Error())
 	}
 	return err
 }
-
-// func GetUser(id int) (user UserEx, err error) {
-// 	user = UserEx{}
-// 	cmd := `select id, uuid, name, email, password, created_at from users where id = ?`
-// 	err = Db.QueryRow(cmd, id).Scan(&user.ID, &user.UUID, &user.Name, &user.Email, &user.Password, &user.CreatedAt)
-// 	return user,err
-// }
-
-// func (u *UserEx) UpdateUser() (err error) {
-// 	cmd := `update users set name =?, email =? where id =?`
-//   _, err = Db.Exec(cmd, u.Name, u.Email, u.ID)
-// 	if err!= nil {
-//     log.Fatalln(err)
-// 	}
-// 	return err
-// }
-
-// func (u *UserEx) DeleteUser() (err error) {
-// 	cmd := `delete from users where id =?`
-//   _, err = Db.Exec(cmd, u.ID)
-//   if err!= nil {
-//     log.Fatalln(err)
-//   }
-// 	return err
-// }
 
 func GetUserByEmailEx(email string, s string) (user UserEx, err error) {
 	user = UserEx{}
@@ -106,40 +73,6 @@ func (u *UserEx) CreateSession(s string) (session Session, err error) {
 	return session, err
 }
 
-/*
-func (sess *Session) CheckSession() (valid bool, err error) {
-	cmd := `select id, uuid, email, user_id, created_at from sessions where uuid = ?`
-
-	err = Db.QueryRow(cmd,sess.UUID).Scan(
-		&sess.Id,
-		&sess.UUID,
-		&sess.Email,
-		&sess.UserId,
-		&sess.CreatedAt)
-
-		if err != nil {
-			valid = false
-			return
-		}
-
-		if sess.Id != 0 {
-			valid = true
-		}
-
-		return valid,err
-}
-
-
-func (sess *Session) DeleteSessionByUUID() (err error) {
-	cmd := `delete from sessions where uuid =?`
-  _, err = Db.Exec(cmd,sess.UUID)
-  if err!= nil {
-    log.Fatalln(err)
-  }
-
-	return err
-}
-*/
 func (sess *Session) GetUserBySessionEx() (user UserEx, err error) {
 	user = UserEx{}
 	err = DB.Where("id = ?", sess.UserId).First(&user).Error

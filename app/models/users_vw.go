@@ -35,9 +35,6 @@ func (UserVw) TableName() string {
 
 //ビューワー登録
 func (u *UserVw) CreateUser() (err error) {
-	u.UUID = CreateUUID().String()
-	u.Password = Encrypt(u.Password)
-	u.LikeNum = 1
 	err = DB.Create(&u).Error
 	if err != nil {
 		log.Fatalln(err.Error())
@@ -48,15 +45,10 @@ func (u *UserVw) CreateUser() (err error) {
 
 func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 	user = UserVw{}
-	cmd := `select id, uuid, name, email, password, like_num, created_at from vw_users where email = ?`
-	err = Db.QueryRow(cmd, email).Scan(
-		&user.ID,
-		&user.UUID,
-		&user.Name,
-		&user.Email,
-		&user.Password,
-		&user.LikeNum,
-		&user.CreatedAt)
+	err = DB.Where("email = ?", email).Find(&user).Error
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	return user, err
 }

@@ -76,6 +76,11 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 	//エキスパート処理
 	if s == "expert" {
 		user, err := models.GetUserByEmailEx(r.PostFormValue("email"), s)
+		if user.IsValid == 0 {
+			log.Println("有効なアカウントではありません")
+			http.Redirect(w, r, "/login/expert", 302)
+		}
+		
 		if err != nil {
 			log.Println(err)
 			http.Redirect(w, r, "/login", 302)
@@ -100,6 +105,10 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 		//ビューワー処理
 	} else if s == "viewer" {
 		user, err := models.GetUserByEmailVw(r.PostFormValue("email"), s)
+		if user.IsValid == 0 {
+			log.Println("有効なアカウントではありません")
+			http.Redirect(w, r, "/login/viewer", 302)
+		}
 		if err != nil {
 			log.Println(err)
 			http.Redirect(w, r, "/login/viewer", 302)
