@@ -51,17 +51,33 @@ func mypageEdit(w http.ResponseWriter, r *http.Request) {
 	userType := r.FormValue("userType")
 	userId := r.FormValue("userId")
 	email := r.FormValue("new-email")
+	name := r.FormValue("new-name")
 
 	if userType == "viewer" {
-		err := models.DB.Table("vw_users").Where("id = ?", userId).Update("email", email).Error
+		if email == "" {
+			err := models.DB.Table("vw_users").Where("id = ?", userId).Update("name", name).Error
+			if err != nil { 
+				log.Println(err.Error())
+			}
+		}else {
+			err := models.DB.Table("vw_users").Where("id = ?", userId).Update("email", email).Error
 		if err != nil { 
 			log.Println(err.Error())
 		}
+		}
 	} else if userType == "expert" {
-		err := models.DB.Table("ex_users").Where("id = ?", userId).Update("email", email).Error
+		if email == "" {
+			err := models.DB.Table("ex_users").Where("id = ?", userId).Update("name", name).Error
+			if err != nil { 
+				log.Println(err.Error())
+			}
+		}else {
+			err := models.DB.Table("ex_users").Where("id = ?", userId).Update("email", email).Error
 		if err != nil {
 			log.Println(err.Error())
 		}
+		}
+		
 	}
 
 	session, _ := store.Get(r, "edit_success")

@@ -20,6 +20,12 @@
         <input type="email" id="confirm-email" name="confirm-email" class="form-control mb-3" value="" required autofocus>
         <div id="email-match-error" class="invalid-feedback">新しいメールアドレスと確認用のメールアドレスが一致しません。</div>
         <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">変更</button>
+        {{ else }}
+        <label for="name">名前</label>
+        <input type="name" id="name" name="name" class="form-control mb-3" value="{{.User.Name}}" required autofocus disabled>
+        <label for="new-name">新しい名前</label>
+        <input type="name" id="new-name" name="new-name" class="form-control mb-3" value="" required autofocus>
+        <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">変更</button>
         {{ end }}
       </form>
       <a class="btn btn-danger btn-block col-5" data-toggle="modal" data-target="#confirmModal">退会する</a>

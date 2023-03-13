@@ -1,13 +1,17 @@
 {{ define "navbar"}}
 <div class="container">
-    <a class="btn btn-outline-danger" href="/logout">ログアウト</a>
-    <a class="btn btn-outline-info" href="/articles">記事ランキング</a>
+    <a class="btn btn-outline-danger" href="/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>ログアウト</a>
+    <a class="btn btn-outline-info" href="/articles"><i class="fa-solid fa-ranking-star"></i>記事ランキング</a>
     {{ if eq .S "expert"}}
       <a class="btn btn-outline-warning" href="/{{.S}}/articles/mine">マイ記事</a>
     {{ end }}
-    <a class="btn btn-outline-dark" href="/{{.S}}/mypage">基本情報</a>
+    <a class="btn btn-outline-dark" href="/{{.S}}/mypage"><i class="fa-regular fa-user"></i>基本情報</a>
     <h2 class="text-right" style="margin-top: 20px;">
-      ようこそ、{{.S}} {{.User.Name}}さん
+      {{ if eq .S "viewer"}}
+      ようこそ、<i class="fa-solid fa-eye"></i>{{.S}} {{.User.Name}}さん
+      {{ else }}
+      ようこそ、<i class="fa-solid fa-graduation-cap"></i>{{.S}} {{.User.Name}}さん
+      {{ end }}
     </h2>
   </div>
 
