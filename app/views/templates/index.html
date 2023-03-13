@@ -1,18 +1,25 @@
 {{define "content"}}
 
 <div class="container d-flex justify-content-center align-items-center" style="height: 60vh;">
-  <p class="text-center">voTalkへようこそ。<br>このアプリはGoで作られた専門家に特化した記事投稿サイトです。viewer(閲覧者)は投稿を閲覧でき、いいねボタンを押すことができます。</p>
+  <p class="text-center">voTalkへようこそ。<br>このアプリはGoとAWSで作られた専門家に特化した記事投稿サイトです。expert(専門家)は記事を投稿することができます。viewer(閲覧者)は投稿を閲覧でき、いいねボタンを押すことができます。</p>
   
-<div class="container py-5">
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-content" aria-expanded="false" aria-controls="toggle-content">
-    作者紹介
-  </button>
-  <div class="collapse" id="toggle-content">
-    <div class="card card-body">
-      <!-- <p>東京都新宿区出身。大学在学中にアメリカアラバマ州に1年交換留学。帰国後TOEIC900点を取る。</p> -->
+  <div class="container py-5">
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-content" aria-expanded="false" aria-controls="toggle-content">
+      作者プロフィール
+    </button>
+    <div class="collapse" id="toggle-content">
+      <div class="card card-body">
+        <div class="profile-info"> <!-- プロフィール情報を入れるためのdiv要素 -->
+          <p>東京都新宿区出身。大学在学中にアメリカアラバマ州に1年交換留学。</p>
+          <p>使用言語 : PHP,Laravel,Go</p>
+          <p>クラウド : AWS,GCP</p>
+          <p>資格 TOEIC:900点, AWS SAA-03, Webアナリスト検定 </p>
+          <p>語学能力 : 韓国語ネイティブ 英語日常会話</p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
 </div>
 
 
