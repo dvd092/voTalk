@@ -4,11 +4,10 @@ import (
 	"crypto/sha1"
 	"database/sql"
 	"fmt"
-	"log"
-	"votalk/config"
-	// gorm mysql
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"log"
+	"votalk/config"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
@@ -30,7 +29,7 @@ const (
 
 func init() {
 	EnvLoad()
-	connection := fmt.Sprintf("%s:%s@%s(%s:%s)/%s?parseTime=true",os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PROTOCOL"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB"))
+	connection := fmt.Sprintf("%s:%s@%s(%s:%s)/%s?parseTime=true", os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PROTOCOL"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB"))
 	Db, err = sql.Open(config.Config.SQLDriver, connection)
 	DB, err = gorm.Open("mysql", connection)
 	if err != nil {
@@ -52,31 +51,6 @@ func init() {
 		log.Fatalln(err)
 	}
 	Db.Exec(cmdVwU)
-
-	//expertユーザーテーブル作成
-	cmdExU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,uuid VARCHAR(100),name VARCHAR(100),email VARCHAR(100),password VARCHAR(100),created_at DATETIME)`, tableNameExUser)
-
-	_, err = Db.Exec(cmdExU)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	Db.Exec(cmdExU)
-
-	// cmdT := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,content TEXT, user_id INTEGER, created_at DATETIME)`, tableNameTodo)
-
-	// Db.Exec(cmdT)
-
-	//セッションテーブル作成
-	cmdS := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (
-		id INTEGER PRIMARY KEY AUTO_INCREMENT,
-		uuid VARCHAR(255) NOT NULL UNIQUE,
-		email VARCHAR(255),
-		user_id INTEGER,
-		user_type INTEGER,
-		created_at DATETIME)`, tableNameSession)
-
-	Db.Exec(cmdS)
-
 }
 
 func CreateUUID() (uuidobj uuid.UUID) {

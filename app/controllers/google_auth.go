@@ -1,13 +1,11 @@
 package controllers
 
 import (
-	// "context"
-	// "os"
 	"fmt"
 	"log"
 	"net/http"
-	"strings"
 	"os"
+	"strings"
 	"votalk/app/models"
 
 	"github.com/stretchr/objx"
@@ -15,7 +13,6 @@ import (
 	"github.com/stretchr/gomniauth"
 	"github.com/stretchr/gomniauth/providers/google"
 )
-
 
 // loginHandler handles the third-party login process.
 func LoginHandler(w http.ResponseWriter, r *http.Request) {
@@ -30,13 +27,12 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	provider := "google"
 
 	if action == "login" {
-			// ユーザータイプクッキー登録
+		// ユーザータイプクッキー登録
 		cookie := &http.Cookie{
-				Name: "user_type", 
-				Value: segs[3], 
+			Name:  "user_type",
+			Value: segs[3],
 		}
 		http.SetCookie(w, cookie)
-
 
 		UserTypeCookieValue := segs[3]
 		http.SetCookie(w, &http.Cookie{
@@ -44,10 +40,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 			Value: UserTypeCookieValue,
 			Path:  "/"})
 	}
-
-
-
-
 
 	switch action {
 	case "login":
@@ -85,13 +77,13 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 		cookie, err := r.Cookie("user_type")
 		if err != nil {
-			log.Fatalln("Cookie:",err)
+			log.Fatalln("Cookie:", err)
 		}
 		user_type := cookie.Value
 
 		if user_type == "viewer" {
 			userType := models.UserVw{}
-		
+
 			err = models.DB.Where("email = ?", user.Email()).First(&userType).Error
 			if err != nil {
 				userType.UUID = models.CreateUUID().String()
@@ -99,14 +91,14 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				userType.Email = user.Email()
 				userType.IsValid = 0
 				userType.IsOauth = 1
-				
+
 				userType.CreateUser()
 				models.DB.Where("email = ?", user.Email()).First(&userType)
 				sess := models.Session{
-					UUID: userType.UUID,
-					Name: userType.Name,
-					Email: userType.Email,
-					UserId: userType.ID,
+					UUID:     userType.UUID,
+					Name:     userType.Name,
+					Email:    userType.Email,
+					UserId:   userType.ID,
 					UserType: user_type,
 				}
 				err = models.DB.Create(&sess).Error
@@ -120,10 +112,10 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 					Path:  "/"})
 			} else {
 				sess := models.Session{
-					UUID: userType.UUID,
-					Name: userType.Name,
-					Email: userType.Email,
-					UserId: userType.ID,
+					UUID:     userType.UUID,
+					Name:     userType.Name,
+					Email:    userType.Email,
+					UserId:   userType.ID,
 					UserType: user_type,
 				}
 				err = models.DB.Create(&sess).Error
@@ -155,10 +147,10 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 
 				log.Println(&userType)
 				sess := models.Session{
-					UUID: userType.UUID,
-					Name: userType.Name,
-					Email: userType.Email,
-					UserId: userType.ID,
+					UUID:     userType.UUID,
+					Name:     userType.Name,
+					Email:    userType.Email,
+					UserId:   userType.ID,
 					UserType: user_type,
 				}
 				err = models.DB.Create(&sess).Error
@@ -172,10 +164,10 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 					Path:  "/"})
 			} else {
 				sess := models.Session{
-					UUID: userType.UUID,
-					Name: userType.Name,
-					Email: userType.Email,
-					UserId: userType.ID,
+					UUID:     userType.UUID,
+					Name:     userType.Name,
+					Email:    userType.Email,
+					UserId:   userType.ID,
 					UserType: user_type,
 				}
 				err = models.DB.Create(&sess).Error
@@ -198,5 +190,3 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Auth action %s not supported", action)
 	}
 }
-
-

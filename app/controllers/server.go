@@ -26,14 +26,14 @@ func generateHTML(w http.ResponseWriter, data interface{}, filenames ...string) 
 }
 
 func session(w http.ResponseWriter, r *http.Request) (sess models.Session, err error) {
-		cookie, err := r.Cookie("_cookie")
-		if err == nil {
-				sess = models.Session{UUID: cookie.Value}
-			if ok, _ := sess.CheckSession(); !ok {
-				err = fmt.Errorf("Invalid session")
-			}
+	cookie, err := r.Cookie("_cookie")
+	if err == nil {
+		sess = models.Session{UUID: cookie.Value}
+		if ok, _ := sess.CheckSession(); !ok {
+			err = fmt.Errorf("Invalid session")
 		}
-		return sess, err
+	}
+	return sess, err
 }
 
 var validPath = regexp.MustCompile("^/article/(edit|update|delete|show)/([0-9]+)$")
@@ -69,7 +69,7 @@ func StartMainServer() error {
 	http.HandleFunc("/logout", logout)
 	http.HandleFunc("/auth/", LoginHandler)
 	// expertページ
-	http.HandleFunc("/expert/index", index) //記事一覧
+	http.HandleFunc("/expert/index", index)
 	http.HandleFunc("/expert/mypage", mypage)
 	http.HandleFunc("/expert/mypage/edit", mypageEdit)
 	http.HandleFunc("/expert/delete", deleteUser)
@@ -81,28 +81,30 @@ func StartMainServer() error {
 	http.HandleFunc("/viewer/mypage", mypage)
 	http.HandleFunc("/viewer/mypage/edit", mypageEdit)
 	http.HandleFunc("/viewer/delete", deleteUser)
-	// viewer機能ページ
+
+	// viewer機能ページ(未実装)
 	// http.HandleFunc("/viewer/matches", index)
+
 	// viewer記事ページ
 	http.HandleFunc("/articles", articles)
 
-	// viewerマッチページ
+	// viewerマッチページ(未実装)
 	// http.HandleFunc("/viewer/match/new", index)
 	// http.HandleFunc("/viewer/match/save", index)
 	// http.HandleFunc("/viewer/match/edit", index)
 	// http.HandleFunc("/viewer/match/update", index)
 
-	// common
-	//公開記事
-
+	// common記事ページ
 	http.HandleFunc("/article/show/", parseURL(article))
 	http.HandleFunc("/article/delete/", parseURL(deleteArticle))
 	http.HandleFunc("/article/edit/", parseURL(editArticle))
 	http.HandleFunc("/like-article", likeButton)
-	// 公開討論
+
+	// 公開討論(未実装)
 	// http.HandleFunc("matches", index)
 	// http.HandleFunc("matches/{id}", index)
 	// http.HandleFunc("matches/{topic_id}", index) //タグ付けされたexpertのみ討論可能
+
 	models.EnvLoad()
 	return http.ListenAndServe(os.Getenv("HOST")+":"+config.Config.Port, nil)
 }

@@ -1,12 +1,10 @@
 package controllers
 
 import (
-	"votalk/app/libs"
-	"votalk/app/models"
-
-	// "fmt"
 	"log"
 	"net/http"
+	"votalk/app/libs"
+	"votalk/app/models"
 )
 
 func signup(w http.ResponseWriter, r *http.Request) {
@@ -20,7 +18,7 @@ func signup(w http.ResponseWriter, r *http.Request) {
 		flashMessages := session.Flashes()
 		session.Save(r, w)
 		data := struct {
-			S    string
+			S     string
 			Flash interface{}
 		}{
 			s,
@@ -46,22 +44,22 @@ func signup(w http.ResponseWriter, r *http.Request) {
 			}
 
 			user_vw := models.UserVw{}
-			
+
 			err = models.DB.Where("email = ?", user.Email).First(&user_vw).Error
 			if err == nil {
-			session, _ := store.Get(r, "sign_up_failed")
-			session.AddFlash("メールアドレスはすでに登録されています")
-			session.Save(r, w)
-			http.Redirect(w, r, "/signup/viewer", 302)
-			return
+				session, _ := store.Get(r, "sign_up_failed")
+				session.AddFlash("メールアドレスはすでに登録されています")
+				session.Save(r, w)
+				http.Redirect(w, r, "/signup/viewer", 302)
+				return
 			}
 			err = models.DB.Where("name = ?", user.Name).First(&user_vw).Error
 			if err == nil {
 				session, _ := store.Get(r, "sign_up_failed")
-			session.AddFlash("名前はすでに登録されています")
-			session.Save(r, w)
-			http.Redirect(w, r, "/signup/viewer", 302)
-			return
+				session.AddFlash("名前はすでに登録されています")
+				session.Save(r, w)
+				http.Redirect(w, r, "/signup/viewer", 302)
+				return
 			}
 
 			if err := user.CreateUser(); err != nil {
@@ -79,18 +77,17 @@ func signup(w http.ResponseWriter, r *http.Request) {
 			err = models.DB.Where("email = ?", user.Email).First(user).Error
 			if err == nil {
 				session, _ := store.Get(r, "sign_up_failed")
-			session.AddFlash("メールアドレスはすでに登録されています")
-			session.Save(r, w)
-			http.Redirect(w, r, "/signup/expert", 302)
+				session.AddFlash("メールアドレスはすでに登録されています")
+				session.Save(r, w)
+				http.Redirect(w, r, "/signup/expert", 302)
 			}
 			err = models.DB.Where("name = ?", user.Name).First(user).Error
 			if err == nil {
 				session, _ := store.Get(r, "sign_up_failed")
-			session.AddFlash("名前はすでに登録されています")
-			session.Save(r, w)
-			http.Redirect(w, r, "/signup/expert", 302)
+				session.AddFlash("名前はすでに登録されています")
+				session.Save(r, w)
+				http.Redirect(w, r, "/signup/expert", 302)
 			}
-
 
 			if err := user.CreateUser(); err != nil {
 				log.Println(err)
@@ -127,7 +124,7 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 			log.Println("有効なアカウントではありません")
 			http.Redirect(w, r, "/login/expert", 302)
 		}
-		
+
 		if err != nil {
 			log.Println(err)
 			http.Redirect(w, r, "/login", 302)

@@ -3,7 +3,6 @@ package models
 import (
 	"log"
 	"time"
-	// "fmt"
 )
 
 type UserVw struct {
@@ -28,7 +27,6 @@ type Session struct {
 	CreatedAt time.Time
 }
 
-
 func (UserVw) TableName() string {
 	return "vw_users"
 }
@@ -41,7 +39,6 @@ func (u *UserVw) CreateUser() (err error) {
 	}
 	return err
 }
-
 
 func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 	user = UserVw{}

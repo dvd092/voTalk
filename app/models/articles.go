@@ -1,13 +1,8 @@
 package models
 
 import (
-	// "encoding/json"
-	// "fmt"
-	// "log"
 	"html/template"
 	"time"
-	// "net/http"
-	// gorm mysql
 )
 
 type Article struct {
@@ -46,7 +41,6 @@ func GetArticlesByUser(userId int) (arts []Article, err error) {
 	}
 	return arts, nil
 }
-
 
 func GetCategoryArticles(id int) (arts []Article, err error) {
 	err = DB.Where("category_id = ?", id).Find(&arts).Error

@@ -3,7 +3,6 @@ package models
 import (
 	"log"
 	"time"
-	// "fmt"
 )
 
 type UserEx struct {

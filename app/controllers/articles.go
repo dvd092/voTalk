@@ -11,93 +11,93 @@ import (
 
 // 記事ランキングページ
 func articles(w http.ResponseWriter, r *http.Request) {
-	switch r.Method{
+	switch r.Method {
 	case http.MethodGet:
-	
-	sess, err := session(w, r)
-	if err != nil {
-		log.Println(err)
-		http.Redirect(w, r, "/", 302)
-	} else {
-		var user interface{}
-		// ユーザータイプ別にセッションから情報取得
-		if sess.UserType == "expert" {
-			user, err = sess.GetUserBySessionEx()
-			if err != nil {
-				log.Fatalln(err, user)
-			}
-		} else if sess.UserType == "viewer" {	
-			user, err = sess.GetUserBySessionVw()
-			if err != nil {
-				log.Fatalln(err, user)
-			}
-		}
-		arts, err := models.GetArticles()
-		categories := models.AllCategories()
-		models.DB.Preload("ExUser").Preload("Category").Order("likes desc").Find(&arts)
-		if err != nil {
-			log.Fatalln(err)
-		}
-		data := struct {
-			User     interface{}
-			S        string
-			Art      []models.Article
-			Category []models.Category
-		}{
-			user,
-			sess.UserType,
-			arts,
-			categories,
-		}
-		generateHTML(w, data, "layout", "private_navbar", "articles")
 
-	}
-case http.MethodPost:
 		sess, err := session(w, r)
-	if err != nil {
-		log.Println(err)
-		http.Redirect(w, r, "/", 302)
-	} else {
-		var user interface{}
-		// ユーザータイプ別にセッションから情報取得
-		if sess.UserType == "expert" {
-			user, err = sess.GetUserBySessionEx()
-			if err != nil {
-				log.Fatalln(err, user)
-			}
-		} else if sess.UserType == "viewer" {
-			user, err = sess.GetUserBySessionVw()
-			if err != nil {
-				log.Fatalln(err, user)
-			}
-		}
-		categoryId,err := strconv.Atoi(r.FormValue("CategoryId"))
 		if err != nil {
 			log.Println(err)
+			http.Redirect(w, r, "/", 302)
+		} else {
+			var user interface{}
+			// ユーザータイプ別にセッションから情報取得
+			if sess.UserType == "expert" {
+				user, err = sess.GetUserBySessionEx()
+				if err != nil {
+					log.Fatalln(err, user)
+				}
+			} else if sess.UserType == "viewer" {
+				user, err = sess.GetUserBySessionVw()
+				if err != nil {
+					log.Fatalln(err, user)
+				}
+			}
+			arts, err := models.GetArticles()
+			categories := models.AllCategories()
+			models.DB.Preload("ExUser").Preload("Category").Order("likes desc").Find(&arts)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			data := struct {
+				User     interface{}
+				S        string
+				Art      []models.Article
+				Category []models.Category
+			}{
+				user,
+				sess.UserType,
+				arts,
+				categories,
+			}
+			generateHTML(w, data, "layout", "private_navbar", "articles")
+
 		}
-		// arts, err := models.GetCategoryArticles(categoryId)
-		categories := models.AllCategories()
-		arts := []models.Article{}
-		models.DB.Preload("ExUser").Preload("Category").Order("likes desc").Where("category_id =?",categoryId).Find(&arts)
-		
+	case http.MethodPost:
+		sess, err := session(w, r)
 		if err != nil {
-			log.Fatalln(err)
+			log.Println(err)
+			http.Redirect(w, r, "/", 302)
+		} else {
+			var user interface{}
+			// ユーザータイプ別にセッションから情報取得
+			if sess.UserType == "expert" {
+				user, err = sess.GetUserBySessionEx()
+				if err != nil {
+					log.Fatalln(err, user)
+				}
+			} else if sess.UserType == "viewer" {
+				user, err = sess.GetUserBySessionVw()
+				if err != nil {
+					log.Fatalln(err, user)
+				}
+			}
+			categoryId, err := strconv.Atoi(r.FormValue("CategoryId"))
+			if err != nil {
+				log.Println(err)
+			}
+			categories := models.AllCategories()
+			arts := []models.Article{}
+			models.DB.Preload("ExUser").Preload("Category").Order("likes desc").Where("category_id =?", categoryId).Find(&arts)
+
+			if err != nil {
+				log.Fatalln(err)
+			}
+			data := struct {
+				User     interface{}
+				S        string
+				Art      []models.Article
+				Category []models.Category
+			}{
+				user,
+				sess.UserType,
+				arts,
+				categories,
+			}
+			generateHTML(w, data, "layout", "private_navbar", "articles")
 		}
-		data := struct {
-			User     interface{}
-			S        string
-			Art      []models.Article
-			Category []models.Category
-		}{
-			user,
-			sess.UserType,
-			arts,
-			categories,
-		}
-		generateHTML(w, data, "layout", "private_navbar", "articles")
 	}
 }
-}
+
 // 個別記事
 func article(w http.ResponseWriter, r *http.Request, id int) {
 	sess, err := session(w, r)
@@ -135,6 +135,7 @@ func article(w http.ResponseWriter, r *http.Request, id int) {
 		generateHTML(w, data, "layout", "private_navbar", "article")
 	}
 }
+
 // いいねボタンajax処理
 func likeButton(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
@@ -155,6 +156,7 @@ func likeButton(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(response)
 	}
 }
+
 // マイ記事
 func myArticles(w http.ResponseWriter, r *http.Request) {
 	sess, err := session(w, r)
@@ -187,6 +189,7 @@ func myArticles(w http.ResponseWriter, r *http.Request) {
 		generateHTML(w, data, "layout", "private_navbar", "my_articles")
 	}
 }
+
 // 記事作成
 func newArticles(w http.ResponseWriter, r *http.Request) {
 
@@ -230,6 +233,7 @@ func newArticles(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
 	}
 }
+
 // 記事削除
 func deleteArticle(w http.ResponseWriter, r *http.Request, id int) {
 	var art models.Article
@@ -237,6 +241,7 @@ func deleteArticle(w http.ResponseWriter, r *http.Request, id int) {
 	models.DB.Delete(art)
 	http.Redirect(w, r, "/expert/articles/mine", http.StatusFound)
 }
+
 // 記事編集
 func editArticle(w http.ResponseWriter, r *http.Request, id int) {
 	switch r.Method {
@@ -283,4 +288,3 @@ func editArticle(w http.ResponseWriter, r *http.Request, id int) {
 	}
 
 }
-
