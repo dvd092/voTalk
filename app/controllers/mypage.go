@@ -54,10 +54,20 @@ func mypageEdit(w http.ResponseWriter, r *http.Request) {
 
 	if userType == "viewer" {
 		if email == "" {
-			err := models.DB.Table("vw_users").Where("id = ?", userId).Update("name", name).Error
+			vw_user := models.UserVw{}
+			err := models.DB.Where("name = ?",name).First(&vw_user).Error
+			if err == nil{
+				log.Println(err)
+				log.Println("すでに存在する名前です")
+				url := fmt.Sprintf("/%s/mypage",userType)
+				http.Redirect(w,r,url,302)
+				return
+			}
+			err = models.DB.Table("vw_users").Where("id = ?", userId).Update("name", name).Error
 			if err != nil {
 				log.Println(err.Error())
 			}
+
 		} else {
 			err := models.DB.Table("vw_users").Where("id = ?", userId).Update("email", email).Error
 			if err != nil {
@@ -66,10 +76,19 @@ func mypageEdit(w http.ResponseWriter, r *http.Request) {
 		}
 	} else if userType == "expert" {
 		if email == "" {
-			err := models.DB.Table("ex_users").Where("id = ?", userId).Update("name", name).Error
-			if err != nil {
-				log.Println(err.Error())
+			ex_user := models.UserEx{}
+			err := models.DB.Where("name = ?",name).First(&ex_user).Error
+			if err == nil{
+				log.Println(err)
+				log.Println("すでに存在する名前です")
+				url := fmt.Sprintf("/%s/mypage",userType)
+				http.Redirect(w,r,url,302)
+				return
 			}
+			err = models.DB.Table("ex_users").Where("id = ?", userId).Update("name", name).Error
+				if err != nil {
+					log.Println(err.Error())
+				}
 		} else {
 			err := models.DB.Table("ex_users").Where("id = ?", userId).Update("email", email).Error
 			if err != nil {

@@ -140,7 +140,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				userType.IsValid = 0
 				userType.IsOauth = 1
 				// ユーザー新規作成作成
-				log.Println(userType)
 				userType.CreateUser()
 				// ユーザー情報取得
 				models.DB.Where("email = ?", user.Email()).First(&userType)
