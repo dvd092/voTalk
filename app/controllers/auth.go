@@ -44,6 +44,7 @@ func signup(w http.ResponseWriter, r *http.Request) {
 				Email:    r.PostFormValue("email"),
 				Password: models.Encrypt(r.PostFormValue("password")),
 				IsValid: 1,
+				LikeNum: 1,
 			}
 
 			user_vw := models.UserVw{}

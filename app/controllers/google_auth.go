@@ -90,6 +90,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				userType.Name = user.Name()
 				userType.Email = user.Email()
 				userType.IsValid = 0
+				userType.LikeNum = 1
 				userType.IsOauth = 1
 
 				userType.CreateUser()
@@ -133,7 +134,6 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 			userType := models.UserEx{}
 			err = models.DB.Where("email = ?", user.Email()).First(&userType).Error
 			if err != nil {
-
 				userType.UUID = models.CreateUUID().String()
 				userType.Name = user.Name()
 				userType.Email = user.Email()
