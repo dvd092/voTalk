@@ -32,42 +32,28 @@ func (u *UserEx) CreateUser() (err error) {
 
 func GetUserByEmailEx(email string, s string) (user UserEx, err error) {
 	user = UserEx{}
-	cmd := `select id, uuid, name, email, password, created_at from ex_users where email = ?`
-	err = Db.QueryRow(cmd, email).Scan(
-		&user.ID,
-		&user.UUID,
-		&user.Name,
-		&user.Email,
-		&user.Password,
-		&user.CreatedAt)
-
+	err = DB.Where("email = ?", email).Find(&user).Error
+	if err != nil {
+		log.Println(err)
+	}
 	return user, err
 }
 
 func (u *UserEx) CreateSession(s string) (session Session, err error) {
-	session = Session{}
-	cmd1 := `insert into sessions (
-		uuid,
-		email,
-		user_id,
-		user_type,
-		created_at) values (?,?,?,?,?)`
-
-	_, err = Db.Exec(cmd1, CreateUUID(), u.Email, u.ID, s, time.Now())
-
-	if err != nil {
-		log.Fatalln(err)
+	// セッション作成
+	session = Session{
+		UUID: CreateUUID().String(),
+		Email: u.Email,
+		UserId: u.ID,
+		UserType: s,
+		CreatedAt: time.Now(),
 	}
-
-	cmd2 := `select id, uuid, email, user_id, user_type, created_at from sessions where user_id=? and email = ?`
-
-	err = Db.QueryRow(cmd2, u.ID, u.Email).Scan(
-		&session.Id,
-		&session.UUID,
-		&session.Email,
-		&session.UserId,
-		&session.UserType,
-		&session.CreatedAt)
+	err = DB.Create(&session).Error
+		if err != nil {
+		log.Println(err)
+	}
+	// セッション取得
+	err = DB.Where("email = ?", u.Email).First(&session).Error
 
 	return session, err
 }

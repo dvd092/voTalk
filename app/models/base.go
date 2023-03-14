@@ -2,12 +2,11 @@ package models
 
 import (
 	"crypto/sha1"
-	"database/sql"
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"log"
-	"votalk/config"
+	// "votalk/config"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
@@ -16,7 +15,6 @@ import (
 	"os"
 )
 
-var Db *sql.DB
 var DB *gorm.DB
 
 var err error
@@ -30,27 +28,11 @@ const (
 func init() {
 	EnvLoad()
 	connection := fmt.Sprintf("%s:%s@%s(%s:%s)/%s?parseTime=true", os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PROTOCOL"), os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB"))
-	Db, err = sql.Open(config.Config.SQLDriver, connection)
 	DB, err = gorm.Open("mysql", connection)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	err = Db.Ping()
-	if err != nil {
-		fmt.Println("接続失敗")
-	} else {
-		fmt.Println("接続成功")
-	}
-
-	//viewユーザーテーブル作成
-	cmdVwU := fmt.Sprintf(`CREATE TABLE IF NOT EXISTS %s (id INTEGER PRIMARY KEY AUTO_INCREMENT,uuid VARCHAR(100),name VARCHAR(100),email VARCHAR(100),password VARCHAR(100),created_at DATETIME)`, tableNameVwUser)
-
-	_, err = Db.Exec(cmdVwU)
-	if err != nil {
-		log.Fatalln(err)
-	}
-	Db.Exec(cmdVwU)
 }
 
 func CreateUUID() (uuidobj uuid.UUID) {

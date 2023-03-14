@@ -95,7 +95,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				userType.CreateUser()
 				models.DB.Where("email = ?", user.Email()).First(&userType)
 				sess := models.Session{
-					UUID:     userType.UUID,
+					UUID:     models.CreateUUID().String(),
 					Name:     userType.Name,
 					Email:    userType.Email,
 					UserId:   userType.ID,
@@ -105,14 +105,14 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				if err != nil {
 					log.Fatalln(err)
 				}
-				authCookieValue := userType.UUID
+				authCookieValue := sess.UUID
 				http.SetCookie(w, &http.Cookie{
 					Name:  "_cookie",
 					Value: authCookieValue,
 					Path:  "/"})
 			} else {
 				sess := models.Session{
-					UUID:     userType.UUID,
+					UUID:     models.CreateUUID().String(),
 					Name:     userType.Name,
 					Email:    userType.Email,
 					UserId:   userType.ID,
@@ -122,7 +122,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				if err != nil {
 					log.Fatalln(err)
 				}
-				authCookieValue := userType.UUID
+				authCookieValue := sess.UUID
 				http.SetCookie(w, &http.Cookie{
 					Name:  "_cookie",
 					Value: authCookieValue,
@@ -145,9 +145,8 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				// ユーザー情報取得
 				models.DB.Where("email = ?", user.Email()).First(&userType)
 
-				log.Println(&userType)
 				sess := models.Session{
-					UUID:     userType.UUID,
+					UUID:     models.CreateUUID().String(),
 					Name:     userType.Name,
 					Email:    userType.Email,
 					UserId:   userType.ID,
@@ -157,14 +156,14 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				if err != nil {
 					log.Fatalln(err)
 				}
-				authCookieValue := userType.UUID
+				authCookieValue := sess.UUID
 				http.SetCookie(w, &http.Cookie{
 					Name:  "_cookie",
 					Value: authCookieValue,
 					Path:  "/"})
 			} else {
 				sess := models.Session{
-					UUID:     userType.UUID,
+					UUID:     models.CreateUUID().String(),
 					Name:     userType.Name,
 					Email:    userType.Email,
 					UserId:   userType.ID,
@@ -174,7 +173,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 				if err != nil {
 					log.Fatalln(err)
 				}
-				authCookieValue := userType.UUID
+				authCookieValue := sess.UUID
 				http.SetCookie(w, &http.Cookie{
 					Name:  "_cookie",
 					Value: authCookieValue,

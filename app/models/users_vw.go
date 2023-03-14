@@ -51,44 +51,26 @@ func GetUserByEmailVw(email string, s string) (user UserVw, err error) {
 }
 
 func (u *UserVw) CreateSession(s string) (session Session, err error) {
-	session = Session{}
-	cmd1 := `insert into sessions (
-		uuid,
-		email,
-		user_id,
-		user_type,
-		created_at) values (?,?,?,?,?)`
-
-	_, err = Db.Exec(cmd1, CreateUUID(), u.Email, u.ID, s, time.Now())
-
-	if err != nil {
-		log.Fatalln(err)
+	// セッション作成
+	session = Session{
+		UUID: CreateUUID().String(),
+		Email: u.Email,
+		UserId: u.ID,
+		UserType: s,
+		CreatedAt: time.Now(),
 	}
-
-	cmd2 := `select id, uuid, email, user_id, user_type, created_at from sessions where user_id=? and email = ?`
-
-	err = Db.QueryRow(cmd2, u.ID, u.Email).Scan(
-		&session.Id,
-		&session.UUID,
-		&session.Email,
-		&session.UserId,
-		&session.UserType,
-		&session.CreatedAt)
+	err = DB.Create(&session).Error
+		if err != nil {
+		log.Println(err)
+	}
+	// セッション取得
+	err = DB.Where("email = ?", u.Email).First(&session).Error
 
 	return session, err
 }
 
 func (sess *Session) CheckSession() (valid bool, err error) {
-	cmd := `select id, uuid, email, user_id, user_type, created_at from sessions where uuid = ?`
-
-	err = Db.QueryRow(cmd, sess.UUID).Scan(
-		&sess.Id,
-		&sess.UUID,
-		&sess.Email,
-		&sess.UserId,
-		&sess.UserType,
-		&sess.CreatedAt)
-
+	err = DB.Where("uuid = ?", sess.UUID).Find(&sess).Error
 	if err != nil {
 		valid = false
 		return
@@ -101,8 +83,7 @@ func (sess *Session) CheckSession() (valid bool, err error) {
 }
 
 func (sess *Session) DeleteSessionByUUID() (err error) {
-	cmd := `delete from sessions where uuid =?`
-	_, err = Db.Exec(cmd, sess.UUID)
+	err = DB.Where("uuid = ?", sess.UUID).Unscoped().Delete(&sess).Error
 	if err != nil {
 		log.Fatalln(err)
 	}

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"votalk/app/libs"
@@ -38,9 +39,11 @@ func signup(w http.ResponseWriter, r *http.Request) {
 		//viewer登録
 		if s == "viewer" {
 			user := models.UserVw{
+				UUID: models.CreateUUID().String(),
 				Name:     r.PostFormValue("name"),
 				Email:    r.PostFormValue("email"),
-				Password: r.PostFormValue("password"),
+				Password: models.Encrypt(r.PostFormValue("password")),
+				IsValid: 1,
 			}
 
 			user_vw := models.UserVw{}
@@ -71,7 +74,8 @@ func signup(w http.ResponseWriter, r *http.Request) {
 			user := models.UserEx{
 				Name:     r.PostFormValue("name"),
 				Email:    r.PostFormValue("email"),
-				Password: r.PostFormValue("password"),
+				Password: models.Encrypt(r.PostFormValue("password")),
+				IsValid: 1,
 			}
 
 			err = models.DB.Where("email = ?", user.Email).First(user).Error
@@ -93,7 +97,8 @@ func signup(w http.ResponseWriter, r *http.Request) {
 				log.Println(err)
 			}
 		}
-		http.Redirect(w, r, "/", 302)
+		url := fmt.Sprintf("/login/%s",s)
+		http.Redirect(w, r, url, 302)
 	}
 
 }
