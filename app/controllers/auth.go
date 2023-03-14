@@ -15,23 +15,53 @@ func signup(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodGet:
 		_, err := session(w, r)
+		// 登録失敗メッセージ
+		session, _ := store.Get(r, "sign_up_failed")
+		flashMessages := session.Flashes()
+		session.Save(r, w)
+		data := struct {
+			S    string
+			Flash interface{}
+		}{
+			s,
+			flashMessages,
+		}
 		if err != nil {
-			generateHTML(w, s, "layout", "public_navbar", "signup")
+			generateHTML(w, data, "layout", "public_navbar", "signup")
 		} else {
 			http.Redirect(w, r, "/", 302)
 		}
+
 	case http.MethodPost:
 		err := r.ParseForm()
 		if err != nil {
 			log.Println(err)
 		}
-
 		//viewer登録
 		if s == "viewer" {
 			user := models.UserVw{
 				Name:     r.PostFormValue("name"),
 				Email:    r.PostFormValue("email"),
 				Password: r.PostFormValue("password"),
+			}
+
+			user_vw := models.UserVw{}
+			
+			err = models.DB.Where("email = ?", user.Email).First(&user_vw).Error
+			if err == nil {
+			session, _ := store.Get(r, "sign_up_failed")
+			session.AddFlash("メールアドレスはすでに登録されています")
+			session.Save(r, w)
+			http.Redirect(w, r, "/signup/viewer", 302)
+			return
+			}
+			err = models.DB.Where("name = ?", user.Name).First(&user_vw).Error
+			if err == nil {
+				session, _ := store.Get(r, "sign_up_failed")
+			session.AddFlash("名前はすでに登録されています")
+			session.Save(r, w)
+			http.Redirect(w, r, "/signup/viewer", 302)
+			return
 			}
 
 			if err := user.CreateUser(); err != nil {
@@ -45,6 +75,23 @@ func signup(w http.ResponseWriter, r *http.Request) {
 				Email:    r.PostFormValue("email"),
 				Password: r.PostFormValue("password"),
 			}
+
+			err = models.DB.Where("email = ?", user.Email).First(user).Error
+			if err == nil {
+				session, _ := store.Get(r, "sign_up_failed")
+			session.AddFlash("メールアドレスはすでに登録されています")
+			session.Save(r, w)
+			http.Redirect(w, r, "/signup/expert", 302)
+			}
+			err = models.DB.Where("name = ?", user.Name).First(user).Error
+			if err == nil {
+				session, _ := store.Get(r, "sign_up_failed")
+			session.AddFlash("名前はすでに登録されています")
+			session.Save(r, w)
+			http.Redirect(w, r, "/signup/expert", 302)
+			}
+
+
 			if err := user.CreateUser(); err != nil {
 				log.Println(err)
 			}

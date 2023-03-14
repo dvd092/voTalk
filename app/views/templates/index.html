@@ -1,6 +1,16 @@
 {{define "content"}}
 
-<div class="container d-flex justify-content-center align-items-center" style="height: 60vh;">
+<style>
+  .profile-info {
+  visibility: hidden;
+}
+
+.collapse.show .profile-info {
+  visibility: visible;
+}
+</style>
+
+<div class="container d-flex justify-content-center align-items-center row" style="height: 60vh;">
   <p class="text-center">voTalkへようこそ。<br>このアプリはGoとAWSで作られた専門家に特化した記事投稿サイトです。expert(専門家)は記事を投稿することができます。viewer(閲覧者)は投稿を閲覧でき、いいねボタンを押すことができます。</p>
   
   <div class="container py-5">
@@ -9,7 +19,7 @@
     </button>
     <div class="collapse" id="toggle-content">
       <div class="card card-body">
-        <div class="profile-info"> <!-- プロフィール情報を入れるためのdiv要素 -->
+        <div class="profile-info">
           <p>東京都新宿区出身。大学在学中にアメリカアラバマ州に1年交換留学。</p>
           <p>使用言語 : PHP,Laravel,Go</p>
           <p>クラウド : AWS,GCP</p>
