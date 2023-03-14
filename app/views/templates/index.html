@@ -1,17 +1,17 @@
 {{define "content"}}
 
 <style>
-  .profile-info {
+  .profile-info  {
   visibility: hidden;
 }
-
-.collapse.show .profile-info {
+ .collapse.show .profile-info {
   visibility: visible;
 }
 </style>
 
 <div class="container d-flex justify-content-center align-items-center row" style="height: 60vh;">
-  <p class="text-center">voTalkへようこそ。<br>このアプリはGoとAWSで作られた専門家に特化した記事投稿サイトです。expert(専門家)は記事を投稿することができます。viewer(閲覧者)は投稿を閲覧でき、いいねボタンを押すことができます。</p>
+  <p class="text-center">voTalkへようこそ。<br>このアプリはGoとAWSで作られた専門家に特化した記事投稿サイトです。<br>
+    expert(専門家)は記事を投稿することができます。viewer(閲覧者)は投稿を閲覧でき、いいねボタンを押すことができます。</p>
   
   <div class="container py-5">
     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-content" aria-expanded="false" aria-controls="toggle-content">
@@ -19,8 +19,9 @@
     </button>
     <div class="collapse" id="toggle-content">
       <div class="card card-body">
-        <div class="profile-info">
-          <p>東京都新宿区出身。大学在学中にアメリカアラバマ州に1年交換留学。</p>
+        <div class="profile-info text-center">
+          <img src="/static/src/ReadingBook.png" alt="profile-img" width="10%" height="10%" class="mx-auto d-block">
+          <p>東京都新宿区出身。大学在学中にアメリカアラバマ州に1年交換留学。<br>卒業後にシステムエンジニアとしてWebサービスの要件定義からDB設計、ネットワーク構築、システム開発までの流れを経験。<br>国際経験のあるDevOpsを目指して絶賛転職活動中。</p>
           <p>使用言語 : PHP,Laravel,Go</p>
           <p>クラウド : AWS,GCP</p>
           <p>資格 TOEIC:900点, AWS SAA-03, Webアナリスト検定 </p>
